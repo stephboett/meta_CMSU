@@ -57,10 +57,7 @@ or_es <- or_dat %>%
   mutate(
     yi = raw_es * (sqrt(3)/pi), 
     vi = ((log(or_ciub) - log(or_cilb)) / 2*qnorm(.975))^2,
-    vi = case_when(
-      !is.na(vi) ~ vi * (3/(pi^2)),
-       is.na(vi) ~ ((ni) / ((ni/2)^2)) + ((yi^2) / (2 * ni))
-    ),
+    vi = vi * (3/(pi^2)),
     vi = (16 * vi) / (yi^2 + 4)^3,
     yi = yi/sqrt(yi^2 + 4)
   )
@@ -80,3 +77,19 @@ smd_es <- smd_es %>%
     yi = yi/sqrt(yi^2 + 4),
     vi = (16 * vi) / (yi^2 + 4)^3
   )
+
+# Variance for correlation coefficients
+
+r_dat <- dat %>% 
+  filter(!is.na(ri))
+
+r_es <- r_dat %>% 
+  mutate(
+    yi = ri
+  )
+
+# Bind data
+
+es_dat <- bind_rows(r_es, lor_es, or_es, smd_es)
+
+meta <- escalc(ri = yi, ni = ni, data = es_dat, measure = "ZCOR")
