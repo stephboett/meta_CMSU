@@ -56,17 +56,12 @@ or_dat <- or_dat %>%
 or_es <- or_dat %>% 
   mutate(
     yi = raw_es * (sqrt(3)/pi), 
-    vi = ((log(or_ciub) - log(or_cilb)) / 2*qnorm(.975))^2,
-    vi = vi * (3/(pi^2)),
-    vi = (16 * vi) / (yi^2 + 4)^3,
     yi = yi/sqrt(yi^2 + 4)
   )
 
 lor_es <- lor_es %>% 
   mutate(
-    yi = yi * (sqrt(3)/pi), 
-    vi = vi * (3/pi^2),
-    vi = (16 * vi) / (yi^2 + 4)^3,
+    yi = yi * (sqrt(3)/pi),
     yi = yi/sqrt(yi^2 + 4)
   )
 
@@ -74,8 +69,7 @@ lor_es <- lor_es %>%
 
 smd_es <- smd_es %>% 
   mutate(
-    yi = yi/sqrt(yi^2 + 4),
-    vi = (16 * vi) / (yi^2 + 4)^3
+    yi = yi/sqrt(yi^2 + 4)
   )
 
 # Variance for correlation coefficients
