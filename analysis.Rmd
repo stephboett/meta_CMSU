@@ -1,0 +1,66 @@
+---
+title: "report_analysis"
+author: "Stephanie Boettiger"
+date: '2022-04-04'
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(metafor)
+library(dplyr)
+```
+
+```{r}
+meta <- escalc(measure= "ZCOR", ri= yi, ni=ni, data = es_dat)
+```
+
+```{r}
+# the analysis 
+res <- rma(yi, vi, data = meta)
+res
+```
+
+```{r}
+# getting the pooled correlation 
+predict(res, transf = transf.ztor)
+```
+
+```{r}
+confint(res)
+```
+
+
+```{r}
+res2 <- rma(method = "HS", yi, vi, data = meta)
+res3 <- rma(method = "HE", yi, vi, data = meta)
+```
+
+```{r}
+res2
+res3
+```
+
+```{r}
+# viewing the influence of individual studies 
+influence <- influence(res)
+print(influence)
+plot(influence)
+```
+
+```{r}
+forest(res)
+#print to get xlim, cex etc. to adjust forest plot space
+print(forest(res))
+forest(res, 
+       addpred = TRUE, 
+       header = TRUE, 
+       xlim=c() , 
+       cex =c() , 
+       atransf = transf.ztor)
+```
+
+
