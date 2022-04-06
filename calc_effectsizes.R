@@ -8,11 +8,16 @@ library(metafor)
 library(dplyr)
 
 dat <- read.csv("cmsu_raw-data.csv")
+dat <- dat %>% 
+  filter(include == 1)
 
 # calculating standardized mean differences 
 
 smd_dat <- dat %>% 
   filter(!is.na(mean_control)) 
+
+smd_dat <- dat %>% 
+  filter(guo_include == 1)
 
 smd_es <- escalc(
   m2i = mean_control,
