@@ -128,5 +128,12 @@ test.egger = rma.mv(yi, vi, mods = vi,
                                   ~ 1 | su_mod), 
                     data = meta)
 
+# precision effect test
+
+PET = rma.mv(yi, vi, mods = I(sqrt(vi)),
+             random = list(~ 1 | control_id, 
+                           ~ 1 | su_mod), 
+             data = meta)
+PET
 
 
