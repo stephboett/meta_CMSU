@@ -16,6 +16,8 @@ dat <- dat %>%
 smd_dat <- dat %>% 
   filter(!is.na(mean_control)) 
 
+# separate analysis done without Guo et al.
+
 smd_dat <- dat %>% 
   filter(guo_include == 1)
 
@@ -30,7 +32,7 @@ smd_es <- escalc(
   data = smd_dat
 )
 
-# Converting proprotions to lor
+# Converting proportions to lor
 
 lor_dat <- dat %>% 
   filter(!is.na(prop_control))
