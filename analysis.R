@@ -34,6 +34,8 @@ test.egger = rma.mv(yi, vi, mods = vi,
                                   ~ 1 | su_mod), 
                     data = meta)
 
+test.egger
+
 # precision effect test
 
 PET = rma.mv(yi, vi, mods = I(sqrt(vi)),
@@ -131,6 +133,178 @@ res8$vi.f <- res4$vi.f[174:196]
 res8$yi.f <- res4$yi.f[174:196]
 res8$slab <- res4$slab[174:196]
 forest(res6, xlim = c(-3, 4))
+
+# funnel plot
+
+funnel(res)
+
+# prettier funnel plot
+
+summary_estimate <- res$beta[1]
+summary_se <- res$se
+
+se_seq = seq(0, max(meta$vi),na.rm = TRUE, .001)
+
+ll95 = summary_estimate - (1.96*se.seq)
+ul95 = summary_estimate + (1.96*se.seq)
+
+ll99 = summary_estimate - (3.96*se.seq)
+ul99 = summary_estimate + (3.96*se.seq)
+
+meanll95 = summary_estimate - (1.96*se)
+meanul95 = summary_estimate + (1.96*se)
+
+sig_seq <- 1.96*se_seq
+goldilocks_mid <- 2.57*se_seq
+goldilocks_upper <- 3.29*se_seq
+
+sig_seq_neg <- -1.96*se_seq
+goldilocks_mid_neg <- -2.57*se_seq
+goldilocks_upper_neg <- -3.29*se_seq
+
+dfCI <- data.frame(ll95, ul95, ll99, ul99, meanll95, meanul95, se_seq, sig_seq, goldilocks_mid, goldilocks_upper, sig_seq_neg, goldilocks_mid_neg, goldilocks_upper_neg)
+
+funnelp <- meta %>% 
+  ggplot(.,
+         aes(
+           x = yi,
+           y = vi 
+         )) +
+  scale_y_reverse(
+    lim = c(max(meta$vi, na.rm = TRUE) + .05, 0)
+  ) +
+  geom_line(
+    aes(
+      y = se_seq,
+      x = sig_seq
+    ),
+    linetype = "dashed",
+    color = "red",
+    size = .5,
+    data = dfCI
+  ) +
+  geom_line(
+    aes(
+      y = se_seq,
+      x = goldilocks_mid
+    ),
+    linetype = "dashed",
+    color = "red",
+    size = .4,
+    data = dfCI
+  ) +
+  geom_line(
+    aes(
+      y = se_seq,
+      x = goldilocks_upper
+    ),
+    linetype = "dashed",
+    color = "red",
+    size = .5,
+    data = dfCI
+  ) +
+  geom_line(
+    aes(
+      y = se_seq,
+      x = sig_seq_neg
+      ),
+    linetype = "dashed",
+    color = "red",
+    size = .5,
+    data = dfCI
+  ) +
+  geom_line(
+    aes(
+      y = se_seq,
+      x = goldilocks_mid_neg
+      ),
+    linetype = "dashed",
+    color = "red",
+    size = .4,
+    data = dfCI
+  ) +
+  geom_line(
+    aes(
+      y = se_seq,
+      x = goldilocks_upper_neg
+      ),
+    linetype = "dashed",
+    color = "red",
+    size = .5,
+    data = dfCI
+  ) +
+  geom_line(
+    aes(
+      x = se_seq, 
+      y = ll95
+      ), 
+    linetype = 'dotted',
+    data = dfCI
+  ) +
+  geom_line(
+    aes(
+      x = se_seq, 
+      y = ul95
+      ), 
+    linetype = 'dotted',
+    data = dfCI
+  ) +
+  geom_line(
+    aes(
+      x = se_seq, 
+      y = ll99
+      ), 
+    linetype = 'dashed',
+    data = dfCI
+  ) +
+  geom_line(
+    aes(
+      x = se_seq, 
+      y = ul99
+      ), 
+    linetype = 'dashed', 
+    data = dfCI
+  ) +
+  geom_segment(
+    aes(
+      y = min(se_seq), 
+      x = meanll95, 
+      yend = max(se_seq), 
+      xend = meanll95
+      ), 
+    linetype='dashed', 
+    data = dfCI
+  ) +
+  geom_segment(
+    aes(
+      y = min(se_seq), 
+      x = meanul95, 
+      yend = max(se_seq), 
+      xend = meanul95
+      ), 
+    linetype ='dashed', 
+    data = dfCI
+    ) +
+  geom_point(
+    shape = 2
+    ) +
+  labs(
+    x = "Effect size",
+    y = "Standard error"
+  ) +
+  geom_vline(
+    xintercept = summary_estimate,
+    linetype = "dashed",
+    size = 1
+  ) +
+  geom_vline(
+    xintercept = 0,
+    linetype = "dotted",
+    size = 1
+  ) +
+  theme_bw()
+
+funnelp
 
 # Moderator analysis ----------------------------------------------------------
 
