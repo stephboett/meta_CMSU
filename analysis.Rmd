@@ -36,7 +36,6 @@ result3
 
 ```{r}
 # PEESE test (similar to Egger's)
-
 test.egger
 ```
 
@@ -48,12 +47,13 @@ PET
 
 ```{r}
 #Cook's distance 
-x
-plot(x, type = "o",
+cd <- cooks.distance.rma.mv(res)
+cd
+plot(cd, type = "o",
      pch = 19,
      xlab = "Observed Outcome",
      ylab = "Cook's Distance"
-    ) 
+) 
 ```
 
 ```{r}
@@ -110,62 +110,7 @@ funnel(res)
 ```
 
 ```{r}
-# prettier funnel plot (in the works)
-
-estimate = 0.1199
-se = 0.0220
-
-se.seq = seq(0, max(meta$vi), 0.001)
-
-ll95 = estimate-(1.96*se.seq)
-ul95 = estimate+(1.96*se.seq)
-
-ll99 = estimate-(3.96*se.seq)
-ul99 = estimate+(3.96*se.seq)
-
-meanll95 = estimate-(1.96*se)
-meanul95 = estimate+(1.96*se)
-
-dfCI <- data.frame(ll95, ul95, ll99, ul99, se.seq, estimate, meanll95, meanul95)
-
-fp <- ggplot(aes(x = se,
-                 y = Zr,
-                 data = res)
-) +
-  geom_point(shape = 1) +
-  xlab = ('Standard Error') +
-  ylab = ('Zr') +
-  geom_line(aes(x = se.seq, 
-                y = ll95), 
-                linetype = 'dotted', 
-                data = dfCI) +
-  geom_line(aes(x = se.seq, 
-                y = ul95), 
-                linetype = 'dotted', 
-                data = dfCI) +
-  geom_line(aes(x = se.seq, 
-                y = ll99), 
-                linetype = 'dashed', 
-                data = dfCI) +
-  geom_line(aes(x = se.seq, 
-                y = ul99), 
-                linetype = 'dashed', 
-                data = dfCI) +
-  geom_segment(aes(x = min(se.seq), 
-                   y = meanll95, 
-                   xend = max(se.seq), 
-                   yend = meanll95), 
-                   linetype='dotted', 
-                   data=dfCI) +
-  geom_segment(aes(x = min(se.seq), 
-                   y = meanul95, 
-                   xend = max(se.seq), 
-                   yend = meanul95), 
-                   linetype='dotted', 
-                   data=dfCI) +
-  scale_x_reverse() +
-  scale_y_continuous(breaks=seq(-.4,.6,0.5)) +
-  coord_flip() +
-  theme_bw()
+# prettier funnel plot
+funnelp
 ```
 
