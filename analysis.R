@@ -65,10 +65,9 @@ forest_df <- meta %>%
   arrange(yi) %>% 
   mutate(
     study_id = 1:length(yi),
-    lowerci = yi - (1.96*vi),
-    upperci = yi + (1.96*vi),
+    lowerci = yi - (1.96*sqrt(vi)),
+    upperci = yi + (1.96*sqrt(vi)),
   )
-forest_df
 
 forest_df %>% 
   ggplot(.,
@@ -76,21 +75,32 @@ forest_df %>%
              y = study_id,
              xmin = lowerci,
              xmax = upperci)) +
-  geom_point(shape = 15,
-             size = 4, 
-             color = "black"
+  geom_point(
+    shape = 15,
+    size = .50, 
+    color = "black"
+  ) +
+  geom_errorbarh() +
+  scale_x_continuous(
+    limits = c(-2, 2), 
+    breaks = seq(-1.5, 1.5, .25),
+    name = "Fisher r to z transformed effect size") +
+  labs(
+    y = "Effect ID"
   ) + 
-  scale_x_continuous(limits = c(-.4, .6), 
-                     breaks = c(-.4, -.3, -.2, -.1, 0, .1, .2, .3, .4, .5, .6),
-                     name = "Correlation Coefficient (r)") +
-  ylab("Author(s)") + 
   scale_y_continuous(
     limits = c(1, length(forest_df$study_id)),
     breaks = 1:length(forest_df$study_id)
   ) + 
-  geom_vline(xintercept = 0, 
-             color = "black", 
-             linetype = "dashed")
+  geom_vline(
+    xintercept = 0, 
+    color = "black", 
+    linetype = "dashed"
+  ) +
+  theme_classic() +
+  theme(
+    axis.text.y = element_text(size = 5)
+  )
 
 ## forest plot option #2
 
