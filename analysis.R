@@ -137,8 +137,9 @@ PET = rma.mv(yi, vi, mods = I(sqrt(vi)),
              data = meta)
 PET
 
+# visualizations --------------------------------------------------------------
 
-# forest plot option #1 
+## forest plot option #1 
 
 forest_df <- meta %>% 
   arrange(yi) %>% 
@@ -171,7 +172,7 @@ forest_df %>%
              color = "black", 
              linetype = "dashed")
 
-# forest plot option #2
+## forest plot option #2
 
 res2 <- res
 res2$vi.f <- res2$vi.f[1:28]
@@ -210,3 +211,13 @@ res8$vi.f <- res4$vi.f[174:196]
 res8$yi.f <- res4$yi.f[174:196]
 res8$slab <- res4$slab[174:196]
 forest(res6, xlim = c(-3, 4))
+
+# Cook's distance 
+
+x <- cooks.distance.rma.mv(res)
+x
+plot(x, type = "o",
+     pch = 19,
+     xlab = "Observed Outcome",
+     ylab = "Cook's Distance"
+) 
