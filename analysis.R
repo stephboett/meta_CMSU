@@ -46,9 +46,9 @@ PET
 
 ## Cook's distance 
 
-x <- cooks.distance.rma.mv(res)
-x
-plot(x, type = "o",
+cd <- cooks.distance.rma.mv(res)
+cd
+plot(cd, type = "o",
      pch = 19,
      xlab = "Observed Outcome",
      ylab = "Cook's Distance"
@@ -132,3 +132,11 @@ res8$yi.f <- res4$yi.f[174:196]
 res8$slab <- res4$slab[174:196]
 forest(res6, xlim = c(-3, 4))
 
+# Moderator analysis ----------------------------------------------------------
+
+res_mod <- rma.mv(yi, vi,
+                  random = list(~ 1 | control_id, 
+                                ~ 1 | su_mod), 
+               mods =~ factor(cm_measure) + 
+                 cbind(age_mean + age_min + age_max + gender)
+) 
