@@ -61,7 +61,7 @@ plot(cd, type = "o",
 hatvalues.rma.mv(res)
 plot(hatvalues.rma.mv(res))
 
-## forest plot option #1 
+## forest plot
 
 forest_df <- meta %>% 
   arrange(yi) %>% 
@@ -104,46 +104,6 @@ forest_df %>%
     axis.text.y = element_text(size = 5)
   )
 
-## forest plot option #2
-
-res2 <- res
-res2$vi.f <- res2$vi.f[1:28]
-
-res3 <- res
-res3$vi.f <- res3$vi.f[29:57]
-res3$yi.f <- res3$yi.f[29:57]
-res3$slab <- res3$slab[29:57]
-forest(res3, xlim = c(-3, 4))
-
-res4 <- res
-res4$vi.f <- res4$vi.f[58:86]
-res4$yi.f <- res4$yi.f[58:86]
-res4$slab <- res4$slab[58:86]
-forest(res4, xlim = c(-3, 4))
-
-res5 <- res
-res5$vi.f <- res4$vi.f[87:115]
-res5$yi.f <- res4$yi.f[87:115]
-res5$slab <- res4$slab[87:115]
-forest(res5, xlim = c(-3, 4))
-
-res6 <- res
-res5$vi.f <- res4$vi.f[116:144]
-res5$yi.f <- res4$yi.f[116:144]
-res5$slab <- res4$slab[116:144]
-
-res7 <- res
-res5$vi.f <- res4$vi.f[145:173]
-res5$yi.f <- res4$yi.f[145:173]
-res5$slab <- res4$slab[145:173]
-forest(res6, xlim = c(-3, 4))
-
-res8 <- res
-res8$vi.f <- res4$vi.f[174:196]
-res8$yi.f <- res4$yi.f[174:196]
-res8$slab <- res4$slab[174:196]
-forest(res6, xlim = c(-3, 4))
-
 # funnel plot
 
 funnel(res)
@@ -153,7 +113,7 @@ funnel(res)
 summary_estimate <- res$beta[1]
 summary_se <- res$se
 
-se_seq = seq(0, max(meta$vi),na.rm = TRUE, .001)
+se_seq = seq(0, max(sqrt(meta$vi)),.001)
 
 ll95 = summary_estimate - (1.96*se.seq)
 ul95 = summary_estimate + (1.96*se.seq)
@@ -178,10 +138,10 @@ funnelp <- meta %>%
   ggplot(.,
          aes(
            x = yi,
-           y = vi 
+           y = sqrt(vi) 
          )) +
   scale_y_reverse(
-    lim = c(max(meta$vi, na.rm = TRUE) + .05, 0)
+    lim = c(max(sqrt(meta$vi), na.rm = TRUE) + .05, 0)
   ) +
   geom_line(
     aes(
@@ -296,10 +256,11 @@ funnelp <- meta %>%
     data = dfCI
     ) +
   geom_point(
-    shape = 2
+    shape = 16,
+    alpha = .33
     ) +
   labs(
-    x = "Effect size",
+    x = "Fisher r to z transformed effect size",
     y = "Standard error"
   ) +
   geom_vline(
@@ -312,7 +273,7 @@ funnelp <- meta %>%
     linetype = "dotted",
     size = 1
   ) +
-  theme_bw()
+  theme_classic()
 
 funnelp
 

@@ -113,4 +113,3 @@ funnel(res)
 # prettier funnel plot
 funnelp
 ```
-
