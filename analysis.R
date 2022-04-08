@@ -220,4 +220,9 @@ plot(x, type = "o",
      pch = 19,
      xlab = "Observed Outcome",
      ylab = "Cook's Distance"
-) 
+) ) 
+
+# Hat values
+
+hatvalues.rma.mv(res)
+plot(hatvalues.rma.mv(res))
