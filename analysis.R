@@ -145,95 +145,35 @@ funnelp <- meta %>%
   ) +
   geom_line(
     aes(
-      y = se_seq,
-      x = sig_seq
-    ),
-    linetype = "dashed",
-    color = "red",
-    size = .5,
-    data = dfCI
-  ) +
-  geom_line(
-    aes(
-      y = se_seq,
-      x = goldilocks_mid
-    ),
-    linetype = "dashed",
-    color = "red",
-    size = .4,
-    data = dfCI
-  ) +
-  geom_line(
-    aes(
-      y = se_seq,
-      x = goldilocks_upper
-    ),
-    linetype = "dashed",
-    color = "red",
-    size = .5,
-    data = dfCI
-  ) +
-  geom_line(
-    aes(
-      y = se_seq,
-      x = sig_seq_neg
-      ),
-    linetype = "dashed",
-    color = "red",
-    size = .5,
-    data = dfCI
-  ) +
-  geom_line(
-    aes(
-      y = se_seq,
-      x = goldilocks_mid_neg
-      ),
-    linetype = "dashed",
-    color = "red",
-    size = .4,
-    data = dfCI
-  ) +
-  geom_line(
-    aes(
-      y = se_seq,
-      x = goldilocks_upper_neg
-      ),
-    linetype = "dashed",
-    color = "red",
-    size = .5,
-    data = dfCI
-  ) +
-  geom_line(
-    aes(
-      x = se_seq, 
-      y = ll95
-      ), 
+      y = se_seq, 
+      x = ll95
+    ), 
     linetype = 'dotted',
-    data = dfCI
+    data = df_CI
   ) +
   geom_line(
     aes(
-      x = se_seq, 
-      y = ul95
-      ), 
+      y = se_seq, 
+      x = ul95
+    ), 
     linetype = 'dotted',
-    data = dfCI
+    data = df_CI
   ) +
   geom_line(
     aes(
-      x = se_seq, 
-      y = ll99
-      ), 
+      y = se_seq, 
+      x = ll99
+    ), 
     linetype = 'dashed',
-    data = dfCI
+    data = df_CI
   ) +
   geom_line(
     aes(
-      x = se_seq, 
-      y = ul99
-      ), 
+      y = se_seq, 
+      x = ul99
+    ), 
     linetype = 'dashed', 
-    data = dfCI
+    data = df_CI
   ) +
   geom_segment(
     aes(
@@ -241,9 +181,9 @@ funnelp <- meta %>%
       x = meanll95, 
       yend = max(se_seq), 
       xend = meanll95
-      ), 
+    ), 
     linetype='dashed', 
-    data = dfCI
+    data = df_CI
   ) +
   geom_segment(
     aes(
@@ -251,14 +191,14 @@ funnelp <- meta %>%
       x = meanul95, 
       yend = max(se_seq), 
       xend = meanul95
-      ), 
+    ), 
     linetype ='dashed', 
-    data = dfCI
-    ) +
+    data = df_CI
+  ) +
   geom_point(
     shape = 16,
     alpha = .33
-    ) +
+  ) +
   labs(
     x = "Fisher r to z transformed effect size",
     y = "Standard error"
