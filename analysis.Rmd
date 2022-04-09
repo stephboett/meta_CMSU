@@ -66,39 +66,6 @@ plot(hatvalues.rma.mv(res))
 forest(res)
 ```
 
-
-```{r}
-res2 
-```
-
-
-```{r}
-res3
-```
-
-
-```{r}
-res4 
-```
-
-
-```{r}
-res5 
-```
-
-
-```{r}
-res6 
-```
-
-```{r}
-res7 
-```
-
-```{r}
-res8 
-```
-
 ```{r}
 # alternative
 forest_df
@@ -111,5 +78,6 @@ funnel(res)
 
 ```{r}
 # prettier funnel plot
+
 funnelp
 ```
