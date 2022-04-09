@@ -121,8 +121,8 @@ ul95 = summary_estimate + (1.96*se_seq)
 ll99 = summary_estimate - (3.96*se_seq)
 ul99 = summary_estimate + (3.96*se_seq)
 
-meanll95 = summary_estimate - (1.96*se)
-meanul95 = summary_estimate + (1.96*se)
+meanll95 = summary_estimate - (1.96*summary_se)
+meanul95 = summary_estimate + (1.96*summary_se)
 
 sig_seq <- 1.96*se_seq
 goldilocks_mid <- 2.57*se_seq
