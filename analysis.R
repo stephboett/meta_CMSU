@@ -115,11 +115,11 @@ summary_se <- res$se
 
 se_seq = seq(0, max(sqrt(meta$vi)),.001)
 
-ll95 = summary_estimate - (1.96*se.seq)
-ul95 = summary_estimate + (1.96*se.seq)
+ll95 = summary_estimate - (1.96*se_seq)
+ul95 = summary_estimate + (1.96*se_seq)
 
-ll99 = summary_estimate - (3.96*se.seq)
-ul99 = summary_estimate + (3.96*se.seq)
+ll99 = summary_estimate - (3.96*se_seq)
+ul99 = summary_estimate + (3.96*se_seq)
 
 meanll95 = summary_estimate - (1.96*se)
 meanul95 = summary_estimate + (1.96*se)
