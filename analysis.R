@@ -219,9 +219,66 @@ funnelp
 
 # Moderator analysis ----------------------------------------------------------
 
+## Child maltreatment measure as a moderator 
+
 cm_mod <- rma.mv(yi, vi,
-                 mods = ~ cm_measure - 1,
+                 mods = ~ measure_mod - 1,
                  random = list(~ 1 | control_id, ~ 1 | su_mod),
                  data = meta
                  )
 
+### with intercept
+
+cm_mod2 <- rma.mv(yi, vi,
+                 mods = ~ measure_mod,
+                 random = list(~ 1 | control_id, ~ 1 | su_mod),
+                 data = meta
+)
+
+## child maltreatment type as a moderator 
+
+type_mod <- rma.mv(yi, vi, 
+                   mods = ~ mod_cm - 1, 
+                   random = list(~ 1 | control_id, ~ 1 | su_mod),
+                   data = meta
+                   )
+
+### with intercept 
+
+type_mod2 <- rma.mv(yi, vi, 
+                    mods = ~ mod_cm, 
+                    random = list(~ 1 | control_id, ~ 1 | su_mod),
+                    data = meta
+)
+
+## substance use type as a moderator 
+
+sub_mod <- rma.mv(yi, vi, 
+                  mods = ~ su_mod - 1, 
+                  random = list(~ 1 | control_id),
+                  data = meta
+)
+
+### with intercept
+
+sub_mod2 <- rma.mv(yi, vi, 
+                  mods = ~ su_mod, 
+                  random = list(~ 1 | control_id),
+                  data = meta
+)
+
+## mean age as a moderator 
+
+mean_mod <- rma.mv(yi, vi,
+                  mods = ~ age_mean - 1,
+                  random = list(~ 1 | control_id, ~ 1 | su_mod),
+                  data = meta
+)
+
+### with intercept 
+
+mean_mod2 <- rma.mv(yi, vi,
+                    mods = ~ age_mean,
+                    random = list(~ 1 | control_id, ~ 1 | su_mod),
+                    data = meta
+)
