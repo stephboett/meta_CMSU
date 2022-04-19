@@ -102,4 +102,16 @@ sub_mod
 ```{r}
 sub_mod2
 ```
+```{r}
+mean_mod
+```
+```{r}
+mean_mod2
+```
+```{r}
+gender_mod
+```
 
+```{r}
+gender_mod2
+```
