@@ -75,9 +75,14 @@ forest_df
 #study bias - plot to show asymmetry
 funnel(res)
 ```
-
 ```{r}
 # prettier funnel plot
 
 funnelp
+```
+
+```{r}
+cm_mod
+```
+
 ```
