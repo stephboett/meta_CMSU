@@ -132,7 +132,7 @@ sig_seq_neg <- -1.96*se_seq
 goldilocks_mid_neg <- -2.57*se_seq
 goldilocks_upper_neg <- -3.29*se_seq
 
-dfCI <- data.frame(ll95, ul95, ll99, ul99, meanll95, meanul95, se_seq, sig_seq, goldilocks_mid, goldilocks_upper, sig_seq_neg, goldilocks_mid_neg, goldilocks_upper_neg)
+df_CI <- data.frame(ll95, ul95, ll99, ul99, meanll95, meanul95, se_seq, sig_seq, goldilocks_mid, goldilocks_upper, sig_seq_neg, goldilocks_mid_neg, goldilocks_upper_neg)
 
 funnelp <- meta %>% 
   ggplot(.,
