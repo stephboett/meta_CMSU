@@ -18,8 +18,8 @@ res
 
 ### default estimator is REML, I want to compare results to HS and HE 
 
-result2 <- rma(method = "HS", yi, vi, data = dat)
-result3 <- rma(method = "HE", yi, vi, data = dat)
+result2 <- rma(method = "HS", yi, vi, data = meta)
+result3 <- rma(method = "HE", yi, vi, data = meta)
 
 ## back transforming z values into r to get the pooled correlation 
 
