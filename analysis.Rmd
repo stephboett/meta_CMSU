@@ -65,7 +65,6 @@ plot(hatvalues.rma.mv(res))
 # visualizations
 forest(res)
 ```
-
 ```{r}
 # alternative
 forest_df
@@ -81,37 +80,48 @@ funnel(res)
 funnelp
 ```
 
+# Moderator Analysis
+
 ```{r}
+# Child maltreatment measure 
 cm_mod
 ```
 ```{r}
 cm_mod2
 ```
 ```{r}
+# Child maltreatment type 
 type_mod
 ```
-
 ```{r}
 type_mod2
 ```
-
 ```{r}
+# Substance type
 sub_mod
 ```
-
 ```{r}
 sub_mod2
 ```
 ```{r}
+# Mean age
 mean_mod
 ```
 ```{r}
 mean_mod2
 ```
 ```{r}
-gender_mod
+# Minimum and maximum age 
+age_mod
 ```
 
+```{r}
+age_mod2
+```
+```{r}
+# Gender
+gender_mod
+```
 ```{r}
 gender_mod2
 ```

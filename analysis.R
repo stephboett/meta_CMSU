@@ -283,6 +283,21 @@ mean_mod2 <- rma.mv(yi, vi,
                     data = meta
 )
 
+## minimum and maximum ages as a moderator
+
+age_mod <- rma.mv(yi, vi, 
+                  mods = ~ age_min + age_max - 1,
+                  random = list(~ 1 | control_id, ~ 1 | su_mod),
+                  data = meta
+)
+
+### with intercept 
+
+age_mod2 <- rma.mv(yi, vi, 
+                   mods = ~ age_min + age_max,
+                   random = list(~ 1 | control_id, ~ 1 | su_mod),
+                   data = meta
+)
 ## gender as a moderator (percentage women)
 
 gender_mod <- rma.mv(yi, vi,
