@@ -219,9 +219,4 @@ funnelp
 
 # Moderator analysis ----------------------------------------------------------
 
-res_mod <- rma.mv(yi, vi,
-                  random = list(~ 1 | control_id, 
-                                ~ 1 | su_mod), 
-               mods =~ factor(cm_measure) + 
-                 cbind(age_mean + age_min + age_max + gender)
-) 
+
