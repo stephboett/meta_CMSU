@@ -219,4 +219,9 @@ funnelp
 
 # Moderator analysis ----------------------------------------------------------
 
+cm_mod <- rma.mv(yi, vi,
+                 mods = ~ cm_measure - 1,
+                 random = list(~ 1 | control_id, ~ 1 | su_mod),
+                 data = meta
+                 )
 
