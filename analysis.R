@@ -225,7 +225,7 @@ cm_mod <- rma.mv(yi, vi,
                  mods = ~ measure_mod - 1,
                  random = list(~ 1 | control_id, ~ 1 | su_mod),
                  data = meta
-                 )
+)
 
 ### with intercept
 
@@ -241,7 +241,7 @@ type_mod <- rma.mv(yi, vi,
                    mods = ~ mod_cm - 1, 
                    random = list(~ 1 | control_id, ~ 1 | su_mod),
                    data = meta
-                   )
+)
 
 ### with intercept 
 
@@ -281,4 +281,20 @@ mean_mod2 <- rma.mv(yi, vi,
                     mods = ~ age_mean,
                     random = list(~ 1 | control_id, ~ 1 | su_mod),
                     data = meta
+)
+
+## gender as a moderator (percentage women)
+
+gender_mod <- rma.mv(yi, vi,
+                     mods = ~ gender - 1, 
+                     random = list(~ 1 | control_id, ~ 1 | su_mod),
+                     data = meta
+) 
+
+### with intercept 
+
+gender_mod2 <- rma.mv(yi, vi,
+                      mods = ~ gender, 
+                      random = list(~ 1 | control_id, ~ 1 | su_mod),
+                      data = meta
 )
