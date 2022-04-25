@@ -298,18 +298,18 @@ age_mod2 <- rma.mv(yi, vi,
                    random = list(~ 1 | control_id, ~ 1 | su_mod),
                    data = meta
 )
-## gender as a moderator (percentage women)
+
+## transforming gender variable 
+
+meta <- meta %>% 
+  mutate(
+    gender = (gender/100) - 50
+  )
+
+### Gender as a moderator
 
 gender_mod <- rma.mv(yi, vi,
-                     mods = ~ gender - 1, 
-                     random = list(~ 1 | control_id, ~ 1 | su_mod),
-                     data = meta
-) 
-
-### with intercept 
-
-gender_mod2 <- rma.mv(yi, vi,
-                      mods = ~ gender, 
+                      mods = ~ gender,
                       random = list(~ 1 | control_id, ~ 1 | su_mod),
                       data = meta
 )
