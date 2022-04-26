@@ -78,21 +78,21 @@ forest_df %>%
              xmin = lowerci,
              xmax = upperci)) +
   geom_point(
-    shape = 15,
-    size = .50, 
+    shape = 18,
+    size = .5, 
     color = "black"
   ) +
   geom_errorbarh() +
   scale_x_continuous(
-    limits = c(-2, 2), 
-    breaks = seq(-1.5, 1.5, .25),
-    name = "Fisher r to z transformed effect size") +
+    limits = c(-.5, 1), 
+    breaks = c(-.5, -.25, 0, .25, .50, .75, 1),
+    name = "Fisher r to Z Transformed Effect Size") +
   labs(
-    y = "Effect ID"
+    y = "Effect Size ID",
   ) + 
   scale_y_continuous(
     limits = c(1, length(forest_df$study_id)),
-    breaks = 1:length(forest_df$study_id)
+    breaks = seq(1, length(forest_df$study_id), 5)
   ) + 
   geom_vline(
     xintercept = 0, 
@@ -101,8 +101,10 @@ forest_df %>%
   ) +
   theme_classic() +
   theme(
-    axis.text.y = element_text(size = 5)
-  )
+    axis.text.y = element_text(
+                               size = 9, 
+                               margin = margin(r = .3, unit = "cm"))
+    )
 
 # funnel plot
 
@@ -265,38 +267,6 @@ sub_mod2 <- rma.mv(yi, vi,
                   mods = ~ su_mod, 
                   random = list(~ 1 | control_id),
                   data = meta
-)
-
-## mean age as a moderator 
-
-mean_mod <- rma.mv(yi, vi,
-                  mods = ~ age_mean - 1,
-                  random = list(~ 1 | control_id, ~ 1 | su_mod),
-                  data = meta
-)
-
-### with intercept 
-
-mean_mod2 <- rma.mv(yi, vi,
-                    mods = ~ age_mean,
-                    random = list(~ 1 | control_id, ~ 1 | su_mod),
-                    data = meta
-)
-
-## minimum and maximum ages as a moderator
-
-age_mod <- rma.mv(yi, vi, 
-                  mods = ~ age_min + age_max - 1,
-                  random = list(~ 1 | control_id, ~ 1 | su_mod),
-                  data = meta
-)
-
-### with intercept 
-
-age_mod2 <- rma.mv(yi, vi, 
-                   mods = ~ age_min + age_max,
-                   random = list(~ 1 | control_id, ~ 1 | su_mod),
-                   data = meta
 )
 
 ## transforming gender variable 
