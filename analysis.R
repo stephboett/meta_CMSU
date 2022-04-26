@@ -78,8 +78,8 @@ forest_df %>%
              xmin = lowerci,
              xmax = upperci)) +
   geom_point(
-    shape = 18,
-    size = .5, 
+    shape = 16,
+    size = .6, 
     color = "black"
   ) +
   geom_errorbarh() +
@@ -92,7 +92,7 @@ forest_df %>%
   ) + 
   scale_y_continuous(
     limits = c(1, length(forest_df$study_id)),
-    breaks = seq(1, length(forest_df$study_id), 5)
+    breaks = seq(1, length(forest_df$study_id), 3)
   ) + 
   geom_vline(
     xintercept = 0, 
@@ -101,9 +101,7 @@ forest_df %>%
   ) +
   theme_classic() +
   theme(
-    axis.text.y = element_text(
-                               size = 9, 
-                               margin = margin(r = .3, unit = "cm"))
+    axis.text.y = element_text(size = 5)
     )
 
 # funnel plot
@@ -144,6 +142,9 @@ funnelp <- meta %>%
          )) +
   scale_y_reverse(
     lim = c(max(sqrt(meta$vi), na.rm = TRUE) + .05, 0)
+  ) +
+  scale_x_reverse(
+    breaks = seq(-.5, .75, .25)
   ) +
   geom_line(
     aes(
@@ -269,7 +270,7 @@ sub_mod2 <- rma.mv(yi, vi,
                   data = meta
 )
 
-## transforming gender variable 
+## transforming the gender variable 
 
 meta <- meta %>% 
   mutate(
