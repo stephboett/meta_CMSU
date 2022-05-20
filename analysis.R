@@ -27,14 +27,14 @@ predict(res, transf = transf.ztor)
 
 # inspecting the data ---------------------------------------------------------
 
-## simulating Egger's test for rma.mv by adding sampling variance
+## checking for bias with the precision-effect estimate with standard error (PEESE test)
 
-test.egger = rma.mv(yi, vi, mods = vi,
+PEESE = rma.mv(yi, vi, mods = vi,
                     random = list(~ 1 | control_id, 
                                   ~ 1 | su_mod), 
                     data = meta)
 
-test.egger
+PEESE
 
 # precision effect test
 
@@ -68,7 +68,7 @@ forest_df <- meta %>%
   mutate(
     study_id = 1:length(yi),
     lowerci = yi - (1.96*sqrt(vi)),
-    upperci = yi + (1.96*sqrt(vi)),
+    upperci = yi + (1.96*sqrt(vi))
   )
 
 forest_df %>% 
@@ -86,9 +86,9 @@ forest_df %>%
   scale_x_continuous(
     limits = c(-.5, 1), 
     breaks = c(-.5, -.25, 0, .25, .50, .75, 1),
-    name = "Fisher r to Z Transformed Effect Size") +
+    name = "Fisher r to Z transformed effect size") +
   labs(
-    y = "Effect Size ID",
+    y = "Effect size ID",
   ) + 
   scale_y_continuous(
     limits = c(1, length(forest_df$study_id)),
@@ -203,7 +203,7 @@ funnelp <- meta %>%
     alpha = .33
   ) +
   labs(
-    x = "Fisher r to z transformed effect size",
+    x = "Fisher r to Z transformed effect size",
     y = "Standard error"
   ) +
   geom_vline(
