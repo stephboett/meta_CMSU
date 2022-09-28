@@ -71,6 +71,7 @@ forest_df <- meta %>%
     upperci = yi + (1.96*sqrt(vi))
   )
 
+forest_plot <- 
 forest_df %>% 
   ggplot(.,
          aes(x = yi,

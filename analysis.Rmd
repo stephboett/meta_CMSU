@@ -1,7 +1,7 @@
 ---
-title: "report_analysis"
-author: "Stephanie Boettiger"
-date: '2022-04-04'
+title: "Child Maltreatment and Adolescent Substance Use -- Main Analysis Report"
+author: "Stephanie Boettiger & Timothy J. Luke"
+date: "`r Sys.Date()`"
 output: github_document
 ---
 
@@ -12,7 +12,10 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 source("calc_effectsizes.R")
 source("analysis.R")
+library(psych)
 ```
+
+# Main Results
 
 ```{r}
 # results
@@ -36,13 +39,20 @@ result3
 
 ```{r}
 # PEESE test (similar to Egger's)
-test.egger
+PEESE
+```
+
+```{r}
+fisherz2r(c(b = PEESE$beta[1], ci.lb = PEESE$ci.lb[1], ci.ub = PEESE$ci.ub[1]))
 ```
 
 ```{r}
 # Precision effect test
-
 PET
+```
+
+```{r}
+fisherz2r(c(b = PET$beta[1], ci.lb = PET$ci.lb[1], ci.ub = PET$ci.ub[1]))
 ```
 
 ```{r}
@@ -65,18 +75,19 @@ plot(hatvalues.rma.mv(res))
 # visualizations
 forest(res)
 ```
+
 ```{r}
 # alternative
-forest_df
+forest_plot
 ```
 
 ```{r}
 #study bias - plot to show asymmetry
 funnel(res)
 ```
+
 ```{r}
 # prettier funnel plot
-
 funnelp
 ```
 
@@ -86,42 +97,31 @@ funnelp
 # Child maltreatment measure 
 cm_mod
 ```
+
 ```{r}
 cm_mod2
 ```
+
 ```{r}
 # Child maltreatment type 
 type_mod
 ```
+
 ```{r}
 type_mod2
 ```
+
 ```{r}
 # Substance type
 sub_mod
 ```
+
 ```{r}
 sub_mod2
 ```
-```{r}
-# Mean age
-mean_mod
-```
-```{r}
-mean_mod2
-```
-```{r}
-# Minimum and maximum age 
-age_mod
-```
 
-```{r}
-age_mod2
-```
 ```{r}
 # Gender
 gender_mod
 ```
-```{r}
-gender_mod2
-```
+
