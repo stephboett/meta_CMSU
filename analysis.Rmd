@@ -57,13 +57,17 @@ fisherz2r(c(b = PET$beta[1], ci.lb = PET$ci.lb[1], ci.ub = PET$ci.ub[1]))
 
 ```{r}
 #Cook's distance 
-cd <- cooks.distance.rma.mv(res)
 cd
 plot(cd, type = "o",
      pch = 19,
      xlab = "Observed Outcome",
      ylab = "Cook's Distance"
 ) 
+```
+
+```{r}
+# Results with potential influential cases removed
+res_cd
 ```
 
 ```{r}

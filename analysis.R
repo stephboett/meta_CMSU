@@ -1,20 +1,19 @@
-###############################################################################
+################################################################################
 
 # CMSU - analysis 
 
-###############################################################################
+################################################################################
 
 # additional library packages
 
 library(tidyverse)
 library(ggplot2)
 
-# the analysis ---------------------------------------------------------------- 
+# the analysis ----------------------------------------------------------------- 
 
 res <- rma.mv(yi, vi, 
            random = list(~ 1 | control_id, ~ 1 | su_mod),
              data = meta)
-res
 
 ### default estimator is REML, I want to compare results to HS and HE 
 
@@ -25,9 +24,9 @@ result3 <- rma(method = "HE", yi, vi, data = meta)
 
 predict(res, transf = transf.ztor)
 
-# inspecting the data ---------------------------------------------------------
+# inspecting the data ----------------------------------------------------------
 
-## checking for bias with the precision-effect estimate with standard error (PEESE test)
+## checking for bias with the precision-effect estimate with standard error (PEESE)
 
 PEESE = rma.mv(yi, vi, mods = vi,
                     random = list(~ 1 | control_id, 
@@ -44,38 +43,42 @@ PET = rma.mv(yi, vi, mods = I(sqrt(vi)),
              data = meta)
 PET
 
-# visualizations --------------------------------------------------------------
+# visualizations ---------------------------------------------------------------
 
 ## Cook's distance 
 
 cd <- cooks.distance.rma.mv(res)
-cd
+
 plot(cd, type = "o",
      pch = 19,
      xlab = "Observed Outcome",
      ylab = "Cook's Distance"
 ) 
 
-## Hat values
-
-hatvalues.rma.mv(res)
-plot(hatvalues.rma.mv(res))
-
 ## forest plot
 
 forest_df <- meta %>% 
   arrange(yi) %>% 
   mutate(
-    study_id = 1:length(yi),
+    effect_id = 1:length(yi),
     lowerci = yi - (1.96*sqrt(vi)),
     upperci = yi + (1.96*sqrt(vi))
-  )
+  ) %>% 
+  select(study_id, effect_id, yi, lowerci, upperci)
+
+meta_df <- data.frame(
+  study_id  = 0,
+  effect_id = 0,
+  yi        = res$beta[[1]],
+  lowerci   = res$ci.lb[[1]],
+  upperci   = res$ci.ub[[1]]
+)
 
 forest_plot <- 
 forest_df %>% 
   ggplot(.,
          aes(x = yi,
-             y = study_id,
+             y = effect_id,
              xmin = lowerci,
              xmax = upperci)) +
   geom_point(
@@ -89,25 +92,44 @@ forest_df %>%
     breaks = c(-.5, -.25, 0, .25, .50, .75, 1),
     name = "Fisher r to Z transformed effect size") +
   labs(
-    y = "Effect size ID",
+    y = "Study ID",
   ) + 
   scale_y_continuous(
-    limits = c(1, length(forest_df$study_id)),
-    breaks = seq(1, length(forest_df$study_id), 3)
+    limits = c(-5, length(forest_df$effect_id)),
+    breaks = seq(1, length(forest_df$effect_id), 1),
+    labels = forest_df$study_id
   ) + 
   geom_vline(
     xintercept = 0, 
     color = "black", 
     linetype = "dashed"
   ) +
+  geom_vline(
+    xintercept = res$beta[1], 
+    color = "black", 
+    linetype = "dotted"
+  ) +
+  geom_hline(
+    yintercept = -1,
+    color = "darkgrey",
+    linetype = "solid",
+    size = .75
+  ) +
+  geom_polygon(
+    data = data.frame(
+      x = c(res$ci.lb, res$beta[1], res$ci.ub, res$beta[1]),
+      y = c(-3, -2, -3, -4)),
+    aes(
+      x = x,
+      y = y),
+    fill = "black",
+    color = "black",
+    inherit.aes = FALSE
+  ) +
   theme_classic() +
   theme(
-    axis.text.y = element_text(size = 5)
-    )
-
-# funnel plot
-
-funnel(res)
+    axis.text.y = element_text(size = 4)
+  )
 
 # prettier funnel plot
 
@@ -221,7 +243,7 @@ funnelp <- meta %>%
 
 funnelp
 
-# Moderator analysis ----------------------------------------------------------
+# Moderator analysis -----------------------------------------------------------
 
 ## Child maltreatment measure as a moderator 
 
@@ -283,5 +305,15 @@ meta <- meta %>%
 gender_mod <- rma.mv(yi, vi,
                       mods = ~ gender,
                       random = list(~ 1 | control_id, ~ 1 | su_mod),
-                      data = meta
-)
+                      data = meta)
+
+# Cook's distance exclusions ---------------------------------------------------
+
+# The cutoff of .004 is based on visual inspection of a plot of Cook's distances.
+# More liberal approaches (e.g., 4/n) indicate no influential cases.
+
+meta_cd_excluded <- meta[cd < .004, ]
+
+res_cd <- rma.mv(yi, vi, 
+                 random = list(~ 1 | control_id, ~ 1 | su_mod),
+                 data = meta_cd_excluded)
