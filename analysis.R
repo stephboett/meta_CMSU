@@ -167,7 +167,7 @@ funnelp <- meta %>%
   scale_y_reverse(
     lim = c(max(sqrt(meta$vi), na.rm = TRUE) + .05, 0)
   ) +
-  scale_x_reverse(
+  scale_x_continuous(
     breaks = seq(-.5, .75, .25)
   ) +
   geom_line(
@@ -296,3 +296,13 @@ meta_cd_excluded <- meta[cd < .004, ]
 res_cd <- rma.mv(yi, vi, 
                  random = list(~ 1 | control_id, ~ 1 | su_mod),
                  data = meta_cd_excluded)
+
+# Save figures -----------------------------------------------------------------
+
+save_plot(filename = "./figures/forest_plot.png", 
+          plot = forest_plot, 
+          base_height = 10, base_width = 5)
+
+save_plot(filename = "./figures/funnel_plot.png", 
+          plot = funnelp, 
+          base_height = 5, base_width = 6)
