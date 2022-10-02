@@ -8,6 +8,7 @@
 
 library(tidyverse)
 library(ggplot2)
+library(cowplot)
 
 # the analysis ----------------------------------------------------------------- 
 
@@ -201,26 +202,6 @@ funnelp <- meta %>%
     linetype = 'dashed', 
     data = df_CI
   ) +
-  geom_segment(
-    aes(
-      y = min(se_seq), 
-      x = meanll95, 
-      yend = max(se_seq), 
-      xend = meanll95
-    ), 
-    linetype='dashed', 
-    data = df_CI
-  ) +
-  geom_segment(
-    aes(
-      y = min(se_seq), 
-      x = meanul95, 
-      yend = max(se_seq), 
-      xend = meanul95
-    ), 
-    linetype ='dashed', 
-    data = df_CI
-  ) +
   geom_point(
     shape = 16,
     alpha = .33
@@ -240,8 +221,6 @@ funnelp <- meta %>%
     size = 1
   ) +
   theme_classic()
-
-funnelp
 
 # Moderator analysis -----------------------------------------------------------
 
