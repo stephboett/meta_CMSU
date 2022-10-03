@@ -35,8 +35,8 @@ result3
 ```
 
 ```{r}
-# PEESE test (similar to Egger's)
-test.egger
+# PEESE test 
+PEESE
 ```
 
 ```{r}
@@ -55,7 +55,6 @@ plot(cd, type = "o",
      ylab = "Cook's Distance"
 ) 
 ```
-
 ```{r}
 hatvalues.rma.mv(res)
 plot(hatvalues.rma.mv(res))
@@ -76,7 +75,6 @@ funnel(res)
 ```
 ```{r}
 # prettier funnel plot
-
 funnelp
 ```
 
@@ -104,24 +102,10 @@ sub_mod
 sub_mod2
 ```
 ```{r}
-# Mean age
-mean_mod
-```
-```{r}
-mean_mod2
-```
-```{r}
-# Minimum and maximum age 
-age_mod
-```
-
-```{r}
-age_mod2
-```
-```{r}
 # Gender
 gender_mod
 ```
-```{r}
-gender_mod2
-```
+
+
+
+

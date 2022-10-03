@@ -68,7 +68,7 @@ forest_df <- meta %>%
   mutate(
     study_id = 1:length(yi),
     lowerci = yi - (1.96*sqrt(vi)),
-    upperci = yi + (1.96*sqrt(vi))
+    upperci = yi + (1.96*sqrt(vi)),
   )
 
 forest_df %>% 
@@ -142,9 +142,6 @@ funnelp <- meta %>%
          )) +
   scale_y_reverse(
     lim = c(max(sqrt(meta$vi), na.rm = TRUE) + .05, 0)
-  ) +
-  scale_x_reverse(
-    breaks = seq(-.5, .75, .25)
   ) +
   geom_line(
     aes(
