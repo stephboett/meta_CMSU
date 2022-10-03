@@ -106,6 +106,12 @@ cm_mod2
 ```
 
 ```{r}
+# transforming Z to r scores
+predict (cm_mod, transf = transf.ztor)
+```
+
+
+```{r}
 # Child maltreatment type 
 type_mod
 ```
@@ -115,12 +121,22 @@ type_mod2
 ```
 
 ```{r}
+# transforming Z to r scores
+predict (type_mod, transf = transf.ztor)
+```
+
+```{r}
 # Substance type
 sub_mod
 ```
 
 ```{r}
 sub_mod2
+```
+
+```{r}
+# transforming Z to r scores
+predict (sub_mod, transf = transf.ztor)
 ```
 
 ```{r}

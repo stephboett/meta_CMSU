@@ -240,6 +240,9 @@ cm_mod2 <- rma.mv(yi, vi,
                  data = meta
 )
 
+# transforming Z to r scores
+predict (cm_mod, transf = transf.ztor)
+
 ## child maltreatment type as a moderator 
 
 type_mod <- rma.mv(yi, vi, 
@@ -256,6 +259,9 @@ type_mod2 <- rma.mv(yi, vi,
                     data = meta
 )
 
+# transforming Z to r scores
+predict (type_mod, transf = transf.ztor)
+
 ## substance use type as a moderator 
 
 sub_mod <- rma.mv(yi, vi, 
@@ -271,6 +277,9 @@ sub_mod2 <- rma.mv(yi, vi,
                   random = list(~ 1 | control_id),
                   data = meta
 )
+
+# transforming Z to r scores
+predict (sub_mod, transf = transf.ztor)
 
 ## transforming the gender variable 
 
