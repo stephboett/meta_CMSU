@@ -24,8 +24,7 @@ res
 
 ```{r}
 # pooled correlation estimate
-
-predict(res, transf = transf.ztor)
+res_r
 ```
 
 ```{r}
@@ -64,14 +63,18 @@ plot(cd, type = "o",
      ylab = "Cook's Distance"
 ) 
 ```
+
 ```{r}
 # Results with potential influential cases removed
 res_cd
 ```
 
 ```{r}
-hatvalues.rma.mv(res)
-plot(hatvalues.rma.mv(res))
+hat_res
+```
+
+```{r}
+plot(hat_res)
 ```
 
 ```{r}
@@ -107,9 +110,8 @@ cm_mod2
 
 ```{r}
 # transforming Z to r scores
-predict (cm_mod, transf = transf.ztor)
+mc_r
 ```
-
 
 ```{r}
 # Child maltreatment type 
@@ -122,7 +124,7 @@ type_mod2
 
 ```{r}
 # transforming Z to r scores
-predict (type_mod, transf = transf.ztor)
+type_r
 ```
 
 ```{r}
@@ -136,7 +138,7 @@ sub_mod2
 
 ```{r}
 # transforming Z to r scores
-predict (sub_mod, transf = transf.ztor)
+sub_r
 ```
 
 ```{r}
