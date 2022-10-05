@@ -12,7 +12,6 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 source("calc_effectsizes.R")
 source("analysis.R")
-library(psych)
 ```
 
 # Main Results
@@ -42,7 +41,7 @@ PEESE
 ```
 
 ```{r}
-fisherz2r(c(b = PEESE$beta[1], ci.lb = PEESE$ci.lb[1], ci.ub = PEESE$ci.ub[1]))
+PEESE_r
 ```
 
 ```{r}
@@ -51,7 +50,7 @@ PET
 ```
 
 ```{r}
-fisherz2r(c(b = PET$beta[1], ci.lb = PET$ci.lb[1], ci.ub = PET$ci.ub[1]))
+PET_r
 ```
 
 ```{r}
@@ -110,7 +109,7 @@ cm_mod2
 
 ```{r}
 # transforming Z to r scores
-mc_r
+cm_r
 ```
 
 ```{r}

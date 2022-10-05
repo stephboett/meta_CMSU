@@ -9,6 +9,7 @@
 library(tidyverse)
 library(ggplot2)
 library(cowplot)
+library(psych)
 
 # the analysis ----------------------------------------------------------------- 
 
@@ -34,12 +35,16 @@ PEESE = rma.mv(yi, vi, mods = vi,
                                   ~ 1 | su_mod), 
                     data = meta)
 
+PEESE_r <- fisherz2r(c(b = PEESE$beta[1], ci.lb = PEESE$ci.lb[1], ci.ub = PEESE$ci.ub[1]))
+
 # precision effect test
 
 PET = rma.mv(yi, vi, mods = I(sqrt(vi)),
              random = list(~ 1 | control_id, 
                            ~ 1 | su_mod), 
              data = meta)
+
+PET_r <- fisherz2r(c(b = PET$beta[1], ci.lb = PET$ci.lb[1], ci.ub = PET$ci.ub[1]))
 
 # visualizations ---------------------------------------------------------------
 
@@ -241,7 +246,11 @@ cm_mod2 <- rma.mv(yi, vi,
 )
 
 ### transforming Z to r scores
-cm_r <- predict(cm_mod, transf = transf.ztor)
+cm_r <- data.frame(
+  b     = fisherz2r(cm_mod$beta),
+  ci.lb = fisherz2r(cm_mod$ci.lb),
+  ci.ub = fisherz2r(cm_mod$ci.ub)
+)
 
 ## child maltreatment type as a moderator 
 
@@ -260,7 +269,11 @@ type_mod2 <- rma.mv(yi, vi,
 )
 
 ### transforming Z to r scores
-type_r <- predict(type_mod, transf = transf.ztor)
+type_r <- data.frame(
+  b     = fisherz2r(type_mod$beta),
+  ci.lb = fisherz2r(type_mod$ci.lb),
+  ci.ub = fisherz2r(type_mod$ci.ub)
+)
 
 ## substance use type as a moderator 
 
@@ -279,7 +292,11 @@ sub_mod2 <- rma.mv(yi, vi,
 )
 
 ### transforming Z to r scores
-sub_r <- predict(sub_mod, transf = transf.ztor)
+sub_r <- data.frame(
+  b     = fisherz2r(sub_mod$beta),
+  ci.lb = fisherz2r(sub_mod$ci.lb),
+  ci.ub = fisherz2r(sub_mod$ci.ub)
+)
 
 ## transforming the gender variable 
 
