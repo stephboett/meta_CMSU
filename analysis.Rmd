@@ -144,3 +144,9 @@ sub_r
 # Gender
 gender_mod
 ```
+
+```{r}
+# transforming Z to r scores
+gender_r
+```
+

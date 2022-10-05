@@ -312,6 +312,9 @@ gender_mod <- rma.mv(yi, vi,
                       random = list(~ 1 | control_id, ~ 1 | su_mod),
                       data = meta)
 
+### transforming Z to r scores
+gender_r <- fisherz2r(c(r = gender_mod$beta[[2]], ci.lb = gender_mod$ci.lb[[2]], ci.ub = gender_mod$ci.ub[[2]]))
+
 # Cook's distance exclusions ---------------------------------------------------
 
 # The cutoff of .004 is based on visual inspection of a plot of Cook's distances.
