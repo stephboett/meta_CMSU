@@ -1,7 +1,7 @@
 Child Maltreatment and Adolescent Substance Use – Main Analysis Report
 ================
 Stephanie Boettiger & Timothy J. Luke
-2022-10-02
+2022-10-05
 
 ``` r
 source("calc_effectsizes.R")
@@ -9,10 +9,8 @@ source("calc_effectsizes.R")
 
     ## Loading required package: Matrix
 
-    ## Loading required package: metadat
-
     ## 
-    ## Loading the 'metafor' package (version 3.4-0). For an
+    ## Loading the 'metafor' package (version 3.0-2). For an
     ## introduction to the package please type: help(metafor)
 
     ## 
@@ -30,35 +28,28 @@ source("calc_effectsizes.R")
 source("analysis.R")
 ```
 
-    ## ── Attaching packages
-    ## ───────────────────────────────────────
-    ## tidyverse 1.3.2 ──
+    ## -- Attaching packages --------------------------------------- tidyverse 1.3.1 --
 
-    ## ✔ ggplot2 3.3.6     ✔ purrr   0.3.4
-    ## ✔ tibble  3.1.8     ✔ stringr 1.4.1
-    ## ✔ tidyr   1.2.0     ✔ forcats 0.5.1
-    ## ✔ readr   2.1.2     
-    ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-    ## ✖ tidyr::expand() masks Matrix::expand()
-    ## ✖ dplyr::filter() masks stats::filter()
-    ## ✖ dplyr::lag()    masks stats::lag()
-    ## ✖ tidyr::pack()   masks Matrix::pack()
-    ## ✖ tidyr::unpack() masks Matrix::unpack()
+    ## v ggplot2 3.3.5     v purrr   0.3.4
+    ## v tibble  3.1.8     v stringr 1.4.1
+    ## v tidyr   1.2.0     v forcats 0.5.1
+    ## v readr   2.1.2
 
-    ## Warning: Rows with NAs omitted from model fitting.
-
-![](analysis_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
-
-``` r
-library(psych)
-```
+    ## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+    ## x tidyr::expand() masks Matrix::expand()
+    ## x dplyr::filter() masks stats::filter()
+    ## x dplyr::lag()    masks stats::lag()
+    ## x tidyr::pack()   masks Matrix::pack()
+    ## x tidyr::unpack() masks Matrix::unpack()
 
     ## 
     ## Attaching package: 'psych'
-    ## 
+
     ## The following objects are masked from 'package:ggplot2':
     ## 
     ##     %+%, alpha
+
+    ## Warning: Rows with NAs omitted from model fitting.
 
 # Main Results
 
@@ -81,7 +72,7 @@ res
     ## 
     ## Model Results:
     ## 
-    ## estimate      se    zval    pval   ci.lb   ci.ub     ​ 
+    ## estimate      se    zval    pval   ci.lb   ci.ub 
     ##   0.1221  0.0231  5.2760  <.0001  0.0767  0.1674  *** 
     ## 
     ## ---
@@ -89,8 +80,7 @@ res
 
 ``` r
 # pooled correlation estimate
-
-predict(res, transf = transf.ztor)
+res_r
 ```
 
     ## 
@@ -127,7 +117,7 @@ result2
     ## 
     ## Model Results:
     ## 
-    ## estimate      se     zval    pval   ci.lb   ci.ub     ​ 
+    ## estimate      se     zval    pval   ci.lb   ci.ub 
     ##   0.1272  0.0081  15.7629  <.0001  0.1114  0.1430  *** 
     ## 
     ## ---
@@ -150,14 +140,14 @@ result3
     ## 
     ## Model Results:
     ## 
-    ## estimate      se     zval    pval   ci.lb   ci.ub     ​ 
+    ## estimate      se     zval    pval   ci.lb   ci.ub 
     ##   0.1281  0.0097  13.2301  <.0001  0.1091  0.1471  *** 
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 ``` r
-# PEESE test (similar to Egger's)
+# PEESE test 
 PEESE
 ```
 
@@ -178,7 +168,7 @@ PEESE
     ## 
     ## Model Results:
     ## 
-    ##          estimate      se    zval    pval    ci.lb    ci.ub     ​ 
+    ##          estimate      se    zval    pval    ci.lb    ci.ub 
     ## intrcpt    0.1025  0.0256  4.0126  <.0001   0.0525   0.1526  *** 
     ## mods       6.5685  3.4229  1.9190  0.0550  -0.1404  13.2773    . 
     ## 
@@ -186,7 +176,7 @@ PEESE
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 ``` r
-fisherz2r(c(b = PEESE$beta[1], ci.lb = PEESE$ci.lb[1], ci.ub = PEESE$ci.ub[1]))
+PEESE_r
 ```
 
     ##          b      ci.lb      ci.ub 
@@ -214,7 +204,7 @@ PET
     ## 
     ## Model Results:
     ## 
-    ##          estimate      se    zval    pval   ci.lb   ci.ub   ​ 
+    ##          estimate      se    zval    pval   ci.lb   ci.ub 
     ## intrcpt    0.0767  0.0331  2.3171  0.0205  0.0118  0.1416  * 
     ## mods       0.9357  0.4756  1.9677  0.0491  0.0037  1.8678  * 
     ## 
@@ -222,7 +212,7 @@ PET
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 ``` r
-fisherz2r(c(b = PET$beta[1], ci.lb = PET$ci.lb[1], ci.ub = PET$ci.ub[1]))
+PET_r
 ```
 
     ##          b      ci.lb      ci.ub 
@@ -329,14 +319,14 @@ res_cd
     ## 
     ## Model Results:
     ## 
-    ## estimate      se    zval    pval   ci.lb   ci.ub     ​ 
+    ## estimate      se    zval    pval   ci.lb   ci.ub 
     ##   0.1216  0.0239  5.0889  <.0001  0.0748  0.1684  *** 
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 ``` r
-hatvalues.rma.mv(res)
+hat_res
 ```
 
     ##             1             2             3             4             5 
@@ -421,38 +411,38 @@ hatvalues.rma.mv(res)
     ##  1.311324e-02
 
 ``` r
-plot(hatvalues.rma.mv(res))
+plot(hat_res)
 ```
 
-![](analysis_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+![](analysis_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
 
 ``` r
 # visualizations
 forest(res)
 ```
 
-![](analysis_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+![](analysis_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
 
 ``` r
 # alternative
 forest_plot
 ```
 
-![](analysis_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+![](analysis_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
 
 ``` r
 #study bias - plot to show asymmetry
 funnel(res)
 ```
 
-![](analysis_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+![](analysis_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
 
 ``` r
 # prettier funnel plot
 funnelp
 ```
 
-![](analysis_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
+![](analysis_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
 
 # Moderator Analysis
 
@@ -478,7 +468,7 @@ cm_mod
     ## 
     ## Model Results:
     ## 
-    ##                          estimate      se    zval    pval    ci.lb   ci.ub     ​ 
+    ##                          estimate      se    zval    pval    ci.lb   ci.ub 
     ## measure_modcase records    0.0976  0.0388  2.5171  0.0118   0.0216  0.1736    * 
     ## measure_modother           0.0761  0.0682  1.1151  0.2648  -0.0576  0.2098      
     ## measure_modself-report     0.1316  0.0249  5.2923  <.0001   0.0829  0.1804  *** 
@@ -507,13 +497,23 @@ cm_mod2
     ## 
     ## Model Results:
     ## 
-    ##                         estimate      se     zval    pval    ci.lb   ci.ub   ​ 
+    ##                         estimate      se     zval    pval    ci.lb   ci.ub 
     ## intrcpt                   0.0976  0.0388   2.5171  0.0118   0.0216  0.1736  * 
     ## measure_modother         -0.0215  0.0743  -0.2902  0.7717  -0.1671  0.1240    
     ## measure_modself-report    0.0340  0.0384   0.8850  0.3761  -0.0413  0.1093    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+``` r
+# transforming Z to r scores
+cm_r
+```
+
+    ##                                  b       ci.lb     ci.ub
+    ## measure_modcase records 0.09731231  0.02160459 0.1719103
+    ## measure_modother        0.07592785 -0.05756887 0.2067570
+    ## measure_modself-report  0.13087873  0.08269464 0.1784523
 
 ``` r
 # Child maltreatment type 
@@ -537,7 +537,7 @@ type_mod
     ## 
     ## Model Results:
     ## 
-    ##            estimate      se    zval    pval    ci.lb   ci.ub     ​ 
+    ##            estimate      se    zval    pval    ci.lb   ci.ub 
     ## mod_cmany    0.2027  0.0272  7.4614  <.0001   0.1495  0.2560  *** 
     ## mod_cmEA     0.0879  0.0292  3.0064  0.0026   0.0306  0.1452   ** 
     ## mod_cmEN     0.0245  0.0318  0.7700  0.4413  -0.0378  0.0867      
@@ -570,7 +570,7 @@ type_mod2
     ## 
     ## Model Results:
     ## 
-    ##           estimate      se      zval    pval    ci.lb    ci.ub     ​ 
+    ##           estimate      se      zval    pval    ci.lb    ci.ub 
     ## intrcpt     0.2027  0.0272    7.4614  <.0001   0.1495   0.2560  *** 
     ## mod_cmEA   -0.1148  0.0130   -8.8448  <.0001  -0.1402  -0.0894  *** 
     ## mod_cmEN   -0.1783  0.0181   -9.8360  <.0001  -0.2138  -0.1427  *** 
@@ -581,6 +581,20 @@ type_mod2
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+``` r
+# transforming Z to r scores
+type_r
+```
+
+    ##                    b        ci.lb      ci.ub
+    ## mod_cmany 0.19997361  0.148355375 0.25050520
+    ## mod_cmEA  0.08768048  0.030587126 0.14420354
+    ## mod_cmEN  0.02444791 -0.037768773 0.08647579
+    ## mod_cmN   0.06542884  0.011771795 0.11871017
+    ## mod_cmPA  0.06315414  0.009981421 0.11597071
+    ## mod_cmPN  0.04680694 -0.006939879 0.10028410
+    ## mod_cmSA  0.06655061  0.013366197 0.11935953
 
 ``` r
 # Substance type
@@ -603,7 +617,7 @@ sub_mod
     ## 
     ## Model Results:
     ## 
-    ##                     estimate      se    zval    pval   ci.lb   ci.ub     ​ 
+    ##                     estimate      se    zval    pval   ci.lb   ci.ub 
     ## su_modalcohol         0.0649  0.0173  3.7508  0.0002  0.0310  0.0987  *** 
     ## su_modany             0.1111  0.0358  3.1040  0.0019  0.0410  0.1813   ** 
     ## su_modcigarette       0.1487  0.0174  8.5245  <.0001  0.1145  0.1829  *** 
@@ -633,7 +647,7 @@ sub_mod2
     ## 
     ## Model Results:
     ## 
-    ##                     estimate      se     zval    pval    ci.lb   ci.ub     ​ 
+    ##                     estimate      se     zval    pval    ci.lb   ci.ub 
     ## intrcpt               0.0649  0.0173   3.7508  0.0002   0.0310  0.0987  *** 
     ## su_modany             0.0463  0.0398   1.1641  0.2444  -0.0316  0.1242      
     ## su_modcigarette       0.0838  0.0038  22.0367  <.0001   0.0764  0.0913  *** 
@@ -642,6 +656,18 @@ sub_mod2
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+``` r
+# transforming Z to r scores
+sub_r
+```
+
+    ##                             b      ci.lb      ci.ub
+    ## su_modalcohol      0.06476556 0.03095585 0.09842723
+    ## su_modany          0.11068815 0.04094196 0.17936087
+    ## su_modcigarette    0.14761805 0.11401640 0.18088236
+    ## su_modillicit drug 0.12703059 0.09313823 0.16062890
+    ## su_modmarijuana    0.15651130 0.12280767 0.18985434
 
 ``` r
 # Gender
@@ -665,7 +691,7 @@ gender_mod
     ## 
     ## Model Results:
     ## 
-    ##          estimate      se    zval    pval   ci.lb    ci.ub   ​ 
+    ##          estimate      se    zval    pval   ci.lb    ci.ub 
     ## intrcpt   12.9514  6.1168  2.1173  0.0342  0.9627  24.9402  * 
     ## gender     0.2591  0.1236  2.0968  0.0360  0.0169   0.5012  * 
     ## 

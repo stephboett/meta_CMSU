@@ -9,6 +9,7 @@
 library(tidyverse)
 library(ggplot2)
 library(cowplot)
+library(psych)
 
 # the analysis ----------------------------------------------------------------- 
 
@@ -23,7 +24,7 @@ result3 <- rma(method = "HE", yi, vi, data = meta)
 
 ## back transforming z values into r to get the pooled correlation 
 
-predict(res, transf = transf.ztor)
+res_r <- predict(res, transf = transf.ztor)
 
 # inspecting the data ----------------------------------------------------------
 
@@ -34,7 +35,7 @@ PEESE = rma.mv(yi, vi, mods = vi,
                                   ~ 1 | su_mod), 
                     data = meta)
 
-PEESE
+PEESE_r <- fisherz2r(c(b = PEESE$beta[1], ci.lb = PEESE$ci.lb[1], ci.ub = PEESE$ci.ub[1]))
 
 # precision effect test
 
@@ -42,19 +43,31 @@ PET = rma.mv(yi, vi, mods = I(sqrt(vi)),
              random = list(~ 1 | control_id, 
                            ~ 1 | su_mod), 
              data = meta)
-PET
+
+PET_r <- fisherz2r(c(b = PET$beta[1], ci.lb = PET$ci.lb[1], ci.ub = PET$ci.ub[1]))
 
 # visualizations ---------------------------------------------------------------
 
 ## Cook's distance 
 
-cd <- cooks.distance.rma.mv(res)
+if (!file.exists("./rda/meta-cmsu_cooks-distance.rda")) {
+  
+  # This process is computationally intensive but only in the order of a couple
+  # minutes or so. A pre-computed object is provided for convenience.
+  
+  cd <- cooks.distance.rma.mv(res)
+  
+  save(cd, file = "./rda/meta-cmsu_cooks-distance.rda")
+  
+} else {
+  
+  load("./rda/meta-cmsu_cooks-distance.rda")
+  
+}
 
-plot(cd, type = "o",
-     pch = 19,
-     xlab = "Observed Outcome",
-     ylab = "Cook's Distance"
-) 
+## Hat values
+
+hat_res <- hatvalues.rma.mv(res)
 
 ## forest plot
 
@@ -148,15 +161,7 @@ ul99 = summary_estimate + (3.96*se_seq)
 meanll95 = summary_estimate - (1.96*summary_se)
 meanul95 = summary_estimate + (1.96*summary_se)
 
-sig_seq <- 1.96*se_seq
-goldilocks_mid <- 2.57*se_seq
-goldilocks_upper <- 3.29*se_seq
-
-sig_seq_neg <- -1.96*se_seq
-goldilocks_mid_neg <- -2.57*se_seq
-goldilocks_upper_neg <- -3.29*se_seq
-
-df_CI <- data.frame(ll95, ul95, ll99, ul99, meanll95, meanul95, se_seq, sig_seq, goldilocks_mid, goldilocks_upper, sig_seq_neg, goldilocks_mid_neg, goldilocks_upper_neg)
+df_CI <- data.frame(ll95, ul95, ll99, ul99, meanll95, meanul95, se_seq)
 
 funnelp <- meta %>% 
   ggplot(.,
@@ -240,8 +245,12 @@ cm_mod2 <- rma.mv(yi, vi,
                  data = meta
 )
 
-# transforming Z to r scores
-predict (cm_mod, transf = transf.ztor)
+### transforming Z to r scores
+cm_r <- data.frame(
+  b     = fisherz2r(cm_mod$beta),
+  ci.lb = fisherz2r(cm_mod$ci.lb),
+  ci.ub = fisherz2r(cm_mod$ci.ub)
+)
 
 ## child maltreatment type as a moderator 
 
@@ -259,8 +268,12 @@ type_mod2 <- rma.mv(yi, vi,
                     data = meta
 )
 
-# transforming Z to r scores
-predict (type_mod, transf = transf.ztor)
+### transforming Z to r scores
+type_r <- data.frame(
+  b     = fisherz2r(type_mod$beta),
+  ci.lb = fisherz2r(type_mod$ci.lb),
+  ci.ub = fisherz2r(type_mod$ci.ub)
+)
 
 ## substance use type as a moderator 
 
@@ -278,8 +291,12 @@ sub_mod2 <- rma.mv(yi, vi,
                   data = meta
 )
 
-# transforming Z to r scores
-predict (sub_mod, transf = transf.ztor)
+### transforming Z to r scores
+sub_r <- data.frame(
+  b     = fisherz2r(sub_mod$beta),
+  ci.lb = fisherz2r(sub_mod$ci.lb),
+  ci.ub = fisherz2r(sub_mod$ci.ub)
+)
 
 ## transforming the gender variable 
 
@@ -294,6 +311,9 @@ gender_mod <- rma.mv(yi, vi,
                       mods = ~ gender,
                       random = list(~ 1 | control_id, ~ 1 | su_mod),
                       data = meta)
+
+### transforming Z to r scores
+gender_r <- fisherz2r(c(r = gender_mod$beta[[2]], ci.lb = gender_mod$ci.lb[[2]], ci.ub = gender_mod$ci.ub[[2]]))
 
 # Cook's distance exclusions ---------------------------------------------------
 

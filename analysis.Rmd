@@ -12,7 +12,6 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 source("calc_effectsizes.R")
 source("analysis.R")
-library(psych)
 ```
 
 # Main Results
@@ -24,8 +23,7 @@ res
 
 ```{r}
 # pooled correlation estimate
-
-predict(res, transf = transf.ztor)
+res_r
 ```
 
 ```{r}
@@ -43,7 +41,7 @@ PEESE
 ```
 
 ```{r}
-fisherz2r(c(b = PEESE$beta[1], ci.lb = PEESE$ci.lb[1], ci.ub = PEESE$ci.ub[1]))
+PEESE_r
 ```
 
 ```{r}
@@ -52,7 +50,7 @@ PET
 ```
 
 ```{r}
-fisherz2r(c(b = PET$beta[1], ci.lb = PET$ci.lb[1], ci.ub = PET$ci.ub[1]))
+PET_r
 ```
 
 ```{r}
@@ -71,8 +69,11 @@ res_cd
 ```
 
 ```{r}
-hatvalues.rma.mv(res)
-plot(hatvalues.rma.mv(res))
+hat_res
+```
+
+```{r}
+plot(hat_res)
 ```
 
 ```{r}
@@ -108,9 +109,8 @@ cm_mod2
 
 ```{r}
 # transforming Z to r scores
-predict (cm_mod, transf = transf.ztor)
+cm_r
 ```
-
 
 ```{r}
 # Child maltreatment type 
@@ -123,7 +123,7 @@ type_mod2
 
 ```{r}
 # transforming Z to r scores
-predict (type_mod, transf = transf.ztor)
+type_r
 ```
 
 ```{r}
@@ -137,10 +137,16 @@ sub_mod2
 
 ```{r}
 # transforming Z to r scores
-predict (sub_mod, transf = transf.ztor)
+sub_r
 ```
 
 ```{r}
 # Gender
 gender_mod
 ```
+
+```{r}
+# transforming Z to r scores
+gender_r
+```
+
