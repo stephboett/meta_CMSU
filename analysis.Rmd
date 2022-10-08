@@ -64,6 +64,7 @@ plot(cd, type = "o",
      ylab = "Cook's Distance"
 ) 
 ```
+
 ```{r}
 # Results with potential influential cases removed
 res_cd
