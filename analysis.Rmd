@@ -98,6 +98,8 @@ funnelp
 
 # Moderator Analysis
 
+## Maltreatment Measures
+
 ```{r}
 # Child maltreatment measure 
 cm_mod
@@ -113,6 +115,16 @@ cm_r
 ```
 
 ```{r}
+cm_pet
+```
+
+```{r}
+cm_peese
+```
+
+## Maltreatment Type
+
+```{r}
 # Child maltreatment type 
 type_mod
 ```
@@ -125,6 +137,8 @@ type_mod2
 # transforming Z to r scores
 type_r
 ```
+
+## Substance Type
 
 ```{r}
 # Substance type
@@ -139,6 +153,8 @@ sub_mod2
 # transforming Z to r scores
 sub_r
 ```
+
+## Gender
 
 ```{r}
 # Gender

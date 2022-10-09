@@ -252,6 +252,20 @@ cm_r <- data.frame(
   ci.ub = fisherz2r(cm_mod$ci.ub)
 )
 
+### Meausure analysis PET-PEESE
+
+cm_pet <- rma.mv(yi, vi,
+                 mods = ~ measure_mod + I(sqrt(vi)) - 1,
+                 random = list(~ 1 | control_id, ~ 1 | su_mod),
+                 data = meta
+)
+
+cm_peese <- rma.mv(yi, vi,
+                   mods = ~ measure_mod + vi - 1,
+                   random = list(~ 1 | control_id, ~ 1 | su_mod),
+                   data = meta
+)
+
 ## child maltreatment type as a moderator 
 
 type_mod <- rma.mv(yi, vi, 
