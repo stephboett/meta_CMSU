@@ -4,8 +4,7 @@
 
 ################################################################################
 
-# Comparing result differences between LongSCAN papers which were not included 
-# in the main analysis 
+# Comparing result differences between LongSCAN papers which were not included in the main analysis 
 
 ## Robust Check 2 substitutes Yoon et al., (2017) with Yoon et al., (2021)
 

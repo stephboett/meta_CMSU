@@ -4,10 +4,9 @@
 
 ################################################################################
 
-# Comparing result differences between LongSCAN papers which were not included 
-# in the main analysis 
+# Comparing result differences between LongSCAN papers which were not included in the main analysis 
 
-## Robust Check 2 substitutes Yoon et al., with Duprey et al.
+## Robust Check 3 substitutes Yoon et al., (2017) with Fagan & Novak (2018)
 
 ### Data wrangling:
 
