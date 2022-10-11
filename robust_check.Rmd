@@ -1,0 +1,49 @@
+---
+title: "Child Maltreatment and Adolescent Substance Use -- Robustness Check Report"
+author: "Stephanie Boettiger & Timothy J. Luke"
+date: "`r Sys.Date()`"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+source("./robust_checks/robust_check.R")
+
+```
+
+# Robustness Check 1 substitutes Yoon et al., (2017) with Dubowitz et al., (2016)
+
+```{r}
+rc_1
+```
+
+# Robustness Check 2 substitutes Yoon et al., with Duprey et al.
+
+```{r}
+rc_2
+```
+
+# Robustness Check 3 substitutes Yoon et al., (2017) with Fagan & Novak (2018)
+
+```{r}
+rc_3
+```
+
+# Robustness Check 4 substitutes Yoon et al., (2017) with Kobulsky et al., (2018)
+
+```{r}
+rc_4
+```
+
+# Robustness Check 5 substitutes Yoon et al., (2017) with Olson et al.,(2021)
+
+```{r}
+rc_5
+```
+
+# Robustness Check 2 substitutes Yoon et al., (2017) with Yoon et al., (2021)
+
+```{r}
+rc_6
+```
