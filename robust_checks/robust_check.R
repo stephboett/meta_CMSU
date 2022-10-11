@@ -269,7 +269,7 @@ dat <- read.csv("cmsu_raw-data.csv")
 
 rc_1 <- robustness("robust_1", dat)
 
-# Robustness Check 2 substitutes Yoon et al., with Duprey et al. ---------------
+# Robustness Check 2 substitutes Yoon et al.,(2017) with Duprey et al.(2017) ---------------
 
 rc_2 <- robustness("robust_2", dat)
 
