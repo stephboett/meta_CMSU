@@ -18,7 +18,7 @@ source("./robust_checks/robust_check.R")
 rc_1
 ```
 
-# Robustness Check 2 substitutes Yoon et al., with Duprey et al.
+# Robustness Check 2 substitutes Yoon et al.,(2017) with Duprey et al., (2017)
 
 ```{r}
 rc_2
