@@ -2,9 +2,9 @@ Child Maltreatment and Adolescent Substance Use – Robustness Check
 Report
 ================
 Stephanie Boettiger & Timothy J. Luke
-2022-10-11
+2022-10-12
 
-# Robustness Check 1 substitutes Yoon et al., (2017) with Dubowitz et al., (2016)
+# Robustness Check 1 substitutes Yoon et al. (2017) with Dubowitz et al. (2016)
 
 ``` r
 rc_1
@@ -385,7 +385,7 @@ rc_1
     ##          r      ci.lb      ci.ub 
     ## 0.25892796 0.02747959 0.46402723
 
-# Robustness Check 2 substitutes Yoon et al., with Duprey et al.
+# Robustness Check 2 substitutes Yoon et al.(2017) with Duprey et al. (2017)
 
 ``` r
 rc_2
@@ -766,7 +766,7 @@ rc_2
     ##          r      ci.lb      ci.ub 
     ## 0.25388383 0.01593622 0.46461610
 
-# Robustness Check 3 substitutes Yoon et al., (2017) with Fagan & Novak (2018)
+# Robustness Check 3 substitutes Yoon et al. (2017) with Fagan & Novak (2018)
 
 ``` r
 rc_3
@@ -1147,7 +1147,7 @@ rc_3
     ##          r      ci.lb      ci.ub 
     ## 0.26847962 0.04048014 0.46990388
 
-# Robustness Check 4 substitutes Yoon et al., (2017) with Kobulsky et al., (2018)
+# Robustness Check 4 substitutes Yoon et al. (2017) with Kobulsky et al. (2018)
 
 ``` r
 rc_4
@@ -1534,7 +1534,7 @@ rc_4
     ##          r      ci.lb      ci.ub 
     ## 0.25526047 0.01464729 0.46792905
 
-# Robustness Check 5 substitutes Yoon et al., (2017) with Olson et al.,(2021)
+# Robustness Check 5 substitutes Yoon et al. (2017) with Olson et al. (2021)
 
 ``` r
 rc_5
@@ -1915,7 +1915,7 @@ rc_5
     ##          r      ci.lb      ci.ub 
     ## 0.25353496 0.02607696 0.45603299
 
-# Robustness Check 2 substitutes Yoon et al., (2017) with Yoon et al., (2021)
+# Robustness Check 2 substitutes Yoon et al. (2017) with Yoon et al. (2021)
 
 ``` r
 rc_6

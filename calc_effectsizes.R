@@ -16,10 +16,12 @@ dat <- dat %>%
 smd_dat <- dat %>% 
   filter(!is.na(mean_control)) 
 
-# separate analysis done without Guo et al.
+## remove Guo et al. to add manually later
 
 smd_dat <- dat %>% 
   filter(guo_include == 1)
+
+## calculate SMDs
 
 smd_es <- escalc(
   m2i = mean_control,
@@ -82,7 +84,7 @@ smd_es <- smd_es %>%
 # Variance for correlation coefficients
 
 r_dat <- dat %>% 
-  filter(!is.na(ri))
+  filter(!is.na(ri)) # Guo et al returns to the data here
 
 r_es <- r_dat %>% 
   mutate(
@@ -94,3 +96,4 @@ r_es <- r_dat %>%
 es_dat <- bind_rows(r_es, lor_es, or_es, smd_es)
 
 meta <- escalc(ri = yi, ni = ni, data = es_dat, measure = "ZCOR")
+

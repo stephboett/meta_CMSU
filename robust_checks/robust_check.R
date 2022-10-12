@@ -22,8 +22,6 @@ robustness <- function(robust_var, data) {
   smd_dat <- dat %>% 
     filter(!is.na(mean_control)) 
   
-  # separate analysis done without Guo et al.
-  
   smd_dat <- dat %>% 
     filter(guo_include == 1)
   
