@@ -18,6 +18,14 @@ smd_dat <- dat %>%
 
 ## remove Guo et al. to add manually later
 
+# Likely because of the serious unbalance in maltreated vs. non-maltreated sample
+# sizes, the Hedges's g correction for small sample bias inflates the size of the
+# effect size estimate compared to the uncorrected Cohen's d. This represents an
+# interesting edge case where g is substantially less conservative than d. For
+# this reason, we calculated uncorrected d values and manually converted them
+# to r for the meta-analysis. This approach is more conservative than using
+# Hedges's g. But we do use the g correction for all other SMD calculations.
+
 smd_dat <- dat %>% 
   filter(guo_include == 1)
 
