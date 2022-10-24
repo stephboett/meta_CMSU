@@ -176,7 +176,7 @@ robustness <- function(robust_var, data) {
   
   type_mod <- rma.mv(yi, vi, 
                      mods = ~ mod_cm - 1, 
-                     random = list(~ 1 | control_id, ~ 1 | su_mod, ~ 1 | mod_cm),
+                     random = list(~ 1 | control_id, ~ 1 | su_mod),
                      data = meta
   )
   
@@ -184,7 +184,7 @@ robustness <- function(robust_var, data) {
   
   type_mod2 <- rma.mv(yi, vi, 
                       mods = ~ mod_cm, 
-                      random = list(~ 1 | control_id, ~ 1 | su_mod, ~ 1 | mod_cm),
+                      random = list(~ 1 | control_id, ~ 1 | su_mod),
                       data = meta
   )
   
