@@ -14,7 +14,7 @@ library(psych)
 # the analysis ----------------------------------------------------------------- 
 
 res <- rma.mv(yi, vi, 
-           random = list(~ 1 | control_id, ~ 1 | su_mod),
+           random = list(~ 1 | control_id, ~ 1 | su_mod, ~ 1 | mod_cm),
              data = meta)
 
 ### default estimator is REML, I want to compare results to HS and HE 
@@ -32,7 +32,8 @@ res_r <- predict(res, transf = transf.ztor)
 
 PEESE = rma.mv(yi, vi, mods = vi,
                     random = list(~ 1 | control_id, 
-                                  ~ 1 | su_mod), 
+                                  ~ 1 | su_mod, 
+                                  ~ 1 | mod_cm), 
                     data = meta)
 
 PEESE_r <- fisherz2r(c(b = PEESE$beta[1], ci.lb = PEESE$ci.lb[1], ci.ub = PEESE$ci.ub[1]))
@@ -41,7 +42,8 @@ PEESE_r <- fisherz2r(c(b = PEESE$beta[1], ci.lb = PEESE$ci.lb[1], ci.ub = PEESE$
 
 PET = rma.mv(yi, vi, mods = I(sqrt(vi)),
              random = list(~ 1 | control_id, 
-                           ~ 1 | su_mod), 
+                           ~ 1 | su_mod,
+                           ~ 1 | mod_cm), 
              data = meta)
 
 PET_r <- fisherz2r(c(b = PET$beta[1], ci.lb = PET$ci.lb[1], ci.ub = PET$ci.ub[1]))
@@ -233,7 +235,7 @@ funnelp <- meta %>%
 
 cm_mod <- rma.mv(yi, vi,
                  mods = ~ measure_mod - 1,
-                 random = list(~ 1 | control_id, ~ 1 | su_mod),
+                 random = list(~ 1 | control_id, ~ 1 | su_mod,  ~ 1 | mod_cm),
                  data = meta
 )
 
@@ -241,7 +243,7 @@ cm_mod <- rma.mv(yi, vi,
 
 cm_mod2 <- rma.mv(yi, vi,
                  mods = ~ measure_mod,
-                 random = list(~ 1 | control_id, ~ 1 | su_mod),
+                 random = list(~ 1 | control_id, ~ 1 | su_mod,  ~ 1 | mod_cm),
                  data = meta
 )
 
@@ -256,13 +258,13 @@ cm_r <- data.frame(
 
 cm_pet <- rma.mv(yi, vi,
                  mods = ~ measure_mod + I(sqrt(vi)) - 1,
-                 random = list(~ 1 | control_id, ~ 1 | su_mod),
+                 random = list(~ 1 | control_id, ~ 1 | su_mod,  ~ 1 | mod_cm),
                  data = meta
 )
 
 cm_peese <- rma.mv(yi, vi,
                    mods = ~ measure_mod + vi - 1,
-                   random = list(~ 1 | control_id, ~ 1 | su_mod),
+                   random = list(~ 1 | control_id, ~ 1 | su_mod,  ~ 1 | mod_cm),
                    data = meta
 )
 
@@ -293,7 +295,7 @@ type_r <- data.frame(
 
 sub_mod <- rma.mv(yi, vi, 
                   mods = ~ su_mod - 1, 
-                  random = list(~ 1 | control_id),
+                  random = list(~ 1 | control_id,  ~ 1 | mod_cm),
                   data = meta
 )
 
@@ -301,7 +303,7 @@ sub_mod <- rma.mv(yi, vi,
 
 sub_mod2 <- rma.mv(yi, vi, 
                   mods = ~ su_mod, 
-                  random = list(~ 1 | control_id),
+                  random = list(~ 1 | control_id,  ~ 1 | mod_cm),
                   data = meta
 )
 
@@ -323,7 +325,9 @@ meta <- meta %>%
 
 gender_mod <- rma.mv(yi, vi,
                       mods = ~ gender,
-                      random = list(~ 1 | control_id, ~ 1 | su_mod),
+                      random = list(~ 1 | control_id, 
+                                    ~ 1 | su_mod,  
+                                    ~ 1 | mod_cm),
                       data = meta)
 
 ### transforming Z to r scores
@@ -337,7 +341,7 @@ gender_r <- fisherz2r(c(r = gender_mod$beta[[2]], ci.lb = gender_mod$ci.lb[[2]],
 meta_cd_excluded <- meta[cd < .004, ]
 
 res_cd <- rma.mv(yi, vi, 
-                 random = list(~ 1 | control_id, ~ 1 | su_mod),
+                 random = list(~ 1 | control_id, ~ 1 | su_mod,  ~ 1 | mod_cm),
                  data = meta_cd_excluded)
 
 # Save figures -----------------------------------------------------------------
