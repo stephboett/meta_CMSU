@@ -104,7 +104,7 @@ robustness <- function(robust_var, data) {
   # the analysis ----------------------------------------------------------------- 
   
   res <- rma.mv(yi, vi, 
-                random = list(~ 1 | control_id, ~ 1 | su_mod),
+                random = list(~ 1 | control_id, ~ 1 | su_mod, ~ 1 | mod_cm),
                 data = meta)
   
   ## back transforming z values into r to get the pooled correlation 
@@ -117,7 +117,8 @@ robustness <- function(robust_var, data) {
   
   PEESE = rma.mv(yi, vi, mods = vi,
                  random = list(~ 1 | control_id, 
-                               ~ 1 | su_mod), 
+                               ~ 1 | su_mod,
+                               ~ 1 | mod_cm), 
                  data = meta)
   
   PEESE_r <- fisherz2r(c(b = PEESE$beta[1], ci.lb = PEESE$ci.lb[1], ci.ub = PEESE$ci.ub[1]))
@@ -126,7 +127,8 @@ robustness <- function(robust_var, data) {
   
   PET = rma.mv(yi, vi, mods = I(sqrt(vi)),
                random = list(~ 1 | control_id, 
-                             ~ 1 | su_mod), 
+                             ~ 1 | su_mod,
+                             ~ 1 | mod_cm), 
                data = meta)
   
   PET_r <- fisherz2r(c(b = PET$beta[1], ci.lb = PET$ci.lb[1], ci.ub = PET$ci.ub[1]))
@@ -137,7 +139,7 @@ robustness <- function(robust_var, data) {
   
   cm_mod <- rma.mv(yi, vi,
                    mods = ~ measure_mod - 1,
-                   random = list(~ 1 | control_id, ~ 1 | su_mod),
+                   random = list(~ 1 | control_id, ~ 1 | su_mod, ~ 1 | mod_cm),
                    data = meta
   )
   
@@ -145,7 +147,7 @@ robustness <- function(robust_var, data) {
   
   cm_mod2 <- rma.mv(yi, vi,
                     mods = ~ measure_mod,
-                    random = list(~ 1 | control_id, ~ 1 | su_mod),
+                    random = list(~ 1 | control_id, ~ 1 | su_mod, ~ 1 | mod_cm),
                     data = meta
   )
   
@@ -160,13 +162,13 @@ robustness <- function(robust_var, data) {
   
   cm_pet <- rma.mv(yi, vi,
                    mods = ~ measure_mod + I(sqrt(vi)) - 1,
-                   random = list(~ 1 | control_id, ~ 1 | su_mod),
+                   random = list(~ 1 | control_id, ~ 1 | su_mod, ~ 1 | mod_cm),
                    data = meta
   )
   
   cm_peese <- rma.mv(yi, vi,
                      mods = ~ measure_mod + vi - 1,
-                     random = list(~ 1 | control_id, ~ 1 | su_mod),
+                     random = list(~ 1 | control_id, ~ 1 | su_mod, ~ 1 | mod_cm),
                      data = meta
   )
   
@@ -174,7 +176,7 @@ robustness <- function(robust_var, data) {
   
   type_mod <- rma.mv(yi, vi, 
                      mods = ~ mod_cm - 1, 
-                     random = list(~ 1 | control_id, ~ 1 | su_mod),
+                     random = list(~ 1 | control_id, ~ 1 | su_mod, ~ 1 | mod_cm),
                      data = meta
   )
   
@@ -182,7 +184,7 @@ robustness <- function(robust_var, data) {
   
   type_mod2 <- rma.mv(yi, vi, 
                       mods = ~ mod_cm, 
-                      random = list(~ 1 | control_id, ~ 1 | su_mod),
+                      random = list(~ 1 | control_id, ~ 1 | su_mod, ~ 1 | mod_cm),
                       data = meta
   )
   
@@ -227,7 +229,7 @@ robustness <- function(robust_var, data) {
   
   gender_mod <- rma.mv(yi, vi,
                        mods = ~ gender,
-                       random = list(~ 1 | control_id, ~ 1 | su_mod),
+                       random = list(~ 1 | control_id, ~ 1 | su_mod, ~ 1 | mod_cm),
                        data = meta)
   
   ### transforming Z to r scores

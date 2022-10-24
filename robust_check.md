@@ -2,7 +2,7 @@ Child Maltreatment and Adolescent Substance Use – Robustness Check
 Report
 ================
 Stephanie Boettiger & Timothy J. Luke
-2022-10-12
+2022-10-24
 
 # Robustness Check 1 substitutes Yoon et al. (2017) with Dubowitz et al. (2016)
 
@@ -17,16 +17,17 @@ rc_1
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0064  0.0803     31     no  control_id 
-    ## sigma^2.2  0.0017  0.0418      5     no      su_mod 
+    ## sigma^2.1  0.0130  0.1139     31     no  control_id 
+    ## sigma^2.2  0.0018  0.0423      5     no      su_mod 
+    ## sigma^2.3  0.0034  0.0579      7     no      mod_cm 
     ## 
     ## Test for Heterogeneity:
     ## Q(df = 165) = 5183.0768, p-val < .0001
     ## 
     ## Model Results:
     ## 
-    ## estimate      se    zval    pval   ci.lb   ci.ub 
-    ##   0.1260  0.0244  5.1622  <.0001  0.0782  0.1739  *** 
+    ## estimate      se    zval    pval   ci.lb   ci.ub   ​ 
+    ##   0.0804  0.0362  2.2230  0.0262  0.0095  0.1513  * 
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -35,7 +36,7 @@ rc_1
     ## [[2]]
     ## 
     ##    pred  ci.lb  ci.ub   pi.lb  pi.ub 
-    ##  0.1254 0.0780 0.1722 -0.0576 0.3002 
+    ##  0.0802 0.0095 0.1501 -0.1904 0.3395 
     ## 
     ## 
     ## [[3]]
@@ -45,28 +46,29 @@ rc_1
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0072  0.0849     31     no  control_id 
-    ## sigma^2.2  0.0018  0.0425      5     no      su_mod 
+    ## sigma^2.1  0.0143  0.1196     31     no  control_id 
+    ## sigma^2.2  0.0018  0.0426      5     no      su_mod 
+    ## sigma^2.3  0.0034  0.0579      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 164) = 5130.8798, p-val < .0001
     ## 
     ## Test of Moderators (coefficient 2):
-    ## QM(df = 1) = 3.2909, p-val = 0.0697
+    ## QM(df = 1) = 1.8193, p-val = 0.1774
     ## 
     ## Model Results:
     ## 
-    ##          estimate      se    zval    pval    ci.lb   ci.ub 
-    ## intrcpt    0.0835  0.0343  2.4315  0.0150   0.0162  0.1508  * 
-    ## mods       0.8676  0.4783  1.8141  0.0697  -0.0698  1.8050  . 
+    ##          estimate      se    zval    pval    ci.lb   ci.ub   ​ 
+    ## intrcpt    0.0439  0.0455  0.9639  0.3351  -0.0454  0.1332    
+    ## mods       0.7224  0.5356  1.3488  0.1774  -0.3273  1.7721    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
     ## [[4]]
-    ##          b      ci.lb      ci.ub 
-    ## 0.08330241 0.01619203 0.14966561 
+    ##           b       ci.lb       ci.ub 
+    ##  0.04387026 -0.04533221  0.13237867 
     ## 
     ## [[5]]
     ## 
@@ -75,28 +77,29 @@ rc_1
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0067  0.0819     31     no  control_id 
-    ## sigma^2.2  0.0018  0.0424      5     no      su_mod 
+    ## sigma^2.1  0.0135  0.1163     31     no  control_id 
+    ## sigma^2.2  0.0018  0.0425      5     no      su_mod 
+    ## sigma^2.3  0.0033  0.0579      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 164) = 5162.4746, p-val < .0001
     ## 
     ## Test of Moderators (coefficient 2):
-    ## QM(df = 1) = 3.2041, p-val = 0.0735
+    ## QM(df = 1) = 1.2156, p-val = 0.2702
     ## 
     ## Model Results:
     ## 
-    ##          estimate      se    zval    pval    ci.lb    ci.ub 
-    ## intrcpt    0.1073  0.0269  3.9892  <.0001   0.0546   0.1601  *** 
-    ## mods       6.1545  3.4382  1.7900  0.0735  -0.5843  12.8933    . 
+    ##          estimate      se    zval    pval    ci.lb    ci.ub   ​ 
+    ## intrcpt    0.0672  0.0383  1.7541  0.0794  -0.0079   0.1423  . 
+    ## mods       4.0712  3.6926  1.1025  0.2702  -3.1661  11.3085    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
     ## [[6]]
-    ##          b      ci.lb      ci.ub 
-    ## 0.10692497 0.05454529 0.15871780 
+    ##            b        ci.lb        ci.ub 
+    ##  0.067120646 -0.007890091  0.141380238 
     ## 
     ## [[7]]
     ## 
@@ -105,21 +108,22 @@ rc_1
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0066  0.0813     31     no  control_id 
-    ## sigma^2.2  0.0017  0.0417      5     no      su_mod 
+    ## sigma^2.1  0.0106  0.1027     31     no  control_id 
+    ## sigma^2.2  0.0018  0.0422      5     no      su_mod 
+    ## sigma^2.3  0.0034  0.0581      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 163) = 4208.1153, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 1:3):
-    ## QM(df = 3) = 28.1053, p-val < .0001
+    ## QM(df = 3) = 12.5950, p-val = 0.0056
     ## 
     ## Model Results:
     ## 
-    ##                          estimate      se    zval    pval    ci.lb   ci.ub 
-    ## measure_modcase records    0.0985  0.0393  2.5042  0.0123   0.0214  0.1756    * 
-    ## measure_modother           0.0738  0.0684  1.0786  0.2808  -0.0603  0.2079      
-    ## measure_modself-report     0.1373  0.0261  5.2634  <.0001   0.0862  0.1885  *** 
+    ##                          estimate      se     zval    pval    ci.lb   ci.ub    ​ 
+    ## measure_modcase records   -0.0072  0.0504  -0.1426  0.8866  -0.1059  0.0916     
+    ## measure_modother           0.0196  0.0848   0.2316  0.8168  -0.1465  0.1858     
+    ## measure_modself-report     0.1097  0.0367   2.9900  0.0028   0.0378  0.1816  ** 
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -132,31 +136,32 @@ rc_1
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0066  0.0813     31     no  control_id 
-    ## sigma^2.2  0.0017  0.0417      5     no      su_mod 
+    ## sigma^2.1  0.0106  0.1027     31     no  control_id 
+    ## sigma^2.2  0.0018  0.0422      5     no      su_mod 
+    ## sigma^2.3  0.0034  0.0581      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 163) = 4208.1153, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 2:3):
-    ## QM(df = 2) = 1.6593, p-val = 0.4362
+    ## QM(df = 2) = 7.2161, p-val = 0.0271
     ## 
     ## Model Results:
     ## 
-    ##                         estimate      se     zval    pval    ci.lb   ci.ub 
-    ## intrcpt                   0.0985  0.0393   2.5042  0.0123   0.0214  0.1756  * 
-    ## measure_modother         -0.0247  0.0740  -0.3335  0.7387  -0.1698  0.1204    
-    ## measure_modself-report    0.0389  0.0385   1.0102  0.3124  -0.0365  0.1143    
+    ##                         estimate      se     zval    pval    ci.lb   ci.ub    ​ 
+    ## intrcpt                  -0.0072  0.0504  -0.1426  0.8866  -0.1059  0.0916     
+    ## measure_modother          0.0268  0.0892   0.3008  0.7636  -0.1479  0.2016     
+    ## measure_modself-report    0.1169  0.0453   2.5779  0.0099   0.0280  0.2058  ** 
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
     ## [[9]]
-    ##                                  b       ci.lb     ci.ub
-    ## measure_modcase records 0.09816420  0.02140016 0.1737776
-    ## measure_modother        0.07365616 -0.06022770 0.2049367
-    ## measure_modself-report  0.13649000  0.08598963 0.1862908
+    ##                                    b       ci.lb      ci.ub
+    ## measure_modcase records -0.007184429 -0.10554110 0.09131146
+    ## measure_modother         0.019631537 -0.14548439 0.18368351
+    ## measure_modself-report   0.109271561  0.03777689 0.17965326
     ## 
     ## [[10]]
     ## 
@@ -165,22 +170,23 @@ rc_1
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0074  0.0862     31     no  control_id 
-    ## sigma^2.2  0.0018  0.0421      5     no      su_mod 
+    ## sigma^2.1  0.0117  0.1084     31     no  control_id 
+    ## sigma^2.2  0.0018  0.0422      5     no      su_mod 
+    ## sigma^2.3  0.0034  0.0581      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 162) = 4167.3374, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 1:4):
-    ## QM(df = 4) = 29.9025, p-val < .0001
+    ## QM(df = 4) = 13.2452, p-val = 0.0101
     ## 
     ## Model Results:
     ## 
-    ##                          estimate      se    zval    pval    ci.lb   ci.ub 
-    ## measure_modcase records    0.0531  0.0475  1.1193  0.2630  -0.0399  0.1462     
-    ## measure_modother           0.0331  0.0747  0.4436  0.6573  -0.1133  0.1796     
-    ## measure_modself-report     0.0943  0.0357  2.6457  0.0082   0.0245  0.1642  ** 
-    ## I(sqrt(vi))                0.8841  0.4812  1.8372  0.0662  -0.0591  1.8274   . 
+    ##                          estimate      se     zval    pval    ci.lb   ci.ub   ​ 
+    ## measure_modcase records   -0.0399  0.0583  -0.6848  0.4935  -0.1542  0.0743    
+    ## measure_modother          -0.0109  0.0915  -0.1197  0.9047  -0.1902  0.1683    
+    ## measure_modself-report     0.0769  0.0454   1.6951  0.0901  -0.0120  0.1658  . 
+    ## I(sqrt(vi))                0.6510  0.5205   1.2507  0.2110  -0.3692  1.6712    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -193,27 +199,23 @@ rc_1
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0069  0.0831     31     no  control_id 
-    ## sigma^2.2  0.0018  0.0420      5     no      su_mod 
+    ## sigma^2.1  0.0111  0.1054     31     no  control_id 
+    ## sigma^2.2  0.0018  0.0422      5     no      su_mod 
+    ## sigma^2.3  0.0034  0.0581      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 162) = 4165.4463, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 1:4):
-    ## QM(df = 4) = 30.3968, p-val < .0001
+    ## QM(df = 4) = 13.0841, p-val = 0.0109
     ## 
     ## Model Results:
     ## 
-    ##                          estimate      se    zval    pval    ci.lb    ci.ub 
-    ## measure_modcase records    0.0802  0.0412  1.9466  0.0516  -0.0006   0.1610 
-    ## measure_modother           0.0621  0.0699  0.8889  0.3741  -0.0748   0.1991 
-    ## measure_modself-report     0.1185  0.0286  4.1459  <.0001   0.0625   0.1745 
-    ## vi                         6.0133  3.4558  1.7401  0.0818  -0.7599  12.7865 
-    ##  
-    ## measure_modcase records    . 
-    ## measure_modother 
-    ## measure_modself-report   *** 
-    ## vi                         . 
+    ##                          estimate      se     zval    pval    ci.lb    ci.ub   ​ 
+    ## measure_modcase records   -0.0177  0.0522  -0.3380  0.7353  -0.1200   0.0847    
+    ## measure_modother           0.0125  0.0867   0.1442  0.8853  -0.1574   0.1824    
+    ## measure_modself-report     0.0980  0.0388   2.5248  0.0116   0.0219   0.1741  * 
+    ## vi                         3.4992  3.6291   0.9642  0.3349  -3.6138  10.6122    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -228,23 +230,24 @@ rc_1
     ##             estim    sqrt  nlvls  fixed      factor 
     ## sigma^2.1  0.0131  0.1145     31     no  control_id 
     ## sigma^2.2  0.0018  0.0423      5     no      su_mod 
+    ## sigma^2.3  0.0044  0.0667      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 159) = 3582.6050, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 1:7):
-    ## QM(df = 7) = 820.3960, p-val < .0001
+    ## QM(df = 7) = 8.8966, p-val = 0.2602
     ## 
     ## Model Results:
     ## 
-    ##            estimate      se    zval    pval    ci.lb   ci.ub 
-    ## mod_cmany    0.2055  0.0289  7.1074  <.0001   0.1488  0.2621  *** 
-    ## mod_cmEA     0.0766  0.0319  2.4027  0.0163   0.0141  0.1391    * 
-    ## mod_cmEN     0.0233  0.0333  0.7012  0.4832  -0.0419  0.0886      
-    ## mod_cmN      0.0666  0.0292  2.2801  0.0226   0.0094  0.1239    * 
-    ## mod_cmPA     0.0654  0.0289  2.2624  0.0237   0.0087  0.1221    * 
-    ## mod_cmPN     0.0487  0.0292  1.6705  0.0948  -0.0084  0.1059    . 
-    ## mod_cmSA     0.0699  0.0290  2.4143  0.0158   0.0132  0.1266    * 
+    ##            estimate      se    zval    pval    ci.lb   ci.ub    ​ 
+    ## mod_cmany    0.2055  0.0727  2.8272  0.0047   0.0630  0.3479  ** 
+    ## mod_cmEA     0.0766  0.0739  1.0364  0.3000  -0.0683  0.2215     
+    ## mod_cmEN     0.0233  0.0745  0.3132  0.7541  -0.1227  0.1694     
+    ## mod_cmN      0.0666  0.0728  0.9154  0.3600  -0.0761  0.2093     
+    ## mod_cmPA     0.0654  0.0727  0.9004  0.3679  -0.0770  0.2079     
+    ## mod_cmPN     0.0487  0.0728  0.6698  0.5030  -0.0939  0.1914     
+    ## mod_cmSA     0.0699  0.0727  0.9615  0.3363  -0.0726  0.2124     
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -259,37 +262,38 @@ rc_1
     ##             estim    sqrt  nlvls  fixed      factor 
     ## sigma^2.1  0.0131  0.1145     31     no  control_id 
     ## sigma^2.2  0.0018  0.0423      5     no      su_mod 
+    ## sigma^2.3  0.0044  0.0667      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 159) = 3582.6050, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 2:7):
-    ## QM(df = 6) = 801.3465, p-val < .0001
+    ## QM(df = 6) = 4.5259, p-val = 0.6059
     ## 
     ## Model Results:
     ## 
-    ##           estimate      se      zval    pval    ci.lb    ci.ub 
-    ## intrcpt     0.2055  0.0289    7.1074  <.0001   0.1488   0.2621  *** 
-    ## mod_cmEA   -0.1289  0.0156   -8.2790  <.0001  -0.1594  -0.0984  *** 
-    ## mod_cmEN   -0.1821  0.0183   -9.9789  <.0001  -0.2179  -0.1464  *** 
-    ## mod_cmN    -0.1388  0.0070  -19.9406  <.0001  -0.1525  -0.1252  *** 
-    ## mod_cmPA   -0.1400  0.0054  -25.9267  <.0001  -0.1506  -0.1294  *** 
-    ## mod_cmPN   -0.1567  0.0069  -22.7841  <.0001  -0.1702  -0.1432  *** 
-    ## mod_cmSA   -0.1356  0.0054  -25.0947  <.0001  -0.1462  -0.1250  *** 
+    ##           estimate      se     zval    pval    ci.lb   ci.ub    ​ 
+    ## intrcpt     0.2055  0.0727   2.8272  0.0047   0.0630  0.3479  ** 
+    ## mod_cmEA   -0.1289  0.0956  -1.3484  0.1775  -0.3162  0.0584     
+    ## mod_cmEN   -0.1821  0.0960  -1.8963  0.0579  -0.3704  0.0061   . 
+    ## mod_cmN    -0.1388  0.0946  -1.4682  0.1420  -0.3242  0.0465     
+    ## mod_cmPA   -0.1400  0.0945  -1.4825  0.1382  -0.3252  0.0451     
+    ## mod_cmPN   -0.1567  0.0945  -1.6576  0.0974  -0.3420  0.0286   . 
+    ## mod_cmSA   -0.1356  0.0945  -1.4354  0.1512  -0.3207  0.0495     
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
     ## [[14]]
-    ##                    b        ci.lb      ci.ub
-    ## mod_cmany 0.20262887  0.147721925 0.25629063
-    ## mod_cmEA  0.07644592  0.014111791 0.13818816
-    ## mod_cmEN  0.02333563 -0.041877741 0.08835102
-    ## mod_cmN   0.06654403  0.009356958 0.12329724
-    ## mod_cmPA  0.06535023  0.008747468 0.12153555
-    ## mod_cmPN  0.04870996 -0.008448534 0.10555119
-    ## mod_cmSA  0.06977957  0.013151036 0.12596192
+    ##                    b       ci.lb     ci.ub
+    ## mod_cmany 0.20262887  0.06294568 0.3345260
+    ## mod_cmEA  0.07644592 -0.06815620 0.2179023
+    ## mod_cmEN  0.02333563 -0.12211650 0.1678065
+    ## mod_cmN   0.06654403 -0.07590384 0.2063300
+    ## mod_cmPA  0.06535023 -0.07686161 0.2049561
+    ## mod_cmPN  0.04870996 -0.09363370 0.1891022
+    ## mod_cmSA  0.06977957 -0.07245480 0.2092322
     ## 
     ## [[15]]
     ## 
@@ -308,7 +312,7 @@ rc_1
     ## 
     ## Model Results:
     ## 
-    ##                     estimate      se    zval    pval   ci.lb   ci.ub 
+    ##                     estimate      se    zval    pval   ci.lb   ci.ub     ​ 
     ## su_modalcohol         0.0655  0.0177  3.7007  0.0002  0.0308  0.1002  *** 
     ## su_modany             0.1111  0.0358  3.1046  0.0019  0.0410  0.1813   ** 
     ## su_modcigarette       0.1516  0.0179  8.4881  <.0001  0.1166  0.1866  *** 
@@ -336,7 +340,7 @@ rc_1
     ## 
     ## Model Results:
     ## 
-    ##                     estimate      se     zval    pval    ci.lb   ci.ub 
+    ##                     estimate      se     zval    pval    ci.lb   ci.ub     ​ 
     ## intrcpt               0.0655  0.0177   3.7007  0.0002   0.0308  0.1002  *** 
     ## su_modany             0.0457  0.0399   1.1436  0.2528  -0.0326  0.1239      
     ## su_modcigarette       0.0861  0.0039  21.9000  <.0001   0.0784  0.0938  *** 
@@ -362,20 +366,21 @@ rc_1
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0047  0.0685     28     no  control_id 
-    ## sigma^2.2  0.0039  0.0628      5     no      su_mod 
+    ## sigma^2.1  0.0109  0.1043     28     no  control_id 
+    ## sigma^2.2  0.0040  0.0632      5     no      su_mod 
+    ## sigma^2.3  0.0051  0.0712      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 146) = 4252.1105, p-val < .0001
     ## 
     ## Test of Moderators (coefficient 2):
-    ## QM(df = 1) = 4.7822, p-val = 0.0288
+    ## QM(df = 1) = 1.0358, p-val = 0.3088
     ## 
     ## Model Results:
     ## 
-    ##          estimate      se    zval    pval   ci.lb    ci.ub 
-    ## intrcpt   13.2477  5.9983  2.2086  0.0272  1.4913  25.0041  * 
-    ## gender     0.2650  0.1212  2.1868  0.0288  0.0275   0.5024  * 
+    ##          estimate      se    zval    pval    ci.lb    ci.ub   ​ 
+    ## intrcpt    8.6702  8.4178  1.0300  0.3030  -7.8284  25.1687    
+    ## gender     0.1730  0.1700  1.0177  0.3088  -0.1602   0.5063    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -383,7 +388,7 @@ rc_1
     ## 
     ## [[19]]
     ##          r      ci.lb      ci.ub 
-    ## 0.25892796 0.02747959 0.46402723
+    ##  0.1713355 -0.1588443  0.4670458
 
 # Robustness Check 2 substitutes Yoon et al.(2017) with Duprey et al. (2017)
 
@@ -398,16 +403,17 @@ rc_2
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0066  0.0815     32     no  control_id 
-    ## sigma^2.2  0.0017  0.0415      5     no      su_mod 
+    ## sigma^2.1  0.0126  0.1122     32     no  control_id 
+    ## sigma^2.2  0.0018  0.0421      5     no      su_mod 
+    ## sigma^2.3  0.0033  0.0579      7     no      mod_cm 
     ## 
     ## Test for Heterogeneity:
     ## Q(df = 168) = 5195.1006, p-val < .0001
     ## 
     ## Model Results:
     ## 
-    ## estimate      se    zval    pval   ci.lb   ci.ub 
-    ##   0.1224  0.0243  5.0372  <.0001  0.0748  0.1700  *** 
+    ## estimate      se    zval    pval   ci.lb   ci.ub   ​ 
+    ##   0.0788  0.0357  2.2042  0.0275  0.0087  0.1488  * 
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -416,7 +422,7 @@ rc_2
     ## [[2]]
     ## 
     ##    pred  ci.lb  ci.ub   pi.lb  pi.ub 
-    ##  0.1218 0.0746 0.1684 -0.0630 0.2984 
+    ##  0.0786 0.0087 0.1477 -0.1890 0.3353 
     ## 
     ## 
     ## [[3]]
@@ -426,28 +432,29 @@ rc_2
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0074  0.0863     32     no  control_id 
-    ## sigma^2.2  0.0018  0.0421      5     no      su_mod 
+    ## sigma^2.1  0.0139  0.1177     32     no  control_id 
+    ## sigma^2.2  0.0018  0.0424      5     no      su_mod 
+    ## sigma^2.3  0.0034  0.0579      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 167) = 5151.3411, p-val < .0001
     ## 
     ## Test of Moderators (coefficient 2):
-    ## QM(df = 1) = 3.1019, p-val = 0.0782
+    ## QM(df = 1) = 1.7172, p-val = 0.1900
     ## 
     ## Model Results:
     ## 
-    ##          estimate      se    zval    pval    ci.lb   ci.ub 
-    ## intrcpt    0.0805  0.0344  2.3398  0.0193   0.0131  0.1480  * 
-    ## mods       0.8458  0.4802  1.7612  0.0782  -0.0954  1.7871  . 
+    ##          estimate      se    zval    pval    ci.lb   ci.ub   ​ 
+    ## intrcpt    0.0433  0.0452  0.9589  0.3376  -0.0452  0.1318    
+    ## mods       0.6980  0.5326  1.3104  0.1900  -0.3460  1.7420    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
     ## [[4]]
-    ##          b      ci.lb      ci.ub 
-    ## 0.08036828 0.01307451 0.14693733 
+    ##           b       ci.lb       ci.ub 
+    ##  0.04326923 -0.04517327  0.13103871 
     ## 
     ## [[5]]
     ## 
@@ -456,28 +463,29 @@ rc_2
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0069  0.0832     32     no  control_id 
-    ## sigma^2.2  0.0018  0.0420      5     no      su_mod 
+    ## sigma^2.1  0.0131  0.1146     32     no  control_id 
+    ## sigma^2.2  0.0018  0.0423      5     no      su_mod 
+    ## sigma^2.3  0.0033  0.0578      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 167) = 5178.8755, p-val < .0001
     ## 
     ## Test of Moderators (coefficient 2):
-    ## QM(df = 1) = 3.1255, p-val = 0.0771
+    ## QM(df = 1) = 1.1840, p-val = 0.2765
     ## 
     ## Model Results:
     ## 
-    ##          estimate      se    zval    pval    ci.lb    ci.ub 
-    ## intrcpt    0.1037  0.0268  3.8662  0.0001   0.0511   0.1562  *** 
-    ## mods       6.0977  3.4491  1.7679  0.0771  -0.6624  12.8578    . 
+    ##          estimate      se    zval    pval    ci.lb    ci.ub   ​ 
+    ## intrcpt    0.0658  0.0379  1.7357  0.0826  -0.0085   0.1400  . 
+    ## mods       4.0060  3.6816  1.0881  0.2765  -3.2098  11.2217    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
     ## [[6]]
-    ##          b      ci.lb      ci.ub 
-    ## 0.10329890 0.05106969 0.15496459 
+    ##            b        ci.lb        ci.ub 
+    ##  0.065670263 -0.008498191  0.139120119 
     ## 
     ## [[7]]
     ## 
@@ -486,21 +494,22 @@ rc_2
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0066  0.0812     32     no  control_id 
-    ## sigma^2.2  0.0017  0.0415      5     no      su_mod 
+    ## sigma^2.1  0.0102  0.1010     32     no  control_id 
+    ## sigma^2.2  0.0018  0.0420      5     no      su_mod 
+    ## sigma^2.3  0.0034  0.0581      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 166) = 4240.4912, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 1:3):
-    ## QM(df = 3) = 27.9197, p-val < .0001
+    ## QM(df = 3) = 12.8812, p-val = 0.0049
     ## 
     ## Model Results:
     ## 
-    ##                          estimate      se    zval    pval    ci.lb   ci.ub 
-    ## measure_modcase records    0.0870  0.0371  2.3447  0.0190   0.0143  0.1598    * 
-    ## measure_modother           0.0730  0.0683  1.0690  0.2851  -0.0609  0.2069      
-    ## measure_modself-report     0.1371  0.0260  5.2709  <.0001   0.0861  0.1881  *** 
+    ##                          estimate      se     zval    pval    ci.lb   ci.ub    ​ 
+    ## measure_modcase records   -0.0028  0.0477  -0.0595  0.9526  -0.0964  0.0907     
+    ## measure_modother           0.0202  0.0837   0.2418  0.8089  -0.1438  0.1842     
+    ## measure_modself-report     0.1100  0.0364   3.0210  0.0025   0.0386  0.1814  ** 
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -513,31 +522,32 @@ rc_2
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0066  0.0812     32     no  control_id 
-    ## sigma^2.2  0.0017  0.0415      5     no      su_mod 
+    ## sigma^2.1  0.0102  0.1010     32     no  control_id 
+    ## sigma^2.2  0.0018  0.0420      5     no      su_mod 
+    ## sigma^2.3  0.0034  0.0581      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 166) = 4240.4912, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 2:3):
-    ## QM(df = 2) = 2.4731, p-val = 0.2904
+    ## QM(df = 2) = 7.5918, p-val = 0.0225
     ## 
     ## Model Results:
     ## 
-    ##                         estimate      se     zval    pval    ci.lb   ci.ub 
-    ## intrcpt                   0.0870  0.0371   2.3447  0.0190   0.0143  0.1598  * 
-    ## measure_modother         -0.0140  0.0730  -0.1919  0.8478  -0.1571  0.1291    
-    ## measure_modself-report    0.0501  0.0363   1.3801  0.1676  -0.0211  0.1213    
+    ##                         estimate      se     zval    pval    ci.lb   ci.ub    ​ 
+    ## intrcpt                  -0.0028  0.0477  -0.0595  0.9526  -0.0964  0.0907     
+    ## measure_modother          0.0231  0.0869   0.2656  0.7905  -0.1472  0.1933     
+    ## measure_modself-report    0.1129  0.0425   2.6529  0.0080   0.0295  0.1962  ** 
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
     ## [[9]]
-    ##                                  b       ci.lb     ci.ub
-    ## measure_modcase records 0.08681185  0.01427956 0.1584353
-    ## measure_modother        0.07289534 -0.06078276 0.2040046
-    ## measure_modself-report  0.13628068  0.08592918 0.1859378
+    ##                                    b       ci.lb      ci.ub
+    ## measure_modcase records -0.002839422 -0.09612313 0.09049373
+    ## measure_modother         0.020233140 -0.14278423 0.18218175
+    ## measure_modself-report   0.109573862  0.03861991 0.17942842
     ## 
     ## [[10]]
     ## 
@@ -546,22 +556,23 @@ rc_2
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0074  0.0861     32     no  control_id 
-    ## sigma^2.2  0.0017  0.0418      5     no      su_mod 
+    ## sigma^2.1  0.0113  0.1063     32     no  control_id 
+    ## sigma^2.2  0.0018  0.0420      5     no      su_mod 
+    ## sigma^2.3  0.0034  0.0581      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 165) = 4210.7402, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 1:4):
-    ## QM(df = 4) = 29.6466, p-val < .0001
+    ## QM(df = 4) = 13.5044, p-val = 0.0091
     ## 
     ## Model Results:
     ## 
-    ##                          estimate      se    zval    pval    ci.lb   ci.ub 
-    ## measure_modcase records    0.0418  0.0458  0.9131  0.3612  -0.0480  0.1316     
-    ## measure_modother           0.0332  0.0746  0.4453  0.6561  -0.1130  0.1795     
-    ## measure_modself-report     0.0950  0.0355  2.6734  0.0075   0.0254  0.1647  ** 
-    ## I(sqrt(vi))                0.8644  0.4805  1.7990  0.0720  -0.0773  1.8060   . 
+    ##                          estimate      se     zval    pval    ci.lb   ci.ub   ​ 
+    ## measure_modcase records   -0.0359  0.0560  -0.6403  0.5220  -0.1456  0.0739    
+    ## measure_modother          -0.0098  0.0902  -0.1090  0.9132  -0.1866  0.1669    
+    ## measure_modself-report     0.0779  0.0450   1.7300  0.0836  -0.0103  0.1661  . 
+    ## I(sqrt(vi))                0.6388  0.5171   1.2354  0.2167  -0.3747  1.6522    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -574,27 +585,23 @@ rc_2
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0069  0.0831     32     no  control_id 
-    ## sigma^2.2  0.0017  0.0417      5     no      su_mod 
+    ## sigma^2.1  0.0107  0.1035     32     no  control_id 
+    ## sigma^2.2  0.0018  0.0420      5     no      su_mod 
+    ## sigma^2.3  0.0034  0.0580      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 165) = 4208.3491, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 1:4):
-    ## QM(df = 4) = 30.2018, p-val < .0001
+    ## QM(df = 4) = 13.3558, p-val = 0.0097
     ## 
     ## Model Results:
     ## 
-    ##                          estimate      se    zval    pval    ci.lb    ci.ub 
-    ## measure_modcase records    0.0685  0.0391  1.7510  0.0799  -0.0082   0.1452 
-    ## measure_modother           0.0614  0.0698  0.8799  0.3789  -0.0754   0.1982 
-    ## measure_modself-report     0.1185  0.0285  4.1593  <.0001   0.0627   0.1743 
-    ## vi                         5.9457  3.4542  1.7213  0.0852  -0.8244  12.7157 
-    ##  
-    ## measure_modcase records    . 
-    ## measure_modother 
-    ## measure_modself-report   *** 
-    ## vi                         . 
+    ##                          estimate      se     zval    pval    ci.lb    ci.ub   ​ 
+    ## measure_modcase records   -0.0135  0.0496  -0.2723  0.7854  -0.1108   0.0838    
+    ## measure_modother           0.0132  0.0855   0.1540  0.8776  -0.1544   0.1808    
+    ## measure_modself-report     0.0985  0.0385   2.5568  0.0106   0.0230   0.1741  * 
+    ## vi                         3.4552  3.6159   0.9556  0.3393  -3.6318  10.5422    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -609,23 +616,24 @@ rc_2
     ##             estim    sqrt  nlvls  fixed      factor 
     ## sigma^2.1  0.0127  0.1128     32     no  control_id 
     ## sigma^2.2  0.0018  0.0421      5     no      su_mod 
+    ## sigma^2.3  0.0044  0.0663      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 162) = 3589.0719, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 1:7):
-    ## QM(df = 7) = 820.3294, p-val < .0001
+    ## QM(df = 7) = 8.8858, p-val = 0.2610
     ## 
     ## Model Results:
     ## 
-    ##            estimate      se    zval    pval    ci.lb   ci.ub 
-    ## mod_cmany    0.2038  0.0284  7.1827  <.0001   0.1482  0.2594  *** 
-    ## mod_cmEA     0.0751  0.0314  2.3914  0.0168   0.0135  0.1366    * 
-    ## mod_cmEN     0.0219  0.0328  0.6657  0.5056  -0.0425  0.0862      
-    ## mod_cmN      0.0649  0.0287  2.2647  0.0235   0.0087  0.1211    * 
-    ## mod_cmPA     0.0638  0.0284  2.2478  0.0246   0.0082  0.1194    * 
-    ## mod_cmPN     0.0471  0.0286  1.6443  0.1001  -0.0090  0.1032      
-    ## mod_cmSA     0.0682  0.0284  2.4024  0.0163   0.0126  0.1239    * 
+    ##            estimate      se    zval    pval    ci.lb   ci.ub    ​ 
+    ## mod_cmany    0.2038  0.0721  2.8270  0.0047   0.0625  0.3451  ** 
+    ## mod_cmEA     0.0751  0.0733  1.0239  0.3059  -0.0686  0.2188     
+    ## mod_cmEN     0.0219  0.0740  0.2955  0.7676  -0.1231  0.1668     
+    ## mod_cmN      0.0649  0.0722  0.8989  0.3687  -0.0766  0.2064     
+    ## mod_cmPA     0.0638  0.0721  0.8848  0.3762  -0.0775  0.2051     
+    ## mod_cmPN     0.0471  0.0722  0.6522  0.5143  -0.0944  0.1886     
+    ## mod_cmSA     0.0682  0.0721  0.9464  0.3440  -0.0731  0.2096     
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -640,37 +648,38 @@ rc_2
     ##             estim    sqrt  nlvls  fixed      factor 
     ## sigma^2.1  0.0127  0.1128     32     no  control_id 
     ## sigma^2.2  0.0018  0.0421      5     no      su_mod 
+    ## sigma^2.3  0.0044  0.0663      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 162) = 3589.0719, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 2:7):
-    ## QM(df = 6) = 801.6581, p-val < .0001
+    ## QM(df = 6) = 4.5764, p-val = 0.5992
     ## 
     ## Model Results:
     ## 
-    ##           estimate      se      zval    pval    ci.lb    ci.ub 
-    ## intrcpt     0.2038  0.0284    7.1827  <.0001   0.1482   0.2594  *** 
-    ## mod_cmEA   -0.1287  0.0156   -8.2704  <.0001  -0.1592  -0.0982  *** 
-    ## mod_cmEN   -0.1820  0.0182   -9.9704  <.0001  -0.2177  -0.1462  *** 
-    ## mod_cmN    -0.1389  0.0070  -19.9689  <.0001  -0.1525  -0.1253  *** 
-    ## mod_cmPA   -0.1400  0.0054  -25.9309  <.0001  -0.1506  -0.1294  *** 
-    ## mod_cmPN   -0.1567  0.0069  -22.7907  <.0001  -0.1702  -0.1432  *** 
-    ## mod_cmSA   -0.1356  0.0054  -25.0995  <.0001  -0.1462  -0.1250  *** 
+    ##           estimate      se     zval    pval    ci.lb   ci.ub    ​ 
+    ## intrcpt     0.2038  0.0721   2.8270  0.0047   0.0625  0.3451  ** 
+    ## mod_cmEA   -0.1287  0.0950  -1.3548  0.1755  -0.3149  0.0575     
+    ## mod_cmEN   -0.1820  0.0955  -1.9056  0.0567  -0.3691  0.0052   . 
+    ## mod_cmN    -0.1389  0.0940  -1.4779  0.1394  -0.3231  0.0453     
+    ## mod_cmPA   -0.1400  0.0939  -1.4914  0.1359  -0.3240  0.0440     
+    ## mod_cmPN   -0.1567  0.0940  -1.6677  0.0954  -0.3409  0.0275   . 
+    ## mod_cmSA   -0.1356  0.0939  -1.4441  0.1487  -0.3196  0.0484     
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
     ## [[14]]
-    ##                    b        ci.lb      ci.ub
-    ## mod_cmany 0.20103171  0.147118685 0.25375378
-    ## mod_cmEA  0.07494495  0.013546663 0.13578021
-    ## mod_cmEN  0.02184895 -0.042460009 0.08597761
-    ## mod_cmN   0.06481477  0.008732727 0.12049034
-    ## mod_cmPA  0.06370560  0.008167386 0.11885200
-    ## mod_cmPN  0.04704994 -0.009037538 0.10284229
-    ## mod_cmSA  0.06813144  0.012566704 0.12327670
+    ##                    b       ci.lb     ci.ub
+    ## mod_cmany 0.20103171  0.06242665 0.3320291
+    ## mod_cmEA  0.07494495 -0.06854134 0.2153935
+    ## mod_cmEN  0.02184895 -0.12248494 0.1652778
+    ## mod_cmN   0.06481477 -0.07646535 0.2035435
+    ## mod_cmPA  0.06370560 -0.07735704 0.2022677
+    ## mod_cmPN  0.04704994 -0.09413644 0.1863811
+    ## mod_cmSA  0.06813144 -0.07295476 0.2065443
     ## 
     ## [[15]]
     ## 
@@ -689,7 +698,7 @@ rc_2
     ## 
     ## Model Results:
     ## 
-    ##                     estimate      se    zval    pval   ci.lb   ci.ub 
+    ##                     estimate      se    zval    pval   ci.lb   ci.ub     ​ 
     ## su_modalcohol         0.0610  0.0176  3.4699  0.0005  0.0266  0.0955  *** 
     ## su_modany             0.1113  0.0362  3.0715  0.0021  0.0403  0.1824   ** 
     ## su_modcigarette       0.1469  0.0178  8.2752  <.0001  0.1121  0.1817  *** 
@@ -717,7 +726,7 @@ rc_2
     ## 
     ## Model Results:
     ## 
-    ##                     estimate      se     zval    pval    ci.lb   ci.ub 
+    ##                     estimate      se     zval    pval    ci.lb   ci.ub     ​ 
     ## intrcpt               0.0610  0.0176   3.4699  0.0005   0.0266  0.0955  *** 
     ## su_modany             0.0503  0.0403   1.2486  0.2118  -0.0287  0.1293      
     ## su_modcigarette       0.0859  0.0039  21.8578  <.0001   0.0782  0.0936  *** 
@@ -743,20 +752,21 @@ rc_2
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0050  0.0709     29     no  control_id 
-    ## sigma^2.2  0.0038  0.0619      5     no      su_mod 
+    ## sigma^2.1  0.0115  0.1075     29     no  control_id 
+    ## sigma^2.2  0.0039  0.0621      5     no      su_mod 
+    ## sigma^2.3  0.0045  0.0668      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 149) = 4272.7627, p-val < .0001
     ## 
     ## Test of Moderators (coefficient 2):
-    ## QM(df = 1) = 4.3605, p-val = 0.0368
+    ## QM(df = 1) = 0.9375, p-val = 0.3329
     ## 
     ## Model Results:
     ## 
-    ##          estimate      se    zval    pval   ci.lb    ci.ub 
-    ## intrcpt   12.9764  6.1537  2.1087  0.0350  0.9155  25.0374  * 
-    ## gender     0.2596  0.1243  2.0882  0.0368  0.0159   0.5032  * 
+    ##          estimate      se    zval    pval    ci.lb    ci.ub   ​ 
+    ## intrcpt    8.4483  8.6275  0.9792  0.3275  -8.4612  25.3578    
+    ## gender     0.1687  0.1743  0.9683  0.3329  -0.1728   0.5103    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -764,7 +774,7 @@ rc_2
     ## 
     ## [[19]]
     ##          r      ci.lb      ci.ub 
-    ## 0.25388383 0.01593622 0.46461610
+    ##  0.1671456 -0.1711142  0.4701570
 
 # Robustness Check 3 substitutes Yoon et al. (2017) with Fagan & Novak (2018)
 
@@ -779,16 +789,17 @@ rc_3
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0063  0.0792     33     no  control_id 
-    ## sigma^2.2  0.0017  0.0416      5     no      su_mod 
+    ## sigma^2.1  0.0128  0.1132     33     no  control_id 
+    ## sigma^2.2  0.0018  0.0421      5     no      su_mod 
+    ## sigma^2.3  0.0033  0.0578      7     no      mod_cm 
     ## 
     ## Test for Heterogeneity:
     ## Q(df = 169) = 5189.5315, p-val < .0001
     ## 
     ## Model Results:
     ## 
-    ## estimate      se    zval    pval   ci.lb   ci.ub 
-    ##   0.1257  0.0240  5.2466  <.0001  0.0788  0.1727  *** 
+    ## estimate      se    zval    pval   ci.lb   ci.ub   ​ 
+    ##   0.0755  0.0356  2.1169  0.0343  0.0056  0.1453  * 
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -797,7 +808,7 @@ rc_3
     ## [[2]]
     ## 
     ##    pred  ci.lb  ci.ub   pi.lb  pi.ub 
-    ##  0.1251 0.0786 0.1710 -0.0558 0.2980 
+    ##  0.0753 0.0056 0.1443 -0.1936 0.3337 
     ## 
     ## 
     ## [[3]]
@@ -807,28 +818,29 @@ rc_3
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0070  0.0838     33     no  control_id 
-    ## sigma^2.2  0.0018  0.0422      5     no      su_mod 
+    ## sigma^2.1  0.0141  0.1186     33     no  control_id 
+    ## sigma^2.2  0.0018  0.0423      5     no      su_mod 
+    ## sigma^2.3  0.0033  0.0578      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 168) = 5140.2753, p-val < .0001
     ## 
     ## Test of Moderators (coefficient 2):
-    ## QM(df = 1) = 2.8484, p-val = 0.0915
+    ## QM(df = 1) = 1.4701, p-val = 0.2253
     ## 
     ## Model Results:
     ## 
-    ##          estimate      se    zval    pval    ci.lb   ci.ub 
-    ## intrcpt    0.0861  0.0340  2.5340  0.0113   0.0195  0.1526  * 
-    ## mods       0.7967  0.4721  1.6877  0.0915  -0.1285  1.7220  . 
+    ##          estimate      se    zval    pval    ci.lb   ci.ub   ​ 
+    ## intrcpt    0.0424  0.0452  0.9391  0.3477  -0.0461  0.1309    
+    ## mods       0.6447  0.5317  1.2125  0.2253  -0.3974  1.6868    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
     ## [[4]]
-    ##          b      ci.lb      ci.ub 
-    ## 0.08585875 0.01949511 0.15146914 
+    ##           b       ci.lb       ci.ub 
+    ##  0.04238115 -0.04606266  0.13016567 
     ## 
     ## [[5]]
     ## 
@@ -837,28 +849,29 @@ rc_3
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0066  0.0811     33     no  control_id 
+    ## sigma^2.1  0.0134  0.1157     33     no  control_id 
     ## sigma^2.2  0.0018  0.0422      5     no      su_mod 
+    ## sigma^2.3  0.0033  0.0578      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 168) = 5170.9000, p-val < .0001
     ## 
     ## Test of Moderators (coefficient 2):
-    ## QM(df = 1) = 2.8593, p-val = 0.0908
+    ## QM(df = 1) = 1.0328, p-val = 0.3095
     ## 
     ## Model Results:
     ## 
-    ##          estimate      se    zval    pval    ci.lb    ci.ub 
-    ## intrcpt    0.1079  0.0265  4.0661  <.0001   0.0559   0.1598  *** 
-    ## mods       5.7772  3.4165  1.6910  0.0908  -0.9191  12.4735    . 
+    ##          estimate      se    zval    pval    ci.lb    ci.ub   ​ 
+    ## intrcpt    0.0632  0.0378  1.6692  0.0951  -0.0110   0.1373  . 
+    ## mods       3.7392  3.6794  1.0162  0.3095  -3.4724  10.9508    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
     ## [[6]]
-    ##          b      ci.lb      ci.ub 
-    ## 0.10743562 0.05580658 0.15849166 
+    ##           b       ci.lb       ci.ub 
+    ##  0.06308766 -0.01100492  0.13649127 
     ## 
     ## [[7]]
     ## 
@@ -867,21 +880,22 @@ rc_3
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0065  0.0804     33     no  control_id 
-    ## sigma^2.2  0.0017  0.0415      5     no      su_mod 
+    ## sigma^2.1  0.0101  0.1007     33     no  control_id 
+    ## sigma^2.2  0.0018  0.0420      5     no      su_mod 
+    ## sigma^2.3  0.0034  0.0581      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 167) = 4221.0269, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 1:3):
-    ## QM(df = 3) = 28.8728, p-val < .0001
+    ## QM(df = 3) = 13.5699, p-val = 0.0036
     ## 
     ## Model Results:
     ## 
-    ##                          estimate      se    zval    pval    ci.lb   ci.ub 
-    ## measure_modcase records    0.1036  0.0355  2.9185  0.0035   0.0340  0.1732   ** 
-    ## measure_modother           0.0744  0.0678  1.0964  0.2729  -0.0586  0.2073      
-    ## measure_modself-report     0.1373  0.0259  5.3006  <.0001   0.0866  0.1881  *** 
+    ##                          estimate      se     zval    pval    ci.lb   ci.ub    ​ 
+    ## measure_modcase records   -0.0066  0.0462  -0.1435  0.8859  -0.0972  0.0840     
+    ## measure_modother           0.0200  0.0835   0.2400  0.8103  -0.1436  0.1836     
+    ## measure_modself-report     0.1099  0.0364   3.0218  0.0025   0.0386  0.1812  ** 
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -894,31 +908,32 @@ rc_3
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0065  0.0804     33     no  control_id 
-    ## sigma^2.2  0.0017  0.0415      5     no      su_mod 
+    ## sigma^2.1  0.0101  0.1007     33     no  control_id 
+    ## sigma^2.2  0.0018  0.0420      5     no      su_mod 
+    ## sigma^2.3  0.0034  0.0581      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 167) = 4221.0269, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 2:3):
-    ## QM(df = 2) = 1.5850, p-val = 0.4527
+    ## QM(df = 2) = 8.6360, p-val = 0.0133
     ## 
     ## Model Results:
     ## 
-    ##                         estimate      se     zval    pval    ci.lb   ci.ub 
-    ## intrcpt                   0.1036  0.0355   2.9185  0.0035   0.0340  0.1732  ** 
-    ## measure_modother         -0.0293  0.0718  -0.4076  0.6835  -0.1701  0.1115     
-    ## measure_modself-report    0.0337  0.0346   0.9734  0.3304  -0.0342  0.1016     
+    ##                         estimate      se     zval    pval    ci.lb   ci.ub    ​ 
+    ## intrcpt                  -0.0066  0.0462  -0.1435  0.8859  -0.0972  0.0840     
+    ## measure_modother          0.0267  0.0859   0.3104  0.7563  -0.1417  0.1950     
+    ## measure_modself-report    0.1166  0.0409   2.8516  0.0043   0.0364  0.1967  ** 
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
     ## [[9]]
-    ##                                  b       ci.lb     ci.ub
-    ## measure_modcase records 0.10326232  0.03402249 0.1715156
-    ## measure_modother        0.07421665 -0.05849684 0.2043524
-    ## measure_modself-report  0.13648469  0.08634205 0.1859376
+    ##                                   b       ci.lb      ci.ub
+    ## measure_modcase records -0.00663054 -0.09691664 0.08376379
+    ## measure_modother         0.02003052 -0.14257798 0.18158618
+    ## measure_modself-report   0.10948949  0.03860965 0.17927306
     ## 
     ## [[10]]
     ## 
@@ -927,22 +942,23 @@ rc_3
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0072  0.0851     33     no  control_id 
-    ## sigma^2.2  0.0018  0.0419      5     no      su_mod 
+    ## sigma^2.1  0.0112  0.1058     33     no  control_id 
+    ## sigma^2.2  0.0018  0.0420      5     no      su_mod 
+    ## sigma^2.3  0.0034  0.0581      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 166) = 4187.9307, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 1:4):
-    ## QM(df = 4) = 30.3759, p-val < .0001
+    ## QM(df = 4) = 13.9350, p-val = 0.0075
     ## 
     ## Model Results:
     ## 
-    ##                          estimate      se    zval    pval    ci.lb   ci.ub 
-    ## measure_modcase records    0.0590  0.0446  1.3226  0.1860  -0.0284  0.1463     
-    ## measure_modother           0.0360  0.0740  0.4867  0.6265  -0.1090  0.1811     
-    ## measure_modself-report     0.0970  0.0353  2.7448  0.0061   0.0277  0.1662  ** 
-    ## I(sqrt(vi))                0.8307  0.4760  1.7452  0.0810  -0.1022  1.7636   . 
+    ##                          estimate      se     zval    pval    ci.lb   ci.ub   ​ 
+    ## measure_modcase records   -0.0377  0.0548  -0.6887  0.4910  -0.1450  0.0696    
+    ## measure_modother          -0.0077  0.0898  -0.0855  0.9319  -0.1837  0.1683    
+    ## measure_modself-report     0.0803  0.0449   1.7893  0.0736  -0.0077  0.1682  . 
+    ## I(sqrt(vi))                0.5878  0.5142   1.1432  0.2530  -0.4200  1.5956    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -955,27 +971,28 @@ rc_3
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0068  0.0824     33     no  control_id 
-    ## sigma^2.2  0.0018  0.0419      5     no      su_mod 
+    ## sigma^2.1  0.0106  0.1032     33     no  control_id 
+    ## sigma^2.2  0.0018  0.0420      5     no      su_mod 
+    ## sigma^2.3  0.0034  0.0581      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 166) = 4186.6713, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 1:4):
-    ## QM(df = 4) = 30.8306, p-val < .0001
+    ## QM(df = 4) = 13.8794, p-val = 0.0077
     ## 
     ## Model Results:
     ## 
-    ##                          estimate      se    zval    pval    ci.lb    ci.ub 
-    ## measure_modcase records    0.0850  0.0377  2.2542  0.0242   0.0111   0.1589 
-    ## measure_modother           0.0632  0.0694  0.9103  0.3626  -0.0728   0.1991 
-    ## measure_modself-report     0.1195  0.0284  4.2057  <.0001   0.0638   0.1752 
-    ## vi                         5.7078  3.4348  1.6617  0.0966  -1.0244  12.4399 
+    ##                          estimate      se     zval    pval    ci.lb    ci.ub​ 
+    ## measure_modcase records   -0.0169  0.0482  -0.3498  0.7265  -0.1113   0.0776 
+    ## measure_modother           0.0135  0.0853   0.1582  0.8743  -0.1537   0.1807 
+    ## measure_modself-report     0.0993  0.0385   2.5806  0.0099   0.0239   0.1747 
+    ## vi                         3.1845  3.6036   0.8837  0.3769  -3.8784  10.2474 
     ##  
-    ## measure_modcase records    * 
+    ## measure_modcase records 
     ## measure_modother 
-    ## measure_modself-report   *** 
-    ## vi                         . 
+    ## measure_modself-report   ** 
+    ## vi 
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -990,23 +1007,24 @@ rc_3
     ##             estim    sqrt  nlvls  fixed      factor 
     ## sigma^2.1  0.0129  0.1138     33     no  control_id 
     ## sigma^2.2  0.0018  0.0421      5     no      su_mod 
+    ## sigma^2.3  0.0044  0.0667      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 163) = 3602.0969, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 1:7):
-    ## QM(df = 7) = 820.0382, p-val < .0001
+    ## QM(df = 7) = 8.4591, p-val = 0.2939
     ## 
     ## Model Results:
     ## 
-    ##            estimate      se    zval    pval    ci.lb   ci.ub 
-    ## mod_cmany    0.2003  0.0282  7.0894  <.0001   0.1449  0.2556  *** 
-    ## mod_cmEA     0.0718  0.0313  2.2909  0.0220   0.0104  0.1332    * 
-    ## mod_cmEN     0.0185  0.0328  0.5660  0.5714  -0.0457  0.0828      
-    ## mod_cmN      0.0616  0.0286  2.1545  0.0312   0.0056  0.1177    * 
-    ## mod_cmPA     0.0604  0.0283  2.1353  0.0327   0.0050  0.1159    * 
-    ## mod_cmPN     0.0437  0.0286  1.5318  0.1256  -0.0122  0.0997      
-    ## mod_cmSA     0.0649  0.0283  2.2905  0.0220   0.0094  0.1204    * 
+    ##            estimate      se    zval    pval    ci.lb   ci.ub    ​ 
+    ## mod_cmany    0.2003  0.0724  2.7666  0.0057   0.0584  0.3422  ** 
+    ## mod_cmEA     0.0718  0.0737  0.9748  0.3297  -0.0726  0.2161     
+    ## mod_cmEN     0.0185  0.0743  0.2497  0.8028  -0.1270  0.1641     
+    ## mod_cmN      0.0616  0.0725  0.8497  0.3955  -0.0805  0.2038     
+    ## mod_cmPA     0.0604  0.0724  0.8345  0.4040  -0.0815  0.2023     
+    ## mod_cmPN     0.0437  0.0725  0.6033  0.5463  -0.0984  0.1859     
+    ## mod_cmSA     0.0649  0.0724  0.8957  0.3704  -0.0771  0.2068     
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -1021,37 +1039,38 @@ rc_3
     ##             estim    sqrt  nlvls  fixed      factor 
     ## sigma^2.1  0.0129  0.1138     33     no  control_id 
     ## sigma^2.2  0.0018  0.0421      5     no      su_mod 
+    ## sigma^2.3  0.0044  0.0667      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 163) = 3602.0969, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 2:7):
-    ## QM(df = 6) = 800.2491, p-val < .0001
+    ## QM(df = 6) = 4.5139, p-val = 0.6075
     ## 
     ## Model Results:
     ## 
-    ##           estimate      se      zval    pval    ci.lb    ci.ub 
-    ## intrcpt     0.2003  0.0282    7.0894  <.0001   0.1449   0.2556  *** 
-    ## mod_cmEA   -0.1285  0.0156   -8.2562  <.0001  -0.1590  -0.0980  *** 
-    ## mod_cmEN   -0.1817  0.0182   -9.9591  <.0001  -0.2175  -0.1460  *** 
-    ## mod_cmN    -0.1386  0.0070  -19.9205  <.0001  -0.1523  -0.1250  *** 
-    ## mod_cmPA   -0.1399  0.0054  -25.9067  <.0001  -0.1504  -0.1293  *** 
-    ## mod_cmPN   -0.1565  0.0069  -22.7638  <.0001  -0.1700  -0.1430  *** 
-    ## mod_cmSA   -0.1354  0.0054  -25.0746  <.0001  -0.1460  -0.1248  *** 
+    ##           estimate      se     zval    pval    ci.lb   ci.ub    ​ 
+    ## intrcpt     0.2003  0.0724   2.7666  0.0057   0.0584  0.3422  ** 
+    ## mod_cmEA   -0.1285  0.0955  -1.3449  0.1787  -0.3157  0.0588     
+    ## mod_cmEN   -0.1817  0.0960  -1.8928  0.0584  -0.3699  0.0064   . 
+    ## mod_cmN    -0.1386  0.0945  -1.4669  0.1424  -0.3239  0.0466     
+    ## mod_cmPA   -0.1399  0.0944  -1.4813  0.1385  -0.3249  0.0452     
+    ## mod_cmPN   -0.1565  0.0945  -1.6562  0.0977  -0.3418  0.0287   . 
+    ## mod_cmSA   -0.1354  0.0944  -1.4342  0.1515  -0.3205  0.0496     
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
     ## [[14]]
-    ##                    b        ci.lb      ci.ub
-    ## mod_cmany 0.19764052  0.143901362 0.25021744
-    ## mod_cmEA  0.07167029  0.010371404 0.13243253
-    ## mod_cmEN  0.01854410 -0.045648508 0.08258419
-    ## mod_cmN   0.06155268  0.005564768 0.11715589
-    ## mod_cmPA  0.06034867  0.004961921 0.11536629
-    ## mod_cmPN  0.04372167 -0.012229118 0.09939952
-    ## mod_cmSA  0.06477394  0.009359954 0.11979131
+    ##                    b       ci.lb     ci.ub
+    ## mod_cmany 0.19764052  0.05832602 0.3294041
+    ## mod_cmEA  0.07167029 -0.07243288 0.2128424
+    ## mod_cmEN  0.01854410 -0.12634393 0.1626574
+    ## mod_cmN   0.06155268 -0.08035291 0.2010127
+    ## mod_cmPA  0.06034867 -0.08131729 0.1996245
+    ## mod_cmPN  0.04372167 -0.09805736 0.1837612
+    ## mod_cmSA  0.06477394 -0.07691969 0.2039030
     ## 
     ## [[15]]
     ## 
@@ -1070,7 +1089,7 @@ rc_3
     ## 
     ## Model Results:
     ## 
-    ##                     estimate      se    zval    pval   ci.lb   ci.ub 
+    ##                     estimate      se    zval    pval   ci.lb   ci.ub     ​ 
     ## su_modalcohol         0.0652  0.0169  3.8622  0.0001  0.0321  0.0983  *** 
     ## su_modany             0.1110  0.0354  3.1335  0.0017  0.0416  0.1804   ** 
     ## su_modcigarette       0.1512  0.0171  8.8614  <.0001  0.1178  0.1846  *** 
@@ -1098,7 +1117,7 @@ rc_3
     ## 
     ## Model Results:
     ## 
-    ##                     estimate      se     zval    pval    ci.lb   ci.ub 
+    ##                     estimate      se     zval    pval    ci.lb   ci.ub     ​ 
     ## intrcpt               0.0652  0.0169   3.8622  0.0001   0.0321  0.0983  *** 
     ## su_modany             0.0458  0.0392   1.1666  0.2434  -0.0311  0.1227      
     ## su_modcigarette       0.0860  0.0039  21.8806  <.0001   0.0783  0.0937  *** 
@@ -1124,20 +1143,21 @@ rc_3
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0046  0.0678     30     no  control_id 
-    ## sigma^2.2  0.0039  0.0627      5     no      su_mod 
+    ## sigma^2.1  0.0104  0.1022     30     no  control_id 
+    ## sigma^2.2  0.0040  0.0629      5     no      su_mod 
+    ## sigma^2.3  0.0050  0.0710      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 150) = 4259.8882, p-val < .0001
     ## 
     ## Test of Moderators (coefficient 2):
-    ## QM(df = 1) = 5.2816, p-val = 0.0216
+    ## QM(df = 1) = 1.1336, p-val = 0.2870
     ## 
     ## Model Results:
     ## 
-    ##          estimate      se    zval    pval   ci.lb    ci.ub 
-    ## intrcpt   13.7573  5.9287  2.3205  0.0203  2.1374  25.3773  * 
-    ## gender     0.2752  0.1198  2.2982  0.0216  0.0405   0.5099  * 
+    ##          estimate      se    zval    pval    ci.lb    ci.ub   ​ 
+    ## intrcpt    8.8841  8.2498  1.0769  0.2815  -7.2852  25.0535    
+    ## gender     0.1774  0.1666  1.0647  0.2870  -0.1492   0.5040    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -1145,7 +1165,7 @@ rc_3
     ## 
     ## [[19]]
     ##          r      ci.lb      ci.ub 
-    ## 0.26847962 0.04048014 0.46990388
+    ##  0.1755848 -0.1480831  0.4652781
 
 # Robustness Check 4 substitutes Yoon et al. (2017) with Kobulsky et al. (2018)
 
@@ -1160,16 +1180,17 @@ rc_4
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0067  0.0816     33     no  control_id 
-    ## sigma^2.2  0.0017  0.0413      5     no      su_mod 
+    ## sigma^2.1  0.0124  0.1112     33     no  control_id 
+    ## sigma^2.2  0.0018  0.0419      5     no      su_mod 
+    ## sigma^2.3  0.0032  0.0567      7     no      mod_cm 
     ## 
     ## Test for Heterogeneity:
     ## Q(df = 169) = 5209.9195, p-val < .0001
     ## 
     ## Model Results:
     ## 
-    ## estimate      se    zval    pval   ci.lb   ci.ub 
-    ##   0.1311  0.0241  5.4428  <.0001  0.0839  0.1783  *** 
+    ## estimate      se    zval    pval   ci.lb   ci.ub   ​ 
+    ##   0.0860  0.0352  2.4450  0.0145  0.0171  0.1550  * 
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -1178,7 +1199,7 @@ rc_4
     ## [[2]]
     ## 
     ##    pred  ci.lb  ci.ub   pi.lb  pi.ub 
-    ##  0.1304 0.0837 0.1764 -0.0541 0.3062 
+    ##  0.0858 0.0171 0.1537 -0.1792 0.3392 
     ## 
     ## 
     ## [[3]]
@@ -1188,28 +1209,29 @@ rc_4
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0074  0.0863     33     no  control_id 
-    ## sigma^2.2  0.0017  0.0413      5     no      su_mod 
+    ## sigma^2.1  0.0136  0.1166     33     no  control_id 
+    ## sigma^2.2  0.0018  0.0419      5     no      su_mod 
+    ## sigma^2.3  0.0032  0.0568      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 168) = 5150.2420, p-val < .0001
     ## 
     ## Test of Moderators (coefficient 2):
-    ## QM(df = 1) = 2.8158, p-val = 0.0933
+    ## QM(df = 1) = 1.5745, p-val = 0.2096
     ## 
     ## Model Results:
     ## 
-    ##          estimate      se    zval    pval    ci.lb   ci.ub 
-    ## intrcpt    0.0924  0.0337  2.7443  0.0061   0.0264  0.1583  ** 
-    ## mods       0.8026  0.4783  1.6780  0.0933  -0.1348  1.7401   . 
+    ##          estimate      se    zval    pval    ci.lb   ci.ub   ​ 
+    ## intrcpt    0.0530  0.0442  1.2004  0.2300  -0.0336  0.1396    
+    ## mods       0.6646  0.5296  1.2548  0.2096  -0.3735  1.7026    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
     ## [[4]]
-    ##          b      ci.lb      ci.ub 
-    ## 0.09209759 0.02639147 0.15701135 
+    ##           b       ci.lb       ci.ub 
+    ##  0.05298286 -0.03354549  0.13872285 
     ## 
     ## [[5]]
     ## 
@@ -1218,20 +1240,21 @@ rc_4
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0070  0.0837     33     no  control_id 
-    ## sigma^2.2  0.0017  0.0412      5     no      su_mod 
+    ## sigma^2.1  0.0129  0.1137     33     no  control_id 
+    ## sigma^2.2  0.0018  0.0419      5     no      su_mod 
+    ## sigma^2.3  0.0032  0.0567      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 168) = 5185.9798, p-val < .0001
     ## 
     ## Test of Moderators (coefficient 2):
-    ## QM(df = 1) = 2.6350, p-val = 0.1045
+    ## QM(df = 1) = 1.0399, p-val = 0.3079
     ## 
     ## Model Results:
     ## 
-    ##          estimate      se    zval    pval    ci.lb    ci.ub 
-    ## intrcpt    0.1148  0.0263  4.3721  <.0001   0.0634   0.1663  *** 
-    ## mods       5.5667  3.4293  1.6233  0.1045  -1.1547  12.2881      
+    ##          estimate      se    zval    pval    ci.lb    ci.ub   ​ 
+    ## intrcpt    0.0745  0.0371  2.0055  0.0449   0.0017   0.1473  * 
+    ## mods       3.7306  3.6583  1.0197  0.3079  -3.4397  10.9008    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -1239,7 +1262,7 @@ rc_4
     ## 
     ## [[6]]
     ##          b      ci.lb      ci.ub 
-    ## 0.11432641 0.06326701 0.16478886 
+    ## 0.07433436 0.00169238 0.14619595 
     ## 
     ## [[7]]
     ## 
@@ -1248,22 +1271,23 @@ rc_4
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0065  0.0809     33     no  control_id 
-    ## sigma^2.2  0.0017  0.0417      5     no      su_mod 
+    ## sigma^2.1  0.0102  0.1011     33     no  control_id 
+    ## sigma^2.2  0.0018  0.0422      5     no      su_mod 
+    ## sigma^2.3  0.0032  0.0569      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 166) = 4219.5283, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 1:4):
-    ## QM(df = 4) = 32.9974, p-val < .0001
+    ## QM(df = 4) = 14.5477, p-val = 0.0057
     ## 
     ## Model Results:
     ## 
-    ##                          estimate      se    zval    pval    ci.lb   ci.ub 
-    ## measure_modboth            0.2117  0.0683  3.1002  0.0019   0.0779  0.3456   ** 
-    ## measure_modcase records    0.0985  0.0392  2.5136  0.0120   0.0217  0.1754    * 
-    ## measure_modother           0.0738  0.0681  1.0836  0.2785  -0.0597  0.2074      
-    ## measure_modself-report     0.1373  0.0260  5.2771  <.0001   0.0863  0.1884  *** 
+    ##                          estimate      se     zval    pval    ci.lb   ci.ub    ​ 
+    ## measure_modboth            0.1488  0.0844   1.7629  0.0779  -0.0166  0.3143   . 
+    ## measure_modcase records   -0.0051  0.0498  -0.1019  0.9188  -0.1027  0.0925     
+    ## measure_modother           0.0213  0.0836   0.2543  0.7992  -0.1426  0.1852     
+    ## measure_modself-report     0.1107  0.0362   3.0569  0.0022   0.0397  0.1817  ** 
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -1276,33 +1300,34 @@ rc_4
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0065  0.0809     33     no  control_id 
-    ## sigma^2.2  0.0017  0.0417      5     no      su_mod 
+    ## sigma^2.1  0.0102  0.1011     33     no  control_id 
+    ## sigma^2.2  0.0018  0.0422      5     no      su_mod 
+    ## sigma^2.3  0.0032  0.0569      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 166) = 4219.5283, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 2:4):
-    ## QM(df = 3) = 3.5181, p-val = 0.3184
+    ## QM(df = 3) = 8.1336, p-val = 0.0433
     ## 
     ## Model Results:
     ## 
-    ##                          estimate      se     zval    pval    ci.lb   ci.ub 
-    ## intrcpt                    0.2117  0.0683   3.1002  0.0019   0.0779  0.3456  ** 
-    ## measure_modcase records   -0.1132  0.0734  -1.5420  0.1231  -0.2571  0.0307     
-    ## measure_modother          -0.1379  0.0899  -1.5338  0.1251  -0.3141  0.0383     
-    ## measure_modself-report    -0.0744  0.0688  -1.0815  0.2795  -0.2092  0.0604     
+    ##                          estimate      se     zval    pval    ci.lb   ci.ub   ​ 
+    ## intrcpt                    0.1488  0.0844   1.7629  0.0779  -0.0166  0.3143  . 
+    ## measure_modcase records   -0.1539  0.0883  -1.7439  0.0812  -0.3269  0.0191  . 
+    ## measure_modother          -0.1276  0.1088  -1.1728  0.2409  -0.3408  0.0856    
+    ## measure_modself-report    -0.0381  0.0829  -0.4598  0.6457  -0.2007  0.1244    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
     ## [[9]]
-    ##                                  b       ci.lb     ci.ub
-    ## measure_modboth         0.20861801  0.07771614 0.3324489
-    ## measure_modcase records 0.09821389  0.02169927 0.1735847
-    ## measure_modother        0.07369051 -0.05963485 0.2044328
-    ## measure_modself-report  0.13648756  0.08611935 0.1861598
+    ##                                    b       ci.lb      ci.ub
+    ## measure_modboth          0.147756735 -0.01664052 0.30437538
+    ## measure_modcase records -0.005073106 -0.10229778 0.09224757
+    ## measure_modother         0.021266074 -0.14167480 0.18308500
+    ## measure_modself-report   0.110263355  0.03970729 0.17972533
     ## 
     ## [[10]]
     ## 
@@ -1311,23 +1336,24 @@ rc_4
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0073  0.0856     33     no  control_id 
-    ## sigma^2.2  0.0018  0.0421      5     no      su_mod 
+    ## sigma^2.1  0.0113  0.1065     33     no  control_id 
+    ## sigma^2.2  0.0018  0.0422      5     no      su_mod 
+    ## sigma^2.3  0.0032  0.0570      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 165) = 4178.9384, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 1:5):
-    ## QM(df = 5) = 34.4494, p-val < .0001
+    ## QM(df = 5) = 15.0873, p-val = 0.0100
     ## 
     ## Model Results:
     ## 
-    ##                          estimate      se    zval    pval    ci.lb   ci.ub 
-    ## measure_modboth            0.1823  0.0731  2.4935  0.0126   0.0390  0.3257   * 
-    ## measure_modcase records    0.0537  0.0473  1.1357  0.2561  -0.0390  0.1464     
-    ## measure_modother           0.0336  0.0743  0.4526  0.6508  -0.1120  0.1793     
-    ## measure_modself-report     0.0948  0.0355  2.6683  0.0076   0.0252  0.1645  ** 
-    ## I(sqrt(vi))                0.8748  0.4799  1.8229  0.0683  -0.0658  1.8153   . 
+    ##                          estimate      se     zval    pval    ci.lb   ci.ub   ​ 
+    ## measure_modboth            0.1268  0.0896   1.4148  0.1571  -0.0489  0.3025    
+    ## measure_modcase records   -0.0374  0.0576  -0.6494  0.5161  -0.1504  0.0755    
+    ## measure_modother          -0.0089  0.0902  -0.0987  0.9213  -0.1856  0.1678    
+    ## measure_modself-report     0.0784  0.0449   1.7473  0.0806  -0.0095  0.1663  . 
+    ## I(sqrt(vi))                0.6428  0.5176   1.2418  0.2143  -0.3718  1.6573    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -1340,29 +1366,30 @@ rc_4
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0068  0.0826     33     no  control_id 
-    ## sigma^2.2  0.0018  0.0420      5     no      su_mod 
+    ## sigma^2.1  0.0107  0.1036     33     no  control_id 
+    ## sigma^2.2  0.0018  0.0422      5     no      su_mod 
+    ## sigma^2.3  0.0032  0.0569      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 165) = 4177.0663, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 1:5):
-    ## QM(df = 5) = 35.1251, p-val < .0001
+    ## QM(df = 5) = 15.0029, p-val = 0.0103
     ## 
     ## Model Results:
     ## 
-    ##                          estimate      se    zval    pval    ci.lb    ci.ub 
-    ## measure_modboth            0.2083  0.0695  2.9957  0.0027   0.0720   0.3445 
-    ## measure_modcase records    0.0804  0.0411  1.9572  0.0503  -0.0001   0.1609 
-    ## measure_modother           0.0622  0.0696  0.8944  0.3711  -0.0741   0.1985 
-    ## measure_modself-report     0.1186  0.0285  4.1613  <.0001   0.0627   0.1745 
-    ## vi                         5.9830  3.4511  1.7336  0.0830  -0.7811  12.7470 
+    ##                          estimate      se     zval    pval    ci.lb    ci.ub​ 
+    ## measure_modboth            0.1466  0.0861   1.7022  0.0887  -0.0222   0.3153 
+    ## measure_modcase records   -0.0156  0.0516  -0.3021  0.7626  -0.1168   0.0856 
+    ## measure_modother           0.0141  0.0855   0.1652  0.8688  -0.1535   0.1817 
+    ## measure_modself-report     0.0990  0.0383   2.5824  0.0098   0.0239   0.1742 
+    ## vi                         3.5140  3.6172   0.9715  0.3313  -3.5757  10.6036 
     ##  
-    ## measure_modboth           ** 
-    ## measure_modcase records    . 
+    ## measure_modboth           . 
+    ## measure_modcase records 
     ## measure_modother 
-    ## measure_modself-report   *** 
-    ## vi                         . 
+    ## measure_modself-report   ** 
+    ## vi 
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -1377,23 +1404,24 @@ rc_4
     ##             estim    sqrt  nlvls  fixed      factor 
     ## sigma^2.1  0.0125  0.1118     33     no  control_id 
     ## sigma^2.2  0.0018  0.0419      5     no      su_mod 
+    ## sigma^2.3  0.0044  0.0663      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 163) = 3616.1905, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 1:7):
-    ## QM(df = 7) = 804.9093, p-val < .0001
+    ## QM(df = 7) = 9.6041, p-val = 0.2121
     ## 
     ## Model Results:
     ## 
-    ##            estimate      se    zval    pval    ci.lb   ci.ub 
-    ## mod_cmany    0.2083  0.0280  7.4406  <.0001   0.1534  0.2632  *** 
-    ## mod_cmEA     0.0822  0.0311  2.6443  0.0082   0.0213  0.1431   ** 
-    ## mod_cmEN     0.0290  0.0325  0.8920  0.3724  -0.0347  0.0927      
-    ## mod_cmN      0.0747  0.0283  2.6389  0.0083   0.0192  0.1301   ** 
-    ## mod_cmPA     0.0709  0.0280  2.5291  0.0114   0.0159  0.1258    * 
-    ## mod_cmPN     0.0550  0.0283  1.9446  0.0518  -0.0004  0.1104    . 
-    ## mod_cmSA     0.0753  0.0280  2.6860  0.0072   0.0204  0.1303   ** 
+    ##            estimate      se    zval    pval    ci.lb   ci.ub    ​ 
+    ## mod_cmany    0.2083  0.0720  2.8929  0.0038   0.0672  0.3494  ** 
+    ## mod_cmEA     0.0822  0.0733  1.1220  0.2619  -0.0614  0.2258     
+    ## mod_cmEN     0.0290  0.0739  0.3926  0.6946  -0.1158  0.1738     
+    ## mod_cmN      0.0747  0.0721  1.0354  0.3005  -0.0667  0.2160     
+    ## mod_cmPA     0.0709  0.0720  0.9840  0.3251  -0.0703  0.2120     
+    ## mod_cmPN     0.0550  0.0721  0.7625  0.4458  -0.0864  0.1963     
+    ## mod_cmSA     0.0753  0.0720  1.0458  0.2957  -0.0658  0.2165     
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -1408,37 +1436,38 @@ rc_4
     ##             estim    sqrt  nlvls  fixed      factor 
     ## sigma^2.1  0.0125  0.1118     33     no  control_id 
     ## sigma^2.2  0.0018  0.0419      5     no      su_mod 
+    ## sigma^2.3  0.0044  0.0663      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 163) = 3616.1905, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 2:7):
-    ## QM(df = 6) = 782.9517, p-val < .0001
+    ## QM(df = 6) = 4.3949, p-val = 0.6234
     ## 
     ## Model Results:
     ## 
-    ##           estimate      se      zval    pval    ci.lb    ci.ub 
-    ## intrcpt     0.2083  0.0280    7.4406  <.0001   0.1534   0.2632  *** 
-    ## mod_cmEA   -0.1261  0.0155   -8.1098  <.0001  -0.1566  -0.0956  *** 
-    ## mod_cmEN   -0.1793  0.0182   -9.8308  <.0001  -0.2150  -0.1435  *** 
-    ## mod_cmN    -0.1336  0.0069  -19.4634  <.0001  -0.1471  -0.1202  *** 
-    ## mod_cmPA   -0.1374  0.0054  -25.5979  <.0001  -0.1480  -0.1269  *** 
-    ## mod_cmPN   -0.1533  0.0068  -22.4267  <.0001  -0.1667  -0.1399  *** 
-    ## mod_cmSA   -0.1330  0.0054  -24.7591  <.0001  -0.1435  -0.1224  *** 
+    ##           estimate      se     zval    pval    ci.lb   ci.ub    ​ 
+    ## intrcpt     0.2083  0.0720   2.8929  0.0038   0.0672  0.3494  ** 
+    ## mod_cmEA   -0.1261  0.0951  -1.3261  0.1848  -0.3125  0.0603     
+    ## mod_cmEN   -0.1793  0.0956  -1.8759  0.0607  -0.3666  0.0080   . 
+    ## mod_cmN    -0.1336  0.0941  -1.4205  0.1555  -0.3180  0.0507     
+    ## mod_cmPA   -0.1374  0.0940  -1.4626  0.1436  -0.3216  0.0467     
+    ## mod_cmPN   -0.1533  0.0941  -1.6299  0.1031  -0.3377  0.0310     
+    ## mod_cmSA   -0.1330  0.0940  -1.4152  0.1570  -0.3171  0.0512     
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
     ## [[14]]
-    ##                    b         ci.lb      ci.ub
-    ## mod_cmany 0.20532677  0.1522288245 0.25724287
-    ## mod_cmEA  0.08200618  0.0212684152 0.14214085
-    ## mod_cmEN  0.02899997 -0.0347174500 0.09248258
-    ## mod_cmN   0.07452975  0.0192078799 0.12939664
-    ## mod_cmPA  0.07073918  0.0159446330 0.12511010
-    ## mod_cmPN  0.05492578 -0.0004351262 0.10995103
-    ## mod_cmSA  0.07517010  0.0203547760 0.12953487
+    ##                    b       ci.lb     ci.ub
+    ## mod_cmany 0.20532677  0.06706970 0.3358473
+    ## mod_cmEA  0.08200618 -0.06131094 0.2220101
+    ## mod_cmEN  0.02899997 -0.11527506 0.1720767
+    ## mod_cmN   0.07452975 -0.06658125 0.2127179
+    ## mod_cmPA  0.07073917 -0.07016161 0.2088725
+    ## mod_cmPN  0.05492577 -0.08613664 0.1938292
+    ## mod_cmSA  0.07517010 -0.06574422 0.2131448
     ## 
     ## [[15]]
     ## 
@@ -1457,7 +1486,7 @@ rc_4
     ## 
     ## Model Results:
     ## 
-    ##                     estimate      se    zval    pval   ci.lb   ci.ub 
+    ##                     estimate      se    zval    pval   ci.lb   ci.ub     ​ 
     ## su_modalcohol         0.0654  0.0180  3.6346  0.0003  0.0301  0.1006  *** 
     ## su_modany             0.1365  0.0313  4.3606  <.0001  0.0752  0.1979  *** 
     ## su_modcigarette       0.1515  0.0181  8.3476  <.0001  0.1159  0.1870  *** 
@@ -1485,7 +1514,7 @@ rc_4
     ## 
     ## Model Results:
     ## 
-    ##                     estimate      se     zval    pval   ci.lb   ci.ub 
+    ##                     estimate      se     zval    pval   ci.lb   ci.ub     ​ 
     ## intrcpt               0.0654  0.0180   3.6346  0.0003  0.0301  0.1006  *** 
     ## su_modany             0.0712  0.0361   1.9714  0.0487  0.0004  0.1419    * 
     ## su_modcigarette       0.0861  0.0039  21.8978  <.0001  0.0784  0.0938  *** 
@@ -1511,20 +1540,21 @@ rc_4
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0052  0.0719     30     no  control_id 
-    ## sigma^2.2  0.0037  0.0610      5     no      su_mod 
+    ## sigma^2.1  0.0102  0.1012     30     no  control_id 
+    ## sigma^2.2  0.0039  0.0628      5     no      su_mod 
+    ## sigma^2.3  0.0058  0.0764      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 150) = 4267.7920, p-val < .0001
     ## 
     ## Test of Moderators (coefficient 2):
-    ## QM(df = 1) = 4.3118, p-val = 0.0378
+    ## QM(df = 1) = 1.1169, p-val = 0.2906
     ## 
     ## Model Results:
     ## 
-    ##          estimate      se    zval    pval   ci.lb    ci.ub 
-    ## intrcpt   13.0586  6.2234  2.0983  0.0359  0.8609  25.2562  * 
-    ## gender     0.2610  0.1257  2.0765  0.0378  0.0146   0.5074  * 
+    ##          estimate      se    zval    pval    ci.lb    ci.ub   ​ 
+    ## intrcpt    8.7778  8.2045  1.0699  0.2847  -7.3027  24.8583    
+    ## gender     0.1751  0.1657  1.0568  0.2906  -0.1497   0.4999    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -1532,7 +1562,7 @@ rc_4
     ## 
     ## [[19]]
     ##          r      ci.lb      ci.ub 
-    ## 0.25526047 0.01464729 0.46792905
+    ##  0.1733650 -0.1485610  0.4620671
 
 # Robustness Check 5 substitutes Yoon et al. (2017) with Olson et al. (2021)
 
@@ -1547,16 +1577,17 @@ rc_5
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0062  0.0788     32     no  control_id 
-    ## sigma^2.2  0.0017  0.0414      5     no      su_mod 
+    ## sigma^2.1  0.0129  0.1136     32     no  control_id 
+    ## sigma^2.2  0.0018  0.0419      5     no      su_mod 
+    ## sigma^2.3  0.0033  0.0578      7     no      mod_cm 
     ## 
     ## Test for Heterogeneity:
     ## Q(df = 169) = 5189.5370, p-val < .0001
     ## 
     ## Model Results:
     ## 
-    ## estimate      se    zval    pval   ci.lb   ci.ub 
-    ##   0.1249  0.0240  5.2098  <.0001  0.0779  0.1718  *** 
+    ## estimate      se    zval    pval   ci.lb   ci.ub   ​ 
+    ##   0.0767  0.0358  2.1408  0.0323  0.0065  0.1469  * 
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -1565,7 +1596,7 @@ rc_5
     ## [[2]]
     ## 
     ##    pred  ci.lb  ci.ub   pi.lb  pi.ub 
-    ##  0.1242 0.0777 0.1702 -0.0558 0.2964 
+    ##  0.0766 0.0065 0.1459 -0.1931 0.3355 
     ## 
     ## 
     ## [[3]]
@@ -1575,28 +1606,29 @@ rc_5
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0069  0.0833     32     no  control_id 
-    ## sigma^2.2  0.0018  0.0421      5     no      su_mod 
+    ## sigma^2.1  0.0142  0.1191     32     no  control_id 
+    ## sigma^2.2  0.0018  0.0422      5     no      su_mod 
+    ## sigma^2.3  0.0033  0.0579      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 168) = 5142.0731, p-val < .0001
     ## 
     ## Test of Moderators (coefficient 2):
-    ## QM(df = 1) = 3.1884, p-val = 0.0742
+    ## QM(df = 1) = 1.7806, p-val = 0.1821
     ## 
     ## Model Results:
     ## 
-    ##          estimate      se    zval    pval    ci.lb   ci.ub 
-    ## intrcpt    0.0832  0.0339  2.4570  0.0140   0.0168  0.1496  * 
-    ## mods       0.8476  0.4747  1.7856  0.0742  -0.0828  1.7779  . 
+    ##          estimate      se    zval    pval    ci.lb   ci.ub   ​ 
+    ## intrcpt    0.0406  0.0452  0.8979  0.3692  -0.0480  0.1293    
+    ## mods       0.7138  0.5349  1.3344  0.1821  -0.3346  1.7622    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
     ## [[4]]
-    ##          b      ci.lb      ci.ub 
-    ## 0.08304498 0.01683652 0.14852835 
+    ##           b       ci.lb       ci.ub 
+    ##  0.04059815 -0.04800767  0.12857001 
     ## 
     ## [[5]]
     ## 
@@ -1605,28 +1637,29 @@ rc_5
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0065  0.0804     32     no  control_id 
-    ## sigma^2.2  0.0018  0.0420      5     no      su_mod 
+    ## sigma^2.1  0.0134  0.1160     32     no  control_id 
+    ## sigma^2.2  0.0018  0.0421      5     no      su_mod 
+    ## sigma^2.3  0.0033  0.0578      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 168) = 5170.9306, p-val < .0001
     ## 
     ## Test of Moderators (coefficient 2):
-    ## QM(df = 1) = 3.1888, p-val = 0.0741
+    ## QM(df = 1) = 1.2336, p-val = 0.2667
     ## 
     ## Model Results:
     ## 
-    ##          estimate      se    zval    pval    ci.lb    ci.ub 
-    ## intrcpt    0.1064  0.0264  4.0227  <.0001   0.0545   0.1582  *** 
-    ## mods       6.1147  3.4242  1.7857  0.0741  -0.5966  12.8260    . 
+    ##          estimate      se    zval    pval    ci.lb    ci.ub   ​ 
+    ## intrcpt    0.0635  0.0380  1.6733  0.0943  -0.0109   0.1379  . 
+    ## mods       4.0982  3.6898  1.1107  0.2667  -3.1337  11.3300    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
     ## [[6]]
-    ##          b      ci.lb      ci.ub 
-    ## 0.10595831 0.05448304 0.15687187 
+    ##           b       ci.lb       ci.ub 
+    ##  0.06343912 -0.01088151  0.13706269 
     ## 
     ## [[7]]
     ## 
@@ -1635,21 +1668,22 @@ rc_5
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0063  0.0796     32     no  control_id 
-    ## sigma^2.2  0.0017  0.0413      5     no      su_mod 
+    ## sigma^2.1  0.0101  0.1006     32     no  control_id 
+    ## sigma^2.2  0.0018  0.0419      5     no      su_mod 
+    ## sigma^2.3  0.0034  0.0581      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 167) = 4231.3463, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 1:3):
-    ## QM(df = 3) = 28.8420, p-val < .0001
+    ## QM(df = 3) = 13.6253, p-val = 0.0035
     ## 
     ## Model Results:
     ## 
-    ##                          estimate      se    zval    pval    ci.lb   ci.ub 
-    ## measure_modcase records    0.0979  0.0366  2.6778  0.0074   0.0262  0.1695   ** 
-    ## measure_modother           0.0742  0.0673  1.1016  0.2706  -0.0578  0.2061      
-    ## measure_modself-report     0.1372  0.0257  5.3281  <.0001   0.0867  0.1876  *** 
+    ##                          estimate      se     zval    pval    ci.lb   ci.ub    ​ 
+    ## measure_modcase records   -0.0104  0.0476  -0.2189  0.8267  -0.1037  0.0829     
+    ## measure_modother           0.0200  0.0834   0.2397  0.8105  -0.1435  0.1835     
+    ## measure_modself-report     0.1097  0.0363   3.0192  0.0025   0.0385  0.1810  ** 
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -1662,31 +1696,32 @@ rc_5
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0063  0.0796     32     no  control_id 
-    ## sigma^2.2  0.0017  0.0413      5     no      su_mod 
+    ## sigma^2.1  0.0101  0.1006     32     no  control_id 
+    ## sigma^2.2  0.0018  0.0419      5     no      su_mod 
+    ## sigma^2.3  0.0034  0.0581      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 167) = 4231.3463, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 2:3):
-    ## QM(df = 2) = 1.8392, p-val = 0.3987
+    ## QM(df = 2) = 8.5661, p-val = 0.0138
     ## 
     ## Model Results:
     ## 
-    ##                         estimate      se     zval    pval    ci.lb   ci.ub 
-    ## intrcpt                   0.0979  0.0366   2.6778  0.0074   0.0262  0.1695  ** 
-    ## measure_modother         -0.0237  0.0718  -0.3303  0.7412  -0.1645  0.1171     
-    ## measure_modself-report    0.0393  0.0357   1.1018  0.2705  -0.0306  0.1092     
+    ##                         estimate      se     zval    pval    ci.lb   ci.ub    ​ 
+    ## intrcpt                  -0.0104  0.0476  -0.2189  0.8267  -0.1037  0.0829     
+    ## measure_modother          0.0304  0.0865   0.3515  0.7252  -0.1392  0.2000     
+    ## measure_modself-report    0.1202  0.0424   2.8364  0.0046   0.0371  0.2032  ** 
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
     ## [[9]]
-    ##                                  b       ci.lb     ci.ub
-    ## measure_modcase records 0.09756727  0.02623152 0.1679144
-    ## measure_modother        0.07401953 -0.05771427 0.2032198
-    ## measure_modself-report  0.13631352  0.08649330 0.1854537
+    ##                                   b       ci.lb      ci.ub
+    ## measure_modcase records -0.01042162 -0.10335187 0.08268901
+    ## measure_modother         0.01999323 -0.14250283 0.18143984
+    ## measure_modself-report   0.10929136  0.03847817 0.17901234
     ## 
     ## [[10]]
     ## 
@@ -1695,22 +1730,23 @@ rc_5
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0071  0.0843     32     no  control_id 
-    ## sigma^2.2  0.0017  0.0417      5     no      su_mod 
+    ## sigma^2.1  0.0112  0.1059     32     no  control_id 
+    ## sigma^2.2  0.0018  0.0418      5     no      su_mod 
+    ## sigma^2.3  0.0034  0.0581      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 166) = 4200.1680, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 1:4):
-    ## QM(df = 4) = 30.5733, p-val < .0001
+    ## QM(df = 4) = 14.1062, p-val = 0.0070
     ## 
     ## Model Results:
     ## 
-    ##                          estimate      se    zval    pval    ci.lb   ci.ub 
-    ## measure_modcase records    0.0534  0.0450  1.1873  0.2351  -0.0347  0.1415     
-    ## measure_modother           0.0344  0.0735  0.4685  0.6394  -0.1096  0.1784     
-    ## measure_modself-report     0.0952  0.0352  2.7031  0.0069   0.0262  0.1642  ** 
-    ## I(sqrt(vi))                0.8649  0.4770  1.8132  0.0698  -0.0700  1.7999   . 
+    ##                          estimate      se     zval    pval    ci.lb   ci.ub   ​ 
+    ## measure_modcase records   -0.0421  0.0556  -0.7575  0.4487  -0.1512  0.0669    
+    ## measure_modother          -0.0095  0.0899  -0.1056  0.9159  -0.1857  0.1667    
+    ## measure_modself-report     0.0781  0.0449   1.7393  0.0820  -0.0099  0.1661  . 
+    ## I(sqrt(vi))                0.6278  0.5168   1.2148  0.2244  -0.3851  1.6406    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -1723,27 +1759,23 @@ rc_5
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0066  0.0814     32     no  control_id 
-    ## sigma^2.2  0.0017  0.0417      5     no      su_mod 
+    ## sigma^2.1  0.0106  0.1031     32     no  control_id 
+    ## sigma^2.2  0.0018  0.0418      5     no      su_mod 
+    ## sigma^2.3  0.0034  0.0580      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 166) = 4196.8750, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 1:4):
-    ## QM(df = 4) = 31.0974, p-val < .0001
+    ## QM(df = 4) = 14.0329, p-val = 0.0072
     ## 
     ## Model Results:
     ## 
-    ##                          estimate      se    zval    pval    ci.lb    ci.ub 
-    ## measure_modcase records    0.0800  0.0385  2.0795  0.0376   0.0046   0.1553 
-    ## measure_modother           0.0626  0.0687  0.9110  0.3623  -0.0721   0.1973 
-    ## measure_modself-report     0.1186  0.0282  4.2026  <.0001   0.0633   0.1739 
-    ## vi                         5.9562  3.4391  1.7319  0.0833  -0.7844  12.6968 
-    ##  
-    ## measure_modcase records    * 
-    ## measure_modother 
-    ## measure_modself-report   *** 
-    ## vi                         . 
+    ##                          estimate      se     zval    pval    ci.lb    ci.ub   ​ 
+    ## measure_modcase records   -0.0205  0.0494  -0.4156  0.6777  -0.1174   0.0763    
+    ## measure_modother           0.0130  0.0853   0.1530  0.8784  -0.1541   0.1801    
+    ## measure_modself-report     0.0984  0.0384   2.5584  0.0105   0.0230   0.1737  * 
+    ## vi                         3.4157  3.6134   0.9453  0.3445  -3.6664  10.4978    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -1758,23 +1790,24 @@ rc_5
     ##             estim    sqrt  nlvls  fixed      factor 
     ## sigma^2.1  0.0131  0.1143     32     no  control_id 
     ## sigma^2.2  0.0018  0.0420      5     no      su_mod 
+    ## sigma^2.3  0.0044  0.0666      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 163) = 3617.6169, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 1:7):
-    ## QM(df = 7) = 819.7381, p-val < .0001
+    ## QM(df = 7) = 8.5776, p-val = 0.2844
     ## 
     ## Model Results:
     ## 
-    ##            estimate      se    zval    pval    ci.lb   ci.ub 
-    ## mod_cmany    0.2016  0.0285  7.0763  <.0001   0.1458  0.2575  *** 
-    ## mod_cmEA     0.0730  0.0315  2.3152  0.0206   0.0112  0.1348    * 
-    ## mod_cmEN     0.0198  0.0330  0.5993  0.5490  -0.0448  0.0843      
-    ## mod_cmN      0.0629  0.0288  2.1822  0.0291   0.0064  0.1194    * 
-    ## mod_cmPA     0.0617  0.0285  2.1633  0.0305   0.0058  0.1176    * 
-    ## mod_cmPN     0.0450  0.0288  1.5642  0.1178  -0.0114  0.1015      
-    ## mod_cmSA     0.0662  0.0285  2.3173  0.0205   0.0102  0.1221    * 
+    ##            estimate      se    zval    pval    ci.lb   ci.ub    ​ 
+    ## mod_cmany    0.2016  0.0724  2.7846  0.0054   0.0597  0.3435  ** 
+    ## mod_cmEA     0.0730  0.0737  0.9912  0.3216  -0.0714  0.2174     
+    ## mod_cmEN     0.0198  0.0743  0.2659  0.7903  -0.1258  0.1653     
+    ## mod_cmN      0.0629  0.0725  0.8673  0.3858  -0.0793  0.2051     
+    ## mod_cmPA     0.0617  0.0724  0.8521  0.3941  -0.0802  0.2037     
+    ## mod_cmPN     0.0450  0.0725  0.6209  0.5347  -0.0971  0.1872     
+    ## mod_cmSA     0.0662  0.0724  0.9134  0.3610  -0.0758  0.2081     
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -1789,37 +1822,38 @@ rc_5
     ##             estim    sqrt  nlvls  fixed      factor 
     ## sigma^2.1  0.0131  0.1143     32     no  control_id 
     ## sigma^2.2  0.0018  0.0420      5     no      su_mod 
+    ## sigma^2.3  0.0044  0.0666      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 163) = 3617.6169, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 2:7):
-    ## QM(df = 6) = 800.4966, p-val < .0001
+    ## QM(df = 6) = 4.5308, p-val = 0.6052
     ## 
     ## Model Results:
     ## 
-    ##           estimate      se      zval    pval    ci.lb    ci.ub 
-    ## intrcpt     0.2016  0.0285    7.0763  <.0001   0.1458   0.2575  *** 
-    ## mod_cmEA   -0.1286  0.0156   -8.2636  <.0001  -0.1591  -0.0981  *** 
-    ## mod_cmEN   -0.1819  0.0182   -9.9658  <.0001  -0.2176  -0.1461  *** 
-    ## mod_cmN    -0.1387  0.0070  -19.9263  <.0001  -0.1523  -0.1251  *** 
-    ## mod_cmPA   -0.1399  0.0054  -25.9118  <.0001  -0.1505  -0.1293  *** 
-    ## mod_cmPN   -0.1566  0.0069  -22.7695  <.0001  -0.1701  -0.1431  *** 
-    ## mod_cmSA   -0.1355  0.0054  -25.0798  <.0001  -0.1461  -0.1249  *** 
+    ##           estimate      se     zval    pval    ci.lb   ci.ub    ​ 
+    ## intrcpt     0.2016  0.0724   2.7846  0.0054   0.0597  0.3435  ** 
+    ## mod_cmEA   -0.1286  0.0954  -1.3480  0.1777  -0.3156  0.0584     
+    ## mod_cmEN   -0.1819  0.0959  -1.8967  0.0579  -0.3698  0.0061   . 
+    ## mod_cmN    -0.1387  0.0944  -1.4694  0.1417  -0.3237  0.0463     
+    ## mod_cmPA   -0.1399  0.0943  -1.4838  0.1379  -0.3247  0.0449     
+    ## mod_cmPN   -0.1566  0.0944  -1.6590  0.0971  -0.3416  0.0284   . 
+    ## mod_cmSA   -0.1355  0.0943  -1.4367  0.1508  -0.3203  0.0493     
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
     ## [[14]]
-    ##                    b        ci.lb     ci.ub
-    ## mod_cmany 0.19893506  0.144755008 0.2519257
-    ## mod_cmEA  0.07287619  0.011201325 0.1339987
-    ## mod_cmEN  0.01974839 -0.044811185 0.0841437
-    ## mod_cmN   0.06283408  0.006406763 0.1188625
-    ## mod_cmPA  0.06163297  0.005800443 0.1170824
-    ## mod_cmPN  0.04500039 -0.011391525 0.1011070
-    ## mod_cmSA  0.06606020  0.010200553 0.1215088
+    ##                    b       ci.lb     ci.ub
+    ## mod_cmany 0.19893506  0.05963706 0.3306332
+    ## mod_cmEA  0.07287618 -0.07123809 0.2140101
+    ## mod_cmEN  0.01974839 -0.12516925 0.1638410
+    ## mod_cmN   0.06283408 -0.07909627 0.2022676
+    ## mod_cmPA  0.06163297 -0.08005873 0.2008833
+    ## mod_cmPN  0.04500039 -0.09680918 0.1850193
+    ## mod_cmSA  0.06606020 -0.07565793 0.2051624
     ## 
     ## [[15]]
     ## 
@@ -1838,7 +1872,7 @@ rc_5
     ## 
     ## Model Results:
     ## 
-    ##                     estimate      se    zval    pval   ci.lb   ci.ub 
+    ##                     estimate      se    zval    pval   ci.lb   ci.ub     ​ 
     ## su_modalcohol         0.0643  0.0171  3.7687  0.0002  0.0309  0.0977  *** 
     ## su_modany             0.1109  0.0353  3.1435  0.0017  0.0418  0.1801   ** 
     ## su_modcigarette       0.1501  0.0172  8.7128  <.0001  0.1163  0.1838  *** 
@@ -1866,7 +1900,7 @@ rc_5
     ## 
     ## Model Results:
     ## 
-    ##                     estimate      se     zval    pval    ci.lb   ci.ub 
+    ##                     estimate      se     zval    pval    ci.lb   ci.ub     ​ 
     ## intrcpt               0.0643  0.0171   3.7687  0.0002   0.0309  0.0977  *** 
     ## su_modany             0.0466  0.0392   1.1898  0.2341  -0.0302  0.1234      
     ## su_modcigarette       0.0858  0.0039  21.8476  <.0001   0.0781  0.0935  *** 
@@ -1892,20 +1926,21 @@ rc_5
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0045  0.0673     29     no  control_id 
-    ## sigma^2.2  0.0040  0.0634      5     no      su_mod 
+    ## sigma^2.1  0.0108  0.1041     29     no  control_id 
+    ## sigma^2.2  0.0041  0.0637      5     no      su_mod 
+    ## sigma^2.3  0.0051  0.0712      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 150) = 4265.3487, p-val < .0001
     ## 
     ## Test of Moderators (coefficient 2):
-    ## QM(df = 1) = 4.7492, p-val = 0.0293
+    ## QM(df = 1) = 0.8762, p-val = 0.3492
     ## 
     ## Model Results:
     ## 
-    ##          estimate      se    zval    pval   ci.lb    ci.ub 
-    ## intrcpt   12.9588  5.8877  2.2010  0.0277  1.4191  24.4985  * 
-    ## gender     0.2592  0.1189  2.1793  0.0293  0.0261   0.4923  * 
+    ##          estimate      se    zval    pval    ci.lb    ci.ub   ​ 
+    ## intrcpt    7.9311  8.3680  0.9478  0.3432  -8.4699  24.3321    
+    ## gender     0.1582  0.1690  0.9361  0.3492  -0.1731   0.4895    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -1913,7 +1948,7 @@ rc_5
     ## 
     ## [[19]]
     ##          r      ci.lb      ci.ub 
-    ## 0.25353496 0.02607696 0.45603299
+    ##  0.1569134 -0.1713572  0.4538241
 
 # Robustness Check 2 substitutes Yoon et al. (2017) with Yoon et al. (2021)
 
@@ -1928,16 +1963,17 @@ rc_6
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0062  0.0787     32     no  control_id 
-    ## sigma^2.2  0.0017  0.0415      5     no      su_mod 
+    ## sigma^2.1  0.0125  0.1116     32     no  control_id 
+    ## sigma^2.2  0.0018  0.0420      5     no      su_mod 
+    ## sigma^2.3  0.0033  0.0575      7     no      mod_cm 
     ## 
     ## Test for Heterogeneity:
     ## Q(df = 169) = 5193.8950, p-val < .0001
     ## 
     ## Model Results:
     ## 
-    ## estimate      se    zval    pval   ci.lb   ci.ub 
-    ##   0.1267  0.0240  5.2824  <.0001  0.0797  0.1737  *** 
+    ## estimate      se    zval    pval   ci.lb   ci.ub   ​ 
+    ##   0.0838  0.0356  2.3553  0.0185  0.0141  0.1535  * 
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -1946,7 +1982,7 @@ rc_6
     ## [[2]]
     ## 
     ##    pred  ci.lb  ci.ub   pi.lb  pi.ub 
-    ##  0.1260 0.0795 0.1719 -0.0539 0.2979 
+    ##  0.0836 0.0141 0.1523 -0.1828 0.3385 
     ## 
     ## 
     ## [[3]]
@@ -1956,28 +1992,29 @@ rc_6
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0069  0.0832     32     no  control_id 
-    ## sigma^2.2  0.0018  0.0420      5     no      su_mod 
+    ## sigma^2.1  0.0137  0.1171     32     no  control_id 
+    ## sigma^2.2  0.0018  0.0422      5     no      su_mod 
+    ## sigma^2.3  0.0033  0.0575      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 168) = 5142.3402, p-val < .0001
     ## 
     ## Test of Moderators (coefficient 2):
-    ## QM(df = 1) = 3.1172, p-val = 0.0775
+    ## QM(df = 1) = 1.6130, p-val = 0.2041
     ## 
     ## Model Results:
     ## 
-    ##          estimate      se    zval    pval    ci.lb   ci.ub 
-    ## intrcpt    0.0863  0.0335  2.5756  0.0100   0.0206  0.1520  * 
-    ## mods       0.8337  0.4722  1.7655  0.0775  -0.0918  1.7593  . 
+    ##          estimate      se    zval    pval    ci.lb   ci.ub   ​ 
+    ## intrcpt    0.0501  0.0446  1.1224  0.2617  -0.0374  0.1376    
+    ## mods       0.6740  0.5307  1.2700  0.2041  -0.3661  1.7141    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
     ## [[4]]
-    ##          b      ci.lb      ci.ub 
-    ## 0.08610768 0.02062929 0.15085055 
+    ##           b       ci.lb       ci.ub 
+    ##  0.05006456 -0.03737670  0.13674500 
     ## 
     ## [[5]]
     ## 
@@ -1986,28 +2023,29 @@ rc_6
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0065  0.0804     32     no  control_id 
-    ## sigma^2.2  0.0018  0.0419      5     no      su_mod 
+    ## sigma^2.1  0.0130  0.1141     32     no  control_id 
+    ## sigma^2.2  0.0018  0.0421      5     no      su_mod 
+    ## sigma^2.3  0.0033  0.0575      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 168) = 5173.2723, p-val < .0001
     ## 
     ## Test of Moderators (coefficient 2):
-    ## QM(df = 1) = 3.0771, p-val = 0.0794
+    ## QM(df = 1) = 1.0849, p-val = 0.2976
     ## 
     ## Model Results:
     ## 
-    ##          estimate      se    zval    pval    ci.lb    ci.ub 
-    ## intrcpt    0.1091  0.0263  4.1507  <.0001   0.0576   0.1606  *** 
-    ## mods       5.9745  3.4059  1.7542  0.0794  -0.7009  12.6500    . 
+    ##          estimate      se    zval    pval    ci.lb    ci.ub   ​ 
+    ## intrcpt    0.0717  0.0376  1.9089  0.0563  -0.0019   0.1454  . 
+    ## mods       3.8190  3.6665  1.0416  0.2976  -3.3672  11.0052    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
     ## [[6]]
-    ##          b      ci.lb      ci.ub 
-    ## 0.10862647 0.05749684 0.15918776 
+    ##            b        ci.lb        ci.ub 
+    ##  0.071617212 -0.001918908  0.144382946 
     ## 
     ## [[7]]
     ## 
@@ -2016,22 +2054,23 @@ rc_6
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0066  0.0813     32     no  control_id 
-    ## sigma^2.2  0.0017  0.0417      5     no      su_mod 
+    ## sigma^2.1  0.0104  0.1022     32     no  control_id 
+    ## sigma^2.2  0.0018  0.0422      5     no      su_mod 
+    ## sigma^2.3  0.0033  0.0577      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 166) = 4218.8825, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 1:4):
-    ## QM(df = 4) = 28.7425, p-val < .0001
+    ## QM(df = 4) = 13.4417, p-val = 0.0093
     ## 
     ## Model Results:
     ## 
-    ##                          estimate      se    zval    pval    ci.lb   ci.ub 
-    ## measure_modboth            0.1363  0.0892  1.5293  0.1262  -0.0384  0.3111      
-    ## measure_modcase records    0.0985  0.0393  2.5042  0.0123   0.0214  0.1756    * 
-    ## measure_modother           0.0738  0.0684  1.0786  0.2808  -0.0603  0.2079      
-    ## measure_modself-report     0.1373  0.0261  5.2634  <.0001   0.0862  0.1885  *** 
+    ##                          estimate      se     zval    pval    ci.lb   ci.ub    ​ 
+    ## measure_modboth            0.1386  0.1114   1.2438  0.2136  -0.0798  0.3570     
+    ## measure_modcase records   -0.0054  0.0502  -0.1079  0.9141  -0.1038  0.0930     
+    ## measure_modother           0.0216  0.0844   0.2560  0.7979  -0.1438  0.1870     
+    ## measure_modself-report     0.1106  0.0365   3.0267  0.0025   0.0390  0.1822  ** 
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -2044,33 +2083,34 @@ rc_6
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0066  0.0813     32     no  control_id 
-    ## sigma^2.2  0.0017  0.0417      5     no      su_mod 
+    ## sigma^2.1  0.0104  0.1022     32     no  control_id 
+    ## sigma^2.2  0.0018  0.0422      5     no      su_mod 
+    ## sigma^2.3  0.0033  0.0577      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 166) = 4218.8825, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 2:4):
-    ## QM(df = 3) = 1.6933, p-val = 0.6384
+    ## QM(df = 3) = 7.5142, p-val = 0.0572
     ## 
     ## Model Results:
     ## 
-    ##                          estimate      se     zval    pval    ci.lb   ci.ub 
-    ## intrcpt                    0.1363  0.0892   1.5293  0.1262  -0.0384  0.3111    
-    ## measure_modcase records   -0.0379  0.0932  -0.4063  0.6845  -0.2205  0.1448    
-    ## measure_modother          -0.0626  0.1068  -0.5857  0.5580  -0.2719  0.1468    
-    ## measure_modself-report     0.0010  0.0895   0.0112  0.9910  -0.1745  0.1765    
+    ##                          estimate      se     zval    pval    ci.lb   ci.ub   ​ 
+    ## intrcpt                    0.1386  0.1114   1.2438  0.2136  -0.0798  0.3570    
+    ## measure_modcase records   -0.1440  0.1145  -1.2573  0.2087  -0.3685  0.0805    
+    ## measure_modother          -0.1170  0.1313  -0.8909  0.3730  -0.3743  0.1404    
+    ## measure_modself-report    -0.0280  0.1103  -0.2538  0.7997  -0.2442  0.1882    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
     ## [[9]]
-    ##                                  b       ci.lb     ci.ub
-    ## measure_modboth         0.13550260 -0.03837864 0.3014192
-    ## measure_modcase records 0.09816420  0.02140017 0.1737776
-    ## measure_modother        0.07365617 -0.06022768 0.2049367
-    ## measure_modself-report  0.13649000  0.08598964 0.1862908
+    ##                                    b       ci.lb      ci.ub
+    ## measure_modboth          0.137704125 -0.07961824 0.34253020
+    ## measure_modcase records -0.005415681 -0.10341333 0.09268611
+    ## measure_modother         0.021605891 -0.14284058 0.18489151
+    ## measure_modself-report   0.110140126  0.03895755 0.18021050
     ## 
     ## [[10]]
     ## 
@@ -2079,23 +2119,24 @@ rc_6
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0074  0.0862     32     no  control_id 
-    ## sigma^2.2  0.0018  0.0421      5     no      su_mod 
+    ## sigma^2.1  0.0116  0.1078     32     no  control_id 
+    ## sigma^2.2  0.0018  0.0422      5     no      su_mod 
+    ## sigma^2.3  0.0033  0.0578      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 165) = 4178.1046, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 1:5):
-    ## QM(df = 5) = 30.5033, p-val < .0001
+    ## QM(df = 5) = 14.0170, p-val = 0.0155
     ## 
     ## Model Results:
     ## 
-    ##                          estimate      se    zval    pval    ci.lb   ci.ub 
-    ## measure_modboth            0.1095  0.0949  1.1532  0.2488  -0.0766  0.2956     
-    ## measure_modcase records    0.0531  0.0475  1.1193  0.2630  -0.0399  0.1462     
-    ## measure_modother           0.0331  0.0747  0.4436  0.6573  -0.1133  0.1796     
-    ## measure_modself-report     0.0943  0.0357  2.6457  0.0082   0.0245  0.1642  ** 
-    ## I(sqrt(vi))                0.8841  0.4812  1.8372  0.0662  -0.0591  1.8274   . 
+    ##                          estimate      se     zval    pval    ci.lb   ci.ub   ​ 
+    ## measure_modboth            0.1186  0.1178   1.0068  0.3140  -0.1123  0.3496    
+    ## measure_modcase records   -0.0378  0.0581  -0.6506  0.5153  -0.1516  0.0761    
+    ## measure_modother          -0.0086  0.0911  -0.0948  0.9245  -0.1871  0.1699    
+    ## measure_modself-report     0.0781  0.0452   1.7288  0.0838  -0.0104  0.1667  . 
+    ## I(sqrt(vi))                0.6439  0.5197   1.2389  0.2154  -0.3747  1.6624    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -2108,29 +2149,24 @@ rc_6
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0069  0.0831     32     no  control_id 
-    ## sigma^2.2  0.0018  0.0420      5     no      su_mod 
+    ## sigma^2.1  0.0110  0.1049     32     no  control_id 
+    ## sigma^2.2  0.0018  0.0422      5     no      su_mod 
+    ## sigma^2.3  0.0033  0.0577      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 165) = 4176.2135, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 1:5):
-    ## QM(df = 5) = 31.0153, p-val < .0001
+    ## QM(df = 5) = 13.9030, p-val = 0.0162
     ## 
     ## Model Results:
     ## 
-    ##                          estimate      se    zval    pval    ci.lb    ci.ub 
-    ## measure_modboth            0.1344  0.0909  1.4783  0.1393  -0.0438   0.3127 
-    ## measure_modcase records    0.0802  0.0412  1.9466  0.0516  -0.0006   0.1610 
-    ## measure_modother           0.0621  0.0699  0.8889  0.3741  -0.0748   0.1991 
-    ## measure_modself-report     0.1185  0.0286  4.1459  <.0001   0.0625   0.1745 
-    ## vi                         6.0133  3.4558  1.7401  0.0818  -0.7598  12.7865 
-    ##  
-    ## measure_modboth 
-    ## measure_modcase records    . 
-    ## measure_modother 
-    ## measure_modself-report   *** 
-    ## vi                         . 
+    ##                          estimate      se     zval    pval    ci.lb    ci.ub   ​ 
+    ## measure_modboth            0.1372  0.1139   1.2044  0.2284  -0.0861   0.3605    
+    ## measure_modcase records   -0.0158  0.0520  -0.3045  0.7608  -0.1178   0.0861    
+    ## measure_modother           0.0145  0.0863   0.1681  0.8665  -0.1547   0.1837    
+    ## measure_modself-report     0.0990  0.0387   2.5592  0.0105   0.0232   0.1748  * 
+    ## vi                         3.4848  3.6255   0.9612  0.3365  -3.6211  10.5906    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -2145,23 +2181,24 @@ rc_6
     ##             estim    sqrt  nlvls  fixed      factor 
     ## sigma^2.1  0.0126  0.1122     32     no  control_id 
     ## sigma^2.2  0.0018  0.0420      5     no      su_mod 
+    ## sigma^2.3  0.0043  0.0659      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 163) = 3589.4858, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 1:7):
-    ## QM(df = 7) = 822.4803, p-val < .0001
+    ## QM(df = 7) = 9.4865, p-val = 0.2196
     ## 
     ## Model Results:
     ## 
-    ##            estimate      se    zval    pval    ci.lb   ci.ub 
-    ## mod_cmany    0.2066  0.0283  7.3078  <.0001   0.1512  0.2621  *** 
-    ## mod_cmEA     0.0905  0.0310  2.9239  0.0035   0.0298  0.1512   ** 
-    ## mod_cmEN     0.0278  0.0327  0.8498  0.3954  -0.0363  0.0919      
-    ## mod_cmN      0.0673  0.0286  2.3547  0.0185   0.0113  0.1233    * 
-    ## mod_cmPA     0.0670  0.0283  2.3682  0.0179   0.0115  0.1224    * 
-    ## mod_cmPN     0.0501  0.0285  1.7553  0.0792  -0.0058  0.1060    . 
-    ## mod_cmSA     0.0709  0.0283  2.5046  0.0123   0.0154  0.1264    * 
+    ##            estimate      se    zval    pval    ci.lb   ci.ub    ​ 
+    ## mod_cmany    0.2066  0.0717  2.8814  0.0040   0.0661  0.3472  ** 
+    ## mod_cmEA     0.0905  0.0728  1.2433  0.2137  -0.0522  0.2333     
+    ## mod_cmEN     0.0278  0.0736  0.3779  0.7055  -0.1164  0.1720     
+    ## mod_cmN      0.0673  0.0718  0.9368  0.3489  -0.0735  0.2081     
+    ## mod_cmPA     0.0670  0.0717  0.9339  0.3504  -0.0736  0.2075     
+    ## mod_cmPN     0.0501  0.0718  0.6976  0.4855  -0.0907  0.1909     
+    ## mod_cmSA     0.0709  0.0717  0.9884  0.3230  -0.0697  0.2115     
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -2176,37 +2213,38 @@ rc_6
     ##             estim    sqrt  nlvls  fixed      factor 
     ## sigma^2.1  0.0126  0.1122     32     no  control_id 
     ## sigma^2.2  0.0018  0.0420      5     no      su_mod 
+    ## sigma^2.3  0.0043  0.0659      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 163) = 3589.4858, p-val < .0001
     ## 
     ## Test of Moderators (coefficients 2:7):
-    ## QM(df = 6) = 802.4197, p-val < .0001
+    ## QM(df = 6) = 4.5646, p-val = 0.6007
     ## 
     ## Model Results:
     ## 
-    ##           estimate      se      zval    pval    ci.lb    ci.ub 
-    ## intrcpt     0.2066  0.0283    7.3078  <.0001   0.1512   0.2621  *** 
-    ## mod_cmEA   -0.1161  0.0148   -7.8198  <.0001  -0.1452  -0.0870  *** 
-    ## mod_cmEN   -0.1788  0.0182   -9.8194  <.0001  -0.2145  -0.1431  *** 
-    ## mod_cmN    -0.1393  0.0069  -20.0778  <.0001  -0.1529  -0.1257  *** 
-    ## mod_cmPA   -0.1397  0.0054  -25.8801  <.0001  -0.1502  -0.1291  *** 
-    ## mod_cmPN   -0.1565  0.0069  -22.7697  <.0001  -0.1700  -0.1431  *** 
-    ## mod_cmSA   -0.1357  0.0054  -25.1467  <.0001  -0.1463  -0.1252  *** 
+    ##           estimate      se     zval    pval    ci.lb   ci.ub    ​ 
+    ## intrcpt     0.2066  0.0717   2.8814  0.0040   0.0661  0.3472  ** 
+    ## mod_cmEA   -0.1161  0.0944  -1.2302  0.2186  -0.3011  0.0689     
+    ## mod_cmEN   -0.1788  0.0950  -1.8831  0.0597  -0.3650  0.0073   . 
+    ## mod_cmN    -0.1393  0.0935  -1.4909  0.1360  -0.3225  0.0438     
+    ## mod_cmPA   -0.1397  0.0934  -1.4959  0.1347  -0.3226  0.0433     
+    ## mod_cmPN   -0.1565  0.0935  -1.6750  0.0939  -0.3397  0.0266   . 
+    ## mod_cmSA   -0.1357  0.0934  -1.4540  0.1459  -0.3187  0.0472     
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
     ## [[14]]
-    ##                    b        ci.lb      ci.ub
-    ## mod_cmany 0.20374856  0.150076924 0.25622282
-    ## mod_cmEA  0.09028999  0.029839259 0.15008264
-    ## mod_cmEN  0.02780038 -0.036309382 0.09168226
-    ## mod_cmN   0.06719332  0.011281767 0.12268603
-    ## mod_cmPA  0.06687760  0.011545098 0.12180178
-    ## mod_cmPN  0.05005828 -0.005842444 0.10564712
-    ## mod_cmSA  0.07077412  0.015415393 0.12570029
+    ##                    b       ci.lb     ci.ub
+    ## mod_cmany 0.20374857  0.06598274 0.3338918
+    ## mod_cmEA  0.09029001 -0.05213662 0.2291168
+    ## mod_cmEN  0.02780041 -0.11588830 0.1703494
+    ## mod_cmN   0.06719334 -0.07336899 0.2051381
+    ## mod_cmPA  0.06687761 -0.07345573 0.2046140
+    ## mod_cmPN  0.05005830 -0.09042023 0.1885837
+    ## mod_cmSA  0.07077413 -0.06957798 0.2083788
     ## 
     ## [[15]]
     ## 
@@ -2225,7 +2263,7 @@ rc_6
     ## 
     ## Model Results:
     ## 
-    ##                     estimate      se    zval    pval   ci.lb   ci.ub 
+    ##                     estimate      se    zval    pval   ci.lb   ci.ub     ​ 
     ## su_modalcohol         0.0656  0.0174  3.7738  0.0002  0.0315  0.0997  *** 
     ## su_modany             0.1145  0.0323  3.5415  0.0004  0.0511  0.1779  *** 
     ## su_modcigarette       0.1517  0.0176  8.6428  <.0001  0.1173  0.1862  *** 
@@ -2253,7 +2291,7 @@ rc_6
     ## 
     ## Model Results:
     ## 
-    ##                     estimate      se     zval    pval    ci.lb   ci.ub 
+    ##                     estimate      se     zval    pval    ci.lb   ci.ub     ​ 
     ## intrcpt               0.0656  0.0174   3.7738  0.0002   0.0315  0.0997  *** 
     ## su_modany             0.0489  0.0367   1.3320  0.1829  -0.0231  0.1209      
     ## su_modcigarette       0.0861  0.0039  21.9025  <.0001   0.0784  0.0938  *** 
@@ -2279,20 +2317,21 @@ rc_6
     ## Variance Components:
     ## 
     ##             estim    sqrt  nlvls  fixed      factor 
-    ## sigma^2.1  0.0045  0.0673     29     no  control_id 
+    ## sigma^2.1  0.0100  0.1002     29     no  control_id 
     ## sigma^2.2  0.0039  0.0623      5     no      su_mod 
+    ## sigma^2.3  0.0032  0.0566      7     no      mod_cm 
     ## 
     ## Test for Residual Heterogeneity:
     ## QE(df = 150) = 4265.6006, p-val < .0001
     ## 
     ## Test of Moderators (coefficient 2):
-    ## QM(df = 1) = 4.8903, p-val = 0.0270
+    ## QM(df = 1) = 1.1479, p-val = 0.2840
     ## 
     ## Model Results:
     ## 
-    ##          estimate      se    zval    pval   ci.lb    ci.ub 
-    ## intrcpt   13.1868  5.9037  2.2336  0.0255  1.6157  24.7580  * 
-    ## gender     0.2637  0.1192  2.2114  0.0270  0.0300   0.4974  * 
+    ##          estimate      se    zval    pval    ci.lb    ci.ub   ​ 
+    ## intrcpt    8.8129  8.1355  1.0833  0.2787  -7.1323  24.7582    
+    ## gender     0.1761  0.1643  1.0714  0.2840  -0.1460   0.4981    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -2300,4 +2339,4 @@ rc_6
     ## 
     ## [[19]]
     ##          r      ci.lb      ci.ub 
-    ## 0.25776093 0.02997526 0.46009576
+    ##  0.1742543 -0.1449832  0.4606325
