@@ -1,30 +1,40 @@
 ################################################################################
 
-# CMSU - data wrangling
+# CMSU - Data wrangling
 
 ################################################################################
+
+# Load packages ----------------------------------------------------------------
 
 library(metafor)
 library(dplyr)
 
+# Load data --------------------------------------------------------------------
+
 dat <- read.csv("cmsu_raw-data.csv")
+
+## Remove studies not included in main analysis
+
 dat <- dat %>% 
   filter(include == 1)
 
-# calculating standardized mean differences 
+# Effect size calculation ------------------------------------------------------
+
+# Calculating standardized mean differences 
 
 smd_dat <- dat %>% 
   filter(!is.na(mean_control)) 
 
-## remove Guo et al. to add manually later
+## Remove Guo et al. to add manually later
 
-# Likely because of the serious unbalance in maltreated vs. non-maltreated sample
-# sizes, the Hedges's g correction for small sample bias inflates the size of the
-# effect size estimate compared to the uncorrected Cohen's d. This represents an
-# interesting edge case where g is substantially less conservative than d. For
-# this reason, we calculated uncorrected d values and manually converted them
-# to r for the meta-analysis. This approach is more conservative than using
-# Hedges's g. But we do use the g correction for all other SMD calculations.
+# Likely because of the serious unbalance in maltreated vs. non-maltreated
+# sample sizes, the Hedges's g correction for small sample bias inflates the
+# size of the effect size estimate compared to the uncorrected Cohen's d. This
+# represents an interesting edge case where g is substantially less conservative
+# than d. For this reason, we calculated uncorrected d values and manually
+# converted them to r for the meta-analysis. This approach is more conservative
+# than using Hedges's g. But we do use the g correction for all other SMD
+# calculations.
 
 smd_dat <- dat %>% 
   filter(guo_include == 1)
@@ -56,7 +66,7 @@ lor_es <- escalc(
   data = lor_dat
 )
 
-# converting OR into lors 
+# Converting OR into lor
 
 or_dat <- dat %>% 
   filter(effectsize_metric == "OR")
@@ -67,8 +77,7 @@ or_dat <- or_dat %>%
     effectsize_metric = "LOR"
   )
 
-
-# converting Log OR into r
+# Converting Log OR into r
 
 or_es <- or_dat %>% 
   mutate(
@@ -99,9 +108,13 @@ r_es <- r_dat %>%
     yi = ri
   )
 
-# Bind data
+# Prepare data for analysis ----------------------------------------------------
+
+## Bind data from different effect sizes
 
 es_dat <- bind_rows(r_es, lor_es, or_es, smd_es)
+
+## Fisher r to z conversion
 
 meta <- escalc(ri = yi, ni = ni, data = es_dat, measure = "ZCOR")
 

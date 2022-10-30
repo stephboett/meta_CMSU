@@ -4,18 +4,18 @@
 
 ################################################################################
 
-# additional library packages
+# Load packages ----------------------------------------------------------------
 
 library(tidyverse)
 library(ggplot2)
 library(cowplot)
 library(psych)
 
-# the analysis ----------------------------------------------------------------- 
+# Main analysis ---------------------------------------------------------------- 
 
 res <- rma.mv(yi, vi, 
            random = list(~ 1 | control_id, ~ 1 | su_mod, ~ 1 | mod_cm),
-             data = meta)
+           data = meta)
 
 ### default estimator is REML, I want to compare results to HS and HE 
 
@@ -26,25 +26,25 @@ result3 <- rma(method = "HE", yi, vi, data = meta)
 
 res_r <- predict(res, transf = transf.ztor)
 
-# inspecting the data ----------------------------------------------------------
+# Bias Corrections -------------------------------------------------------------
 
 ## checking for bias with the precision-effect estimate with standard error (PEESE)
 
-PEESE = rma.mv(yi, vi, mods = vi,
-                    random = list(~ 1 | control_id, 
-                                  ~ 1 | su_mod, 
-                                  ~ 1 | mod_cm), 
-                    data = meta)
+PEESE <-  rma.mv(yi, vi, mods = ~ vi,
+                     random = list(~ 1 | control_id, 
+                                   ~ 1 | su_mod, 
+                                   ~ 1 | mod_cm), 
+                     data = meta)
 
 PEESE_r <- fisherz2r(c(b = PEESE$beta[1], ci.lb = PEESE$ci.lb[1], ci.ub = PEESE$ci.ub[1]))
 
 # precision effect test
 
-PET = rma.mv(yi, vi, mods = I(sqrt(vi)),
-             random = list(~ 1 | control_id, 
-                           ~ 1 | su_mod,
-                           ~ 1 | mod_cm), 
-             data = meta)
+PET <- rma.mv(yi, vi, mods = ~ I(sqrt(vi)),
+              random = list(~ 1 | control_id, 
+                            ~ 1 | su_mod,
+                            ~ 1 | mod_cm), 
+              data = meta)
 
 PET_r <- fisherz2r(c(b = PET$beta[1], ci.lb = PET$ci.lb[1], ci.ub = PET$ci.ub[1]))
 

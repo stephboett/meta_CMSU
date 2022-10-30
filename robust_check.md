@@ -2,7 +2,7 @@ Child Maltreatment and Adolescent Substance Use – Robustness Check
 Report
 ================
 Stephanie Boettiger & Timothy J. Luke
-2022-10-25
+2022-10-30
 
 # Robustness Check 1 substitutes Yoon et al. (2017) with Dubowitz et al. (2016)
 
@@ -10,7 +10,7 @@ Stephanie Boettiger & Timothy J. Luke
 rc_1
 ```
 
-    ## [[1]]
+    ## $res
     ## 
     ## Multivariate Meta-Analysis Model (k = 166; method: REML)
     ## 
@@ -33,13 +33,13 @@ rc_1
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[2]]
+    ## $res_r
     ## 
     ##    pred  ci.lb  ci.ub   pi.lb  pi.ub 
     ##  0.0802 0.0095 0.1501 -0.1904 0.3395 
     ## 
     ## 
-    ## [[3]]
+    ## $PET
     ## 
     ## Multivariate Meta-Analysis Model (k = 166; method: REML)
     ## 
@@ -58,19 +58,19 @@ rc_1
     ## 
     ## Model Results:
     ## 
-    ##          estimate      se    zval    pval    ci.lb   ci.ub   ​ 
-    ## intrcpt    0.0439  0.0455  0.9639  0.3351  -0.0454  0.1332    
-    ## mods       0.7224  0.5356  1.3488  0.1774  -0.3273  1.7721    
+    ##              estimate      se    zval    pval    ci.lb   ci.ub   ​ 
+    ## intrcpt        0.0439  0.0455  0.9639  0.3351  -0.0454  0.1332    
+    ## I(sqrt(vi))    0.7224  0.5356  1.3488  0.1774  -0.3273  1.7721    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[4]]
+    ## $PET_r
     ##           b       ci.lb       ci.ub 
     ##  0.04387026 -0.04533221  0.13237867 
     ## 
-    ## [[5]]
+    ## $PEESE
     ## 
     ## Multivariate Meta-Analysis Model (k = 166; method: REML)
     ## 
@@ -91,17 +91,17 @@ rc_1
     ## 
     ##          estimate      se    zval    pval    ci.lb    ci.ub   ​ 
     ## intrcpt    0.0672  0.0383  1.7541  0.0794  -0.0079   0.1423  . 
-    ## mods       4.0712  3.6926  1.1025  0.2702  -3.1661  11.3085    
+    ## vi         4.0712  3.6926  1.1025  0.2702  -3.1661  11.3085    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[6]]
+    ## $PEESE_r
     ##            b        ci.lb        ci.ub 
     ##  0.067120646 -0.007890091  0.141380238 
     ## 
-    ## [[7]]
+    ## $cm_mod
     ## 
     ## Multivariate Meta-Analysis Model (k = 166; method: REML)
     ## 
@@ -129,7 +129,7 @@ rc_1
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[8]]
+    ## $cm_mod2
     ## 
     ## Multivariate Meta-Analysis Model (k = 166; method: REML)
     ## 
@@ -157,13 +157,13 @@ rc_1
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[9]]
+    ## $cm_r
     ##                                    b       ci.lb      ci.ub
     ## measure_modcase records -0.007184429 -0.10554110 0.09131146
     ## measure_modother         0.019631537 -0.14548439 0.18368351
     ## measure_modself-report   0.109271561  0.03777689 0.17965326
     ## 
-    ## [[10]]
+    ## $cm_pet
     ## 
     ## Multivariate Meta-Analysis Model (k = 166; method: REML)
     ## 
@@ -192,7 +192,7 @@ rc_1
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[11]]
+    ## $cm_peese
     ## 
     ## Multivariate Meta-Analysis Model (k = 166; method: REML)
     ## 
@@ -221,7 +221,7 @@ rc_1
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[12]]
+    ## $type_mod
     ## 
     ## Multivariate Meta-Analysis Model (k = 166; method: REML)
     ## 
@@ -252,7 +252,7 @@ rc_1
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[13]]
+    ## $type_mod
     ## 
     ## Multivariate Meta-Analysis Model (k = 166; method: REML)
     ## 
@@ -283,7 +283,7 @@ rc_1
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[14]]
+    ## $type_r
     ##                    b        ci.lb      ci.ub
     ## mod_cmany 0.20262887  0.147721925 0.25629063
     ## mod_cmEA  0.07644592  0.014111791 0.13818816
@@ -293,7 +293,7 @@ rc_1
     ## mod_cmPN  0.04870996 -0.008448534 0.10555119
     ## mod_cmSA  0.06977957  0.013151036 0.12596192
     ## 
-    ## [[15]]
+    ## $sub_mod
     ## 
     ## Multivariate Meta-Analysis Model (k = 166; method: REML)
     ## 
@@ -321,7 +321,7 @@ rc_1
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[16]]
+    ## $sub_mod2
     ## 
     ## Multivariate Meta-Analysis Model (k = 166; method: REML)
     ## 
@@ -349,7 +349,7 @@ rc_1
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[17]]
+    ## $sub_r
     ##                             b      ci.lb     ci.ub
     ## su_modalcohol      0.06538209 0.03078885 0.0998189
     ## su_modany          0.11068474 0.04095394 0.1793426
@@ -357,7 +357,7 @@ rc_1
     ## su_modillicit drug 0.13178535 0.09719085 0.1660618
     ## su_modmarijuana    0.16795127 0.13351816 0.2019794
     ## 
-    ## [[18]]
+    ## $gender_m
     ## 
     ## Multivariate Meta-Analysis Model (k = 148; method: REML)
     ## 
@@ -384,7 +384,7 @@ rc_1
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[19]]
+    ## $gender_
     ##          r      ci.lb      ci.ub 
     ##  0.1713355 -0.1588443  0.4670458
 
@@ -394,7 +394,7 @@ rc_1
 rc_2
 ```
 
-    ## [[1]]
+    ## $res
     ## 
     ## Multivariate Meta-Analysis Model (k = 169; method: REML)
     ## 
@@ -417,13 +417,13 @@ rc_2
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[2]]
+    ## $res_r
     ## 
     ##    pred  ci.lb  ci.ub   pi.lb  pi.ub 
     ##  0.0786 0.0087 0.1477 -0.1890 0.3353 
     ## 
     ## 
-    ## [[3]]
+    ## $PET
     ## 
     ## Multivariate Meta-Analysis Model (k = 169; method: REML)
     ## 
@@ -442,19 +442,19 @@ rc_2
     ## 
     ## Model Results:
     ## 
-    ##          estimate      se    zval    pval    ci.lb   ci.ub   ​ 
-    ## intrcpt    0.0433  0.0452  0.9589  0.3376  -0.0452  0.1318    
-    ## mods       0.6980  0.5326  1.3104  0.1900  -0.3460  1.7420    
+    ##              estimate      se    zval    pval    ci.lb   ci.ub   ​ 
+    ## intrcpt        0.0433  0.0452  0.9589  0.3376  -0.0452  0.1318    
+    ## I(sqrt(vi))    0.6980  0.5326  1.3104  0.1900  -0.3460  1.7420    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[4]]
+    ## $PET_r
     ##           b       ci.lb       ci.ub 
     ##  0.04326923 -0.04517327  0.13103871 
     ## 
-    ## [[5]]
+    ## $PEESE
     ## 
     ## Multivariate Meta-Analysis Model (k = 169; method: REML)
     ## 
@@ -475,17 +475,17 @@ rc_2
     ## 
     ##          estimate      se    zval    pval    ci.lb    ci.ub   ​ 
     ## intrcpt    0.0658  0.0379  1.7357  0.0826  -0.0085   0.1400  . 
-    ## mods       4.0060  3.6816  1.0881  0.2765  -3.2098  11.2217    
+    ## vi         4.0060  3.6816  1.0881  0.2765  -3.2098  11.2217    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[6]]
+    ## $PEESE_r
     ##            b        ci.lb        ci.ub 
     ##  0.065670263 -0.008498191  0.139120119 
     ## 
-    ## [[7]]
+    ## $cm_mod
     ## 
     ## Multivariate Meta-Analysis Model (k = 169; method: REML)
     ## 
@@ -513,7 +513,7 @@ rc_2
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[8]]
+    ## $cm_mod2
     ## 
     ## Multivariate Meta-Analysis Model (k = 169; method: REML)
     ## 
@@ -541,13 +541,13 @@ rc_2
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[9]]
+    ## $cm_r
     ##                                    b       ci.lb      ci.ub
     ## measure_modcase records -0.002839422 -0.09612313 0.09049373
     ## measure_modother         0.020233140 -0.14278423 0.18218175
     ## measure_modself-report   0.109573862  0.03861991 0.17942842
     ## 
-    ## [[10]]
+    ## $cm_pet
     ## 
     ## Multivariate Meta-Analysis Model (k = 169; method: REML)
     ## 
@@ -576,7 +576,7 @@ rc_2
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[11]]
+    ## $cm_peese
     ## 
     ## Multivariate Meta-Analysis Model (k = 169; method: REML)
     ## 
@@ -605,7 +605,7 @@ rc_2
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[12]]
+    ## $type_mod
     ## 
     ## Multivariate Meta-Analysis Model (k = 169; method: REML)
     ## 
@@ -636,7 +636,7 @@ rc_2
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[13]]
+    ## $type_mod
     ## 
     ## Multivariate Meta-Analysis Model (k = 169; method: REML)
     ## 
@@ -667,7 +667,7 @@ rc_2
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[14]]
+    ## $type_r
     ##                    b        ci.lb      ci.ub
     ## mod_cmany 0.20103171  0.147118685 0.25375378
     ## mod_cmEA  0.07494495  0.013546663 0.13578021
@@ -677,7 +677,7 @@ rc_2
     ## mod_cmPN  0.04704994 -0.009037538 0.10284229
     ## mod_cmSA  0.06813144  0.012566704 0.12327670
     ## 
-    ## [[15]]
+    ## $sub_mod
     ## 
     ## Multivariate Meta-Analysis Model (k = 169; method: REML)
     ## 
@@ -705,7 +705,7 @@ rc_2
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[16]]
+    ## $sub_mod2
     ## 
     ## Multivariate Meta-Analysis Model (k = 169; method: REML)
     ## 
@@ -733,7 +733,7 @@ rc_2
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[17]]
+    ## $sub_r
     ##                             b      ci.lb      ci.ub
     ## su_modalcohol      0.06095638 0.02655169 0.09521682
     ## su_modany          0.11087909 0.04026934 0.18038692
@@ -741,7 +741,7 @@ rc_2
     ## su_modillicit drug 0.12724732 0.09280168 0.16138873
     ## su_modmarijuana    0.16319123 0.12892161 0.19707153
     ## 
-    ## [[18]]
+    ## $gender_m
     ## 
     ## Multivariate Meta-Analysis Model (k = 151; method: REML)
     ## 
@@ -768,7 +768,7 @@ rc_2
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[19]]
+    ## $gender_
     ##          r      ci.lb      ci.ub 
     ##  0.1671456 -0.1711142  0.4701570
 
@@ -778,7 +778,7 @@ rc_2
 rc_3
 ```
 
-    ## [[1]]
+    ## $res
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -801,13 +801,13 @@ rc_3
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[2]]
+    ## $res_r
     ## 
     ##    pred  ci.lb  ci.ub   pi.lb  pi.ub 
     ##  0.0753 0.0056 0.1443 -0.1936 0.3337 
     ## 
     ## 
-    ## [[3]]
+    ## $PET
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -826,19 +826,19 @@ rc_3
     ## 
     ## Model Results:
     ## 
-    ##          estimate      se    zval    pval    ci.lb   ci.ub   ​ 
-    ## intrcpt    0.0424  0.0452  0.9391  0.3477  -0.0461  0.1309    
-    ## mods       0.6447  0.5317  1.2125  0.2253  -0.3974  1.6868    
+    ##              estimate      se    zval    pval    ci.lb   ci.ub   ​ 
+    ## intrcpt        0.0424  0.0452  0.9391  0.3477  -0.0461  0.1309    
+    ## I(sqrt(vi))    0.6447  0.5317  1.2125  0.2253  -0.3974  1.6868    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[4]]
+    ## $PET_r
     ##           b       ci.lb       ci.ub 
     ##  0.04238115 -0.04606266  0.13016567 
     ## 
-    ## [[5]]
+    ## $PEESE
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -859,17 +859,17 @@ rc_3
     ## 
     ##          estimate      se    zval    pval    ci.lb    ci.ub   ​ 
     ## intrcpt    0.0632  0.0378  1.6692  0.0951  -0.0110   0.1373  . 
-    ## mods       3.7392  3.6794  1.0162  0.3095  -3.4724  10.9508    
+    ## vi         3.7392  3.6794  1.0162  0.3095  -3.4724  10.9508    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[6]]
+    ## $PEESE_r
     ##           b       ci.lb       ci.ub 
     ##  0.06308766 -0.01100492  0.13649127 
     ## 
-    ## [[7]]
+    ## $cm_mod
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -897,7 +897,7 @@ rc_3
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[8]]
+    ## $cm_mod2
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -925,13 +925,13 @@ rc_3
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[9]]
+    ## $cm_r
     ##                                   b       ci.lb      ci.ub
     ## measure_modcase records -0.00663054 -0.09691664 0.08376379
     ## measure_modother         0.02003052 -0.14257798 0.18158618
     ## measure_modself-report   0.10948949  0.03860965 0.17927306
     ## 
-    ## [[10]]
+    ## $cm_pet
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -960,7 +960,7 @@ rc_3
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[11]]
+    ## $cm_peese
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -994,7 +994,7 @@ rc_3
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[12]]
+    ## $type_mod
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -1025,7 +1025,7 @@ rc_3
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[13]]
+    ## $type_mod
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -1056,7 +1056,7 @@ rc_3
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[14]]
+    ## $type_r
     ##                    b        ci.lb      ci.ub
     ## mod_cmany 0.19764052  0.143901362 0.25021744
     ## mod_cmEA  0.07167029  0.010371404 0.13243253
@@ -1066,7 +1066,7 @@ rc_3
     ## mod_cmPN  0.04372167 -0.012229118 0.09939952
     ## mod_cmSA  0.06477394  0.009359954 0.11979131
     ## 
-    ## [[15]]
+    ## $sub_mod
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -1094,7 +1094,7 @@ rc_3
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[16]]
+    ## $sub_mod2
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -1122,7 +1122,7 @@ rc_3
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[17]]
+    ## $sub_r
     ##                             b      ci.lb      ci.ub
     ## su_modalcohol      0.06511168 0.03210377 0.09797771
     ## su_modany          0.11051895 0.04153689 0.17845238
@@ -1130,7 +1130,7 @@ rc_3
     ## su_modillicit drug 0.13134381 0.09826798 0.16412977
     ## su_modmarijuana    0.16720370 0.13433862 0.19970134
     ## 
-    ## [[18]]
+    ## $gender_m
     ## 
     ## Multivariate Meta-Analysis Model (k = 152; method: REML)
     ## 
@@ -1157,7 +1157,7 @@ rc_3
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[19]]
+    ## $gender_
     ##          r      ci.lb      ci.ub 
     ##  0.1755848 -0.1480831  0.4652781
 
@@ -1167,7 +1167,7 @@ rc_3
 rc_4
 ```
 
-    ## [[1]]
+    ## $res
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -1190,13 +1190,13 @@ rc_4
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[2]]
+    ## $res_r
     ## 
     ##    pred  ci.lb  ci.ub   pi.lb  pi.ub 
     ##  0.0858 0.0171 0.1537 -0.1792 0.3392 
     ## 
     ## 
-    ## [[3]]
+    ## $PET
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -1215,19 +1215,19 @@ rc_4
     ## 
     ## Model Results:
     ## 
-    ##          estimate      se    zval    pval    ci.lb   ci.ub   ​ 
-    ## intrcpt    0.0530  0.0442  1.2004  0.2300  -0.0336  0.1396    
-    ## mods       0.6646  0.5296  1.2548  0.2096  -0.3735  1.7026    
+    ##              estimate      se    zval    pval    ci.lb   ci.ub   ​ 
+    ## intrcpt        0.0530  0.0442  1.2004  0.2300  -0.0336  0.1396    
+    ## I(sqrt(vi))    0.6646  0.5296  1.2548  0.2096  -0.3735  1.7026    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[4]]
+    ## $PET_r
     ##           b       ci.lb       ci.ub 
     ##  0.05298286 -0.03354549  0.13872285 
     ## 
-    ## [[5]]
+    ## $PEESE
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -1248,17 +1248,17 @@ rc_4
     ## 
     ##          estimate      se    zval    pval    ci.lb    ci.ub   ​ 
     ## intrcpt    0.0745  0.0371  2.0055  0.0449   0.0017   0.1473  * 
-    ## mods       3.7306  3.6583  1.0197  0.3079  -3.4397  10.9008    
+    ## vi         3.7306  3.6583  1.0197  0.3079  -3.4397  10.9008    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[6]]
+    ## $PEESE_r
     ##          b      ci.lb      ci.ub 
     ## 0.07433436 0.00169238 0.14619595 
     ## 
-    ## [[7]]
+    ## $cm_mod
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -1287,7 +1287,7 @@ rc_4
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[8]]
+    ## $cm_mod2
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -1316,14 +1316,14 @@ rc_4
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[9]]
+    ## $cm_r
     ##                                    b       ci.lb      ci.ub
     ## measure_modboth          0.147756735 -0.01664052 0.30437538
     ## measure_modcase records -0.005073106 -0.10229778 0.09224757
     ## measure_modother         0.021266074 -0.14167480 0.18308500
     ## measure_modself-report   0.110263355  0.03970729 0.17972533
     ## 
-    ## [[10]]
+    ## $cm_pet
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -1353,7 +1353,7 @@ rc_4
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[11]]
+    ## $cm_peese
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -1389,7 +1389,7 @@ rc_4
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[12]]
+    ## $type_mod
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -1420,7 +1420,7 @@ rc_4
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[13]]
+    ## $type_mod
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -1451,7 +1451,7 @@ rc_4
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[14]]
+    ## $type_r
     ##                    b         ci.lb      ci.ub
     ## mod_cmany 0.20532677  0.1522288245 0.25724287
     ## mod_cmEA  0.08200618  0.0212684152 0.14214085
@@ -1461,7 +1461,7 @@ rc_4
     ## mod_cmPN  0.05492578 -0.0004351262 0.10995103
     ## mod_cmSA  0.07517010  0.0203547760 0.12953487
     ## 
-    ## [[15]]
+    ## $sub_mod
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -1489,7 +1489,7 @@ rc_4
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[16]]
+    ## $sub_mod2
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -1517,7 +1517,7 @@ rc_4
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[17]]
+    ## $sub_r
     ##                             b      ci.lb     ci.ub
     ## su_modalcohol      0.06525852 0.03010146 0.1002543
     ## su_modany          0.13568739 0.07502188 0.1953522
@@ -1525,7 +1525,7 @@ rc_4
     ## su_modillicit drug 0.13164629 0.09649858 0.1664661
     ## su_modmarijuana    0.16783867 0.13286114 0.2023987
     ## 
-    ## [[18]]
+    ## $gender_m
     ## 
     ## Multivariate Meta-Analysis Model (k = 152; method: REML)
     ## 
@@ -1552,7 +1552,7 @@ rc_4
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[19]]
+    ## $gender_
     ##          r      ci.lb      ci.ub 
     ##  0.1733650 -0.1485610  0.4620671
 
@@ -1562,7 +1562,7 @@ rc_4
 rc_5
 ```
 
-    ## [[1]]
+    ## $res
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -1585,13 +1585,13 @@ rc_5
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[2]]
+    ## $res_r
     ## 
     ##    pred  ci.lb  ci.ub   pi.lb  pi.ub 
     ##  0.0766 0.0065 0.1459 -0.1931 0.3355 
     ## 
     ## 
-    ## [[3]]
+    ## $PET
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -1610,19 +1610,19 @@ rc_5
     ## 
     ## Model Results:
     ## 
-    ##          estimate      se    zval    pval    ci.lb   ci.ub   ​ 
-    ## intrcpt    0.0406  0.0452  0.8979  0.3692  -0.0480  0.1293    
-    ## mods       0.7138  0.5349  1.3344  0.1821  -0.3346  1.7622    
+    ##              estimate      se    zval    pval    ci.lb   ci.ub   ​ 
+    ## intrcpt        0.0406  0.0452  0.8979  0.3692  -0.0480  0.1293    
+    ## I(sqrt(vi))    0.7138  0.5349  1.3344  0.1821  -0.3346  1.7622    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[4]]
+    ## $PET_r
     ##           b       ci.lb       ci.ub 
     ##  0.04059815 -0.04800767  0.12857001 
     ## 
-    ## [[5]]
+    ## $PEESE
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -1643,17 +1643,17 @@ rc_5
     ## 
     ##          estimate      se    zval    pval    ci.lb    ci.ub   ​ 
     ## intrcpt    0.0635  0.0380  1.6733  0.0943  -0.0109   0.1379  . 
-    ## mods       4.0982  3.6898  1.1107  0.2667  -3.1337  11.3300    
+    ## vi         4.0982  3.6898  1.1107  0.2667  -3.1337  11.3300    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[6]]
+    ## $PEESE_r
     ##           b       ci.lb       ci.ub 
     ##  0.06343912 -0.01088151  0.13706269 
     ## 
-    ## [[7]]
+    ## $cm_mod
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -1681,7 +1681,7 @@ rc_5
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[8]]
+    ## $cm_mod2
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -1709,13 +1709,13 @@ rc_5
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[9]]
+    ## $cm_r
     ##                                   b       ci.lb      ci.ub
     ## measure_modcase records -0.01042162 -0.10335187 0.08268901
     ## measure_modother         0.01999323 -0.14250283 0.18143984
     ## measure_modself-report   0.10929136  0.03847817 0.17901234
     ## 
-    ## [[10]]
+    ## $cm_pet
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -1744,7 +1744,7 @@ rc_5
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[11]]
+    ## $cm_peese
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -1773,7 +1773,7 @@ rc_5
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[12]]
+    ## $type_mod
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -1804,7 +1804,7 @@ rc_5
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[13]]
+    ## $type_mod
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -1835,7 +1835,7 @@ rc_5
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[14]]
+    ## $type_r
     ##                    b        ci.lb     ci.ub
     ## mod_cmany 0.19893506  0.144755008 0.2519257
     ## mod_cmEA  0.07287619  0.011201325 0.1339987
@@ -1845,7 +1845,7 @@ rc_5
     ## mod_cmPN  0.04500039 -0.011391525 0.1011070
     ## mod_cmSA  0.06606020  0.010200553 0.1215088
     ## 
-    ## [[15]]
+    ## $sub_mod
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -1873,7 +1873,7 @@ rc_5
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[16]]
+    ## $sub_mod2
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -1901,7 +1901,7 @@ rc_5
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[17]]
+    ## $sub_r
     ##                            b      ci.lb      ci.ub
     ## su_modalcohol      0.0641963 0.03084297 0.09740683
     ## su_modany          0.1104622 0.04173634 0.17814759
@@ -1909,7 +1909,7 @@ rc_5
     ## su_modillicit drug 0.1307635 0.09738961 0.16384363
     ## su_modmarijuana    0.1658145 0.13257701 0.19867949
     ## 
-    ## [[18]]
+    ## $gender_m
     ## 
     ## Multivariate Meta-Analysis Model (k = 152; method: REML)
     ## 
@@ -1936,7 +1936,7 @@ rc_5
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[19]]
+    ## $gender_
     ##          r      ci.lb      ci.ub 
     ##  0.1569134 -0.1713572  0.4538241
 
@@ -1946,7 +1946,7 @@ rc_5
 rc_6
 ```
 
-    ## [[1]]
+    ## $res
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -1969,13 +1969,13 @@ rc_6
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[2]]
+    ## $res_r
     ## 
     ##    pred  ci.lb  ci.ub   pi.lb  pi.ub 
     ##  0.0836 0.0141 0.1523 -0.1828 0.3385 
     ## 
     ## 
-    ## [[3]]
+    ## $PET
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -1994,19 +1994,19 @@ rc_6
     ## 
     ## Model Results:
     ## 
-    ##          estimate      se    zval    pval    ci.lb   ci.ub   ​ 
-    ## intrcpt    0.0501  0.0446  1.1224  0.2617  -0.0374  0.1376    
-    ## mods       0.6740  0.5307  1.2700  0.2041  -0.3661  1.7141    
+    ##              estimate      se    zval    pval    ci.lb   ci.ub   ​ 
+    ## intrcpt        0.0501  0.0446  1.1224  0.2617  -0.0374  0.1376    
+    ## I(sqrt(vi))    0.6740  0.5307  1.2700  0.2041  -0.3661  1.7141    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[4]]
+    ## $PET_r
     ##           b       ci.lb       ci.ub 
     ##  0.05006456 -0.03737670  0.13674500 
     ## 
-    ## [[5]]
+    ## $PEESE
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -2027,17 +2027,17 @@ rc_6
     ## 
     ##          estimate      se    zval    pval    ci.lb    ci.ub   ​ 
     ## intrcpt    0.0717  0.0376  1.9089  0.0563  -0.0019   0.1454  . 
-    ## mods       3.8190  3.6665  1.0416  0.2976  -3.3672  11.0052    
+    ## vi         3.8190  3.6665  1.0416  0.2976  -3.3672  11.0052    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[6]]
+    ## $PEESE_r
     ##            b        ci.lb        ci.ub 
     ##  0.071617212 -0.001918908  0.144382946 
     ## 
-    ## [[7]]
+    ## $cm_mod
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -2066,7 +2066,7 @@ rc_6
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[8]]
+    ## $cm_mod2
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -2095,14 +2095,14 @@ rc_6
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[9]]
+    ## $cm_r
     ##                                    b       ci.lb      ci.ub
     ## measure_modboth          0.137704125 -0.07961824 0.34253020
     ## measure_modcase records -0.005415681 -0.10341333 0.09268611
     ## measure_modother         0.021605891 -0.14284058 0.18489151
     ## measure_modself-report   0.110140126  0.03895755 0.18021050
     ## 
-    ## [[10]]
+    ## $cm_pet
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -2132,7 +2132,7 @@ rc_6
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[11]]
+    ## $cm_peese
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -2162,7 +2162,7 @@ rc_6
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[12]]
+    ## $type_mod
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -2193,7 +2193,7 @@ rc_6
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[13]]
+    ## $type_mod
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -2224,7 +2224,7 @@ rc_6
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[14]]
+    ## $type_r
     ##                    b        ci.lb      ci.ub
     ## mod_cmany 0.20374856  0.150076924 0.25622282
     ## mod_cmEA  0.09028999  0.029839259 0.15008264
@@ -2234,7 +2234,7 @@ rc_6
     ## mod_cmPN  0.05005828 -0.005842444 0.10564712
     ## mod_cmSA  0.07077412  0.015415393 0.12570029
     ## 
-    ## [[15]]
+    ## $sub_mod
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -2262,7 +2262,7 @@ rc_6
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[16]]
+    ## $sub_mod2
     ## 
     ## Multivariate Meta-Analysis Model (k = 170; method: REML)
     ## 
@@ -2290,7 +2290,7 @@ rc_6
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[17]]
+    ## $sub_r
     ##                             b      ci.lb      ci.ub
     ## su_modalcohol      0.06551948 0.03152600 0.09936157
     ## su_modany          0.11401903 0.05109565 0.17604075
@@ -2298,7 +2298,7 @@ rc_6
     ## su_modillicit drug 0.13193998 0.09793366 0.16563854
     ## su_modmarijuana    0.16807646 0.13422196 0.20153907
     ## 
-    ## [[18]]
+    ## $gender_m
     ## 
     ## Multivariate Meta-Analysis Model (k = 152; method: REML)
     ## 
@@ -2325,6 +2325,6 @@ rc_6
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## 
-    ## [[19]]
+    ## $gender_
     ##          r      ci.lb      ci.ub 
     ##  0.1742543 -0.1449832  0.4606325

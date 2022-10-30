@@ -101,7 +101,7 @@ robustness <- function(robust_var, data) {
   
   #### Analysis 
   
-  # the analysis ----------------------------------------------------------------- 
+  # Main analysis -------------------------------------------------------------- 
   
   res <- rma.mv(yi, vi, 
                 random = list(~ 1 | control_id, ~ 1 | su_mod, ~ 1 | mod_cm),
@@ -111,25 +111,25 @@ robustness <- function(robust_var, data) {
   
   res_r <- predict(res, transf = transf.ztor)
   
-  # inspecting the data ----------------------------------------------------------
+  # Bias correction ------------------------------------------------------------
   
   ## checking for bias with the precision-effect estimate with standard error (PEESE)
   
-  PEESE = rma.mv(yi, vi, mods = vi,
-                 random = list(~ 1 | control_id, 
-                               ~ 1 | su_mod,
-                               ~ 1 | mod_cm), 
-                 data = meta)
+  PEESE <-  rma.mv(yi, vi, mods = ~ vi,
+                   random = list(~ 1 | control_id, 
+                                 ~ 1 | su_mod,
+                                 ~ 1 | mod_cm), 
+                   data = meta)
   
   PEESE_r <- fisherz2r(c(b = PEESE$beta[1], ci.lb = PEESE$ci.lb[1], ci.ub = PEESE$ci.ub[1]))
   
   # precision effect test
   
-  PET = rma.mv(yi, vi, mods = I(sqrt(vi)),
-               random = list(~ 1 | control_id, 
-                             ~ 1 | su_mod,
-                             ~ 1 | mod_cm), 
-               data = meta)
+  PET <-  rma.mv(yi, vi, mods = ~ I(sqrt(vi)),
+                 random = list(~ 1 | control_id, 
+                               ~ 1 | su_mod,
+                               ~ 1 | mod_cm), 
+                 data = meta)
   
   PET_r <- fisherz2r(c(b = PET$beta[1], ci.lb = PET$ci.lb[1], ci.ub = PET$ci.ub[1]))
   
@@ -236,25 +236,25 @@ robustness <- function(robust_var, data) {
   gender_r <- fisherz2r(c(r = gender_mod$beta[[2]], ci.lb = gender_mod$ci.lb[[2]], ci.ub = gender_mod$ci.ub[[2]]))
   
   out <- list(
-    res,
-    res_r,
-    PET,
-    PET_r,
-    PEESE,
-    PEESE_r,
-    cm_mod,
-    cm_mod2,
-    cm_r,
-    cm_pet,
-    cm_peese,
-    type_mod,
-    type_mod2,
-    type_r,
-    sub_mod,
-    sub_mod2,
-    sub_r,
-    gender_mod,
-    gender_r
+    res = res,
+    res_r = res_r,
+    PET = PET,
+    PET_r = PET_r,
+    PEESE = PEESE,
+    PEESE_r = PEESE_r,
+    cm_mod = cm_mod,
+    cm_mod2 = cm_mod2,
+    cm_r = cm_r,
+    cm_pet = cm_pet,
+    cm_peese = cm_peese,
+    type_mod = type_mod,
+    type_mod = type_mod2,
+    type_r = type_r,
+    sub_mod = sub_mod,
+    sub_mod2 = sub_mod2,
+    sub_r = sub_r,
+    gender_m = gender_mod,
+    gender_ = gender_r
   )
   
   return(out)

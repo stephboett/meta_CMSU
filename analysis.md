@@ -1,7 +1,7 @@
 Child Maltreatment and Adolescent Substance Use – Main Analysis Report
 ================
 Stephanie Boettiger & Timothy J. Luke
-2022-10-24
+2022-10-30
 
 ``` r
 source("calc_effectsizes.R")
@@ -179,7 +179,7 @@ PEESE
     ## 
     ##          estimate      se    zval    pval    ci.lb    ci.ub   ​ 
     ## intrcpt    0.0671  0.0367  1.8270  0.0677  -0.0049   0.1391  . 
-    ## mods       4.2450  3.6592  1.1601  0.2460  -2.9268  11.4169    
+    ## vi         4.2450  3.6592  1.1601  0.2460  -2.9268  11.4169    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -214,9 +214,9 @@ PET
     ## 
     ## Model Results:
     ## 
-    ##          estimate      se    zval    pval    ci.lb   ci.ub   ​ 
-    ## intrcpt    0.0435  0.0439  0.9909  0.3218  -0.0425  0.1295    
-    ## mods       0.7415  0.5287  1.4025  0.1608  -0.2948  1.7778    
+    ##              estimate      se    zval    pval    ci.lb   ci.ub   ​ 
+    ## intrcpt        0.0435  0.0439  0.9909  0.3218  -0.0425  0.1295    
+    ## I(sqrt(vi))    0.7415  0.5287  1.4025  0.1608  -0.2948  1.7778    
     ## 
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
