@@ -115,10 +115,12 @@ cm_r
 ```
 
 ```{r}
+# PET
 cm_pet
 ```
 
 ```{r}
+# PEESE
 cm_peese
 ```
 
@@ -136,6 +138,16 @@ type_mod2
 ```{r}
 # transforming Z to r scores
 type_r
+```
+
+```{r}
+# PET
+type_mod_pet
+```
+
+```{r}
+# PEESE
+type_mod_peese
 ```
 
 ## Substance Type
@@ -165,4 +177,3 @@ gender_mod
 # transforming Z to r scores
 gender_r
 ```
-

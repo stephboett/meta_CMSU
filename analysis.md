@@ -531,6 +531,7 @@ cm_r
     ## measure_modself-report   0.107096554  0.03852128 0.1746678
 
 ``` r
+# PET
 cm_pet
 ```
 
@@ -562,6 +563,7 @@ cm_pet
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 ``` r
+# PEESE
 cm_peese
 ```
 
@@ -674,6 +676,76 @@ type_r
     ## mod_cmPA  0.06315414  0.009981421 0.11597071
     ## mod_cmPN  0.04680694 -0.006939879 0.10028410
     ## mod_cmSA  0.06655061  0.013366197 0.11935953
+
+``` r
+# PET
+type_mod_pet
+```
+
+    ## 
+    ## Multivariate Meta-Analysis Model (k = 196; method: REML)
+    ## 
+    ## Variance Components:
+    ## 
+    ##             estim    sqrt  nlvls  fixed      factor 
+    ## sigma^2.1  0.0135  0.1161     32     no  control_id 
+    ## sigma^2.2  0.0016  0.0394      5     no      su_mod 
+    ## 
+    ## Test for Residual Heterogeneity:
+    ## QE(df = 188) = 3700.5762, p-val < .0001
+    ## 
+    ## Test of Moderators (coefficients 1:8):
+    ## QM(df = 8) = 826.3049, p-val < .0001
+    ## 
+    ## Model Results:
+    ## 
+    ##              estimate      se     zval    pval    ci.lb   ci.ub     ​ 
+    ## mod_cmany      0.1656  0.0384   4.3147  <.0001   0.0904  0.2409  *** 
+    ## mod_cmEA       0.0507  0.0398   1.2747  0.2024  -0.0273  0.1287      
+    ## mod_cmEN      -0.0130  0.0417  -0.3112  0.7556  -0.0947  0.0688      
+    ## mod_cmN        0.0286  0.0384   0.7445  0.4566  -0.0467  0.1039      
+    ## mod_cmPA       0.0262  0.0383   0.6847  0.4936  -0.0488  0.1013      
+    ## mod_cmPN       0.0098  0.0385   0.2556  0.7983  -0.0656  0.0852      
+    ## mod_cmSA       0.0296  0.0383   0.7739  0.4390  -0.0454  0.1047      
+    ## I(sqrt(vi))    0.7434  0.5295   1.4041  0.1603  -0.2943  1.7811      
+    ## 
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+``` r
+# PEESE
+type_mod_peese
+```
+
+    ## 
+    ## Multivariate Meta-Analysis Model (k = 196; method: REML)
+    ## 
+    ## Variance Components:
+    ## 
+    ##             estim    sqrt  nlvls  fixed      factor 
+    ## sigma^2.1  0.0127  0.1128     32     no  control_id 
+    ## sigma^2.2  0.0015  0.0393      5     no      su_mod 
+    ## 
+    ## Test for Residual Heterogeneity:
+    ## QE(df = 188) = 3708.9534, p-val < .0001
+    ## 
+    ## Test of Moderators (coefficients 1:8):
+    ## QM(df = 8) = 825.6687, p-val < .0001
+    ## 
+    ## Model Results:
+    ## 
+    ##            estimate      se    zval    pval    ci.lb    ci.ub     ​ 
+    ## mod_cmany    0.1893  0.0299  6.3366  <.0001   0.1307   0.2478  *** 
+    ## mod_cmEA     0.0745  0.0317  2.3523  0.0187   0.0124   0.1367    * 
+    ## mod_cmEN     0.0110  0.0340  0.3224  0.7471  -0.0557   0.0777      
+    ## mod_cmN      0.0523  0.0300  1.7415  0.0816  -0.0066   0.1111    . 
+    ## mod_cmPA     0.0499  0.0298  1.6727  0.0944  -0.0086   0.1083    . 
+    ## mod_cmPN     0.0335  0.0300  1.1152  0.2648  -0.0254   0.0924      
+    ## mod_cmSA     0.0533  0.0298  1.7871  0.0739  -0.0052   0.1118    . 
+    ## vi           4.2382  3.6626  1.1572  0.2472  -2.9403  11.4167      
+    ## 
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 ## Substance Type
 

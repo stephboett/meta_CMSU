@@ -291,6 +291,18 @@ type_r <- data.frame(
   ci.ub = fisherz2r(type_mod$ci.ub)
 )
 
+### PET-PEESE
+
+type_mod_pet <- rma.mv(yi, vi, 
+                       mods = ~ mod_cm + I(sqrt(vi)) - 1, 
+                       random = list(~ 1 | control_id, ~ 1 | su_mod),
+                       data = meta)
+
+type_mod_peese <- rma.mv(yi, vi, 
+                         mods = ~ mod_cm + vi - 1, 
+                         random = list(~ 1 | control_id, ~ 1 | su_mod),
+                         data = meta)
+
 ## substance use type as a moderator 
 
 sub_mod <- rma.mv(yi, vi, 
