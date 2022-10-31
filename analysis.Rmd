@@ -187,3 +187,14 @@ gender_mod
 # transforming Z to r scores
 gender_r
 ```
+
+```{r}
+# PET
+gender_mod_pet
+```
+
+```{r}
+# PEESE
+gender_mod_peese
+```
+
