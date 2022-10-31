@@ -73,7 +73,7 @@ or_dat <- dat %>%
 
 or_dat <- or_dat %>% 
   mutate(
-    raw_es = log(raw_es), 
+    raw_es = log(OR), 
     effectsize_metric = "LOR"
   )
 
