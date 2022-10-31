@@ -166,6 +166,16 @@ sub_mod2
 sub_r
 ```
 
+```{r}
+# PET
+sub_mod_pet
+```
+
+```{r}
+# PEESE
+sub_mod_peese
+```
+
 ## Gender
 
 ```{r}

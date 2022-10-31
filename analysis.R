@@ -319,6 +319,18 @@ sub_mod2 <- rma.mv(yi, vi,
                   data = meta
 )
 
+### PET-PEESE 
+
+sub_mod_pet <- rma.mv(yi, vi, 
+                      mods = ~ su_mod + I(sqrt(vi)) - 1, 
+                      random = list(~ 1 | control_id, ~ 1 | mod_cm),
+                      data = meta)
+
+sub_mod_peese <- rma.mv(yi, vi, 
+                        mods = ~ su_mod + vi - 1, 
+                        random = list(~ 1 | control_id, ~ 1 | mod_cm),
+                        data = meta)
+
 ### transforming Z to r scores
 sub_r <- data.frame(
   b     = fisherz2r(sub_mod$beta),
@@ -345,6 +357,18 @@ gender_mod <- rma.mv(yi, vi,
 ### transforming Z to r scores
 gender_r <- fisherz2r(c(r = gender_mod$beta[[2]], ci.lb = gender_mod$ci.lb[[2]], ci.ub = gender_mod$ci.ub[[2]]))
 
+### PET-PEESE
+
+gender_mod_pet <- rma.mv(yi, vi, 
+                         mods = ~ gender + I(sqrt(vi)) - 1, 
+                         random = list(~ 1 | control_id, ~ 1 | mod_cm, ~ 1 | su_mod),
+                         data = meta)
+
+gender_mod_peese <- rma.mv(yi, vi, 
+                           mods = ~ gender + vi - 1, 
+                           random = list(~ 1 | control_id, ~ 1 | mod_cm, ~ 1 | su_mod),
+                           data = meta)
+  
 # Cook's distance exclusions ---------------------------------------------------
 
 # The cutoff of .004 is based on visual inspection of a plot of Cook's distances.
