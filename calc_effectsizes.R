@@ -73,7 +73,7 @@ or_dat <- dat %>%
 
 or_dat <- or_dat %>% 
   mutate(
-    raw_es = log(OR), 
+    OR = log(OR), 
     effectsize_metric = "LOR"
   )
 
@@ -81,7 +81,7 @@ or_dat <- or_dat %>%
 
 or_es <- or_dat %>% 
   mutate(
-    yi = raw_es * (sqrt(3)/pi), 
+    yi = OR * (sqrt(3)/pi), 
     yi = yi/sqrt(yi^2 + 4)
   )
 
