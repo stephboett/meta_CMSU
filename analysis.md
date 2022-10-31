@@ -1,7 +1,7 @@
 Child Maltreatment and Adolescent Substance Use – Main Analysis Report
 ================
 Stephanie Boettiger & Timothy J. Luke
-2022-10-30
+2022-10-31
 
 ``` r
 source("calc_effectsizes.R")
@@ -51,6 +51,10 @@ source("analysis.R")
     ## The following objects are masked from 'package:ggplot2':
     ## 
     ##     %+%, alpha
+
+    ## Warning: Rows with NAs omitted from model fitting.
+
+    ## Warning: Rows with NAs omitted from model fitting.
 
     ## Warning: Rows with NAs omitted from model fitting.
 
@@ -824,6 +828,72 @@ sub_r
     ## su_modillicit drug 0.08474367  0.02247179 0.14636053
     ## su_modmarijuana    0.11480307  0.05276323 0.17596011
 
+``` r
+# PET
+sub_mod_pet
+```
+
+    ## 
+    ## Multivariate Meta-Analysis Model (k = 196; method: REML)
+    ## 
+    ## Variance Components:
+    ## 
+    ##             estim    sqrt  nlvls  fixed      factor 
+    ## sigma^2.1  0.0137  0.1168     32     no  control_id 
+    ## sigma^2.2  0.0033  0.0573      7     no      mod_cm 
+    ## 
+    ## Test for Residual Heterogeneity:
+    ## QE(df = 190) = 4817.7516, p-val < .0001
+    ## 
+    ## Test of Moderators (coefficients 1:6):
+    ## QM(df = 6) = 618.9334, p-val < .0001
+    ## 
+    ## Model Results:
+    ## 
+    ##                     estimate      se     zval    pval    ci.lb   ci.ub   ​ 
+    ## su_modalcohol        -0.0129  0.0406  -0.3190  0.7497  -0.0924  0.0665    
+    ## su_modany             0.0217  0.0643   0.3376  0.7357  -0.1043  0.1477    
+    ## su_modcigarette       0.0706  0.0407   1.7351  0.0827  -0.0092  0.1504  . 
+    ## su_modillicit drug    0.0488  0.0409   1.1935  0.2327  -0.0313  0.1290    
+    ## su_modmarijuana       0.0795  0.0408   1.9508  0.0511  -0.0004  0.1595  . 
+    ## I(sqrt(vi))           0.7788  0.5374   1.4493  0.1472  -0.2744  1.8320    
+    ## 
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+``` r
+# PEESE
+sub_mod_peese
+```
+
+    ## 
+    ## Multivariate Meta-Analysis Model (k = 196; method: REML)
+    ## 
+    ## Variance Components:
+    ## 
+    ##             estim    sqrt  nlvls  fixed      factor 
+    ## sigma^2.1  0.0129  0.1134     32     no  control_id 
+    ## sigma^2.2  0.0033  0.0572      7     no      mod_cm 
+    ## 
+    ## Test for Residual Heterogeneity:
+    ## QE(df = 190) = 4819.3639, p-val < .0001
+    ## 
+    ## Test of Moderators (coefficients 1:6):
+    ## QM(df = 6) = 618.4053, p-val < .0001
+    ## 
+    ## Model Results:
+    ## 
+    ##                     estimate      se    zval    pval    ci.lb    ci.ub    ​ 
+    ## su_modalcohol         0.0112  0.0334  0.3344  0.7381  -0.0543   0.0767     
+    ## su_modany             0.0491  0.0561  0.8747  0.3818  -0.0609   0.1591     
+    ## su_modcigarette       0.0948  0.0335  2.8285  0.0047   0.0291   0.1605  ** 
+    ## su_modillicit drug    0.0732  0.0336  2.1760  0.0296   0.0073   0.1391   * 
+    ## su_modmarijuana       0.1038  0.0336  3.0897  0.0020   0.0379   0.1696  ** 
+    ## vi                    4.4385  3.7100  1.1963  0.2316  -2.8331  11.7101     
+    ## 
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
 ## Gender
 
 ``` r
@@ -863,3 +933,63 @@ gender_r
 
     ##          r      ci.lb      ci.ub 
     ##  0.1801978 -0.1384203  0.4650133
+
+``` r
+# PET
+gender_mod_pet
+```
+
+    ## 
+    ## Multivariate Meta-Analysis Model (k = 178; method: REML)
+    ## 
+    ## Variance Components:
+    ## 
+    ##             estim    sqrt  nlvls  fixed      factor 
+    ## sigma^2.1  0.0113  0.1064     29     no  control_id 
+    ## sigma^2.2  0.0030  0.0552      7     no      mod_cm 
+    ## sigma^2.3  0.0032  0.0565      5     no      su_mod 
+    ## 
+    ## Test for Residual Heterogeneity:
+    ## QE(df = 176) = 4555.2025, p-val < .0001
+    ## 
+    ## Test of Moderators (coefficients 1:2):
+    ## QM(df = 2) = 6.2508, p-val = 0.0439
+    ## 
+    ## Model Results:
+    ## 
+    ##              estimate      se     zval    pval    ci.lb   ci.ub   ​ 
+    ## gender        -0.0011  0.0010  -1.1680  0.2428  -0.0030  0.0008    
+    ## I(sqrt(vi))    0.6197  0.5427   1.1419  0.2535  -0.4439  1.6834    
+    ## 
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+``` r
+# PEESE
+gender_mod_peese
+```
+
+    ## 
+    ## Multivariate Meta-Analysis Model (k = 178; method: REML)
+    ## 
+    ## Variance Components:
+    ## 
+    ##             estim    sqrt  nlvls  fixed      factor 
+    ## sigma^2.1  0.0108  0.1041     29     no  control_id 
+    ## sigma^2.2  0.0030  0.0551      7     no      mod_cm 
+    ## sigma^2.3  0.0032  0.0565      5     no      su_mod 
+    ## 
+    ## Test for Residual Heterogeneity:
+    ## QE(df = 176) = 4638.9101, p-val < .0001
+    ## 
+    ## Test of Moderators (coefficients 1:2):
+    ## QM(df = 2) = 6.1630, p-val = 0.0459
+    ## 
+    ## Model Results:
+    ## 
+    ##         estimate      se     zval    pval    ci.lb    ci.ub   ​ 
+    ## gender   -0.0015  0.0008  -1.8373  0.0662  -0.0031   0.0001  . 
+    ## vi        3.9388  3.7005   1.0644  0.2871  -3.3140  11.1916    
+    ## 
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
