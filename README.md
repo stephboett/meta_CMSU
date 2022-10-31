@@ -3,6 +3,9 @@
 Repository for a meta-analysis on the association between child maltreatment
 (CM) and adolescent substance use (SU)
 
+The compendium for this project comprises this GitHub repository and a project
+on the Open Science Framework (https://osf.io/yza3u/).
+
 ## Results
 
 The main results, as well as supplemental analyses, are presented in
