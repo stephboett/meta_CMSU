@@ -1940,7 +1940,7 @@ rc_5
     ##          r      ci.lb      ci.ub 
     ##  0.1569134 -0.1713572  0.4538241
 
-# Robustness Check 2 substitutes Yoon et al. (2017) with Yoon et al. (2021)
+# Robustness Check 6 substitutes Yoon et al. (2017) with Yoon et al. (2021)
 
 ``` r
 rc_6
