@@ -42,8 +42,15 @@ rc_4
 rc_5
 ```
 
-# Robustness Check 2 substitutes Yoon et al. (2017) with Yoon et al. (2021)
+# Robustness Check 6 substitutes Yoon et al. (2017) with Yoon et al. (2021)
 
 ```{r}
 rc_6
 ```
+
+# Robustness Check 7 removes Mills et al (2013)
+
+```{r}
+rc_mills
+```
+

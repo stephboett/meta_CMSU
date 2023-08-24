@@ -195,6 +195,32 @@ robustness <- function(robust_var, data) {
     ci.ub = fisherz2r(type_mod$ci.ub)
   )
   
+  ### PET-PEESE
+  
+  type_mod_pet <- rma.mv(yi, vi, 
+                         mods = ~ mod_cm + I(sqrt(vi)) - 1, 
+                         random = list(~ 1 | control_id, ~ 1 | su_mod),
+                         data = meta)
+  
+  type_mod_peese <- rma.mv(yi, vi, 
+                           mods = ~ mod_cm + vi - 1, 
+                           random = list(~ 1 | control_id, ~ 1 | su_mod),
+                           data = meta)
+  
+  ### transforming Z to r scores
+  
+  type_r_pet <- data.frame(
+    b     = fisherz2r(type_mod_pet$beta),
+    ci.lb = fisherz2r(type_mod_pet$ci.lb),
+    ci.ub = fisherz2r(type_mod_pet$ci.ub)
+  )
+  
+  type_r_peese <- data.frame(
+    b     = fisherz2r(type_mod_peese$beta),
+    ci.lb = fisherz2r(type_mod_peese$ci.lb),
+    ci.ub = fisherz2r(type_mod_peese$ci.ub)
+  )
+  
   ## substance use type as a moderator 
   
   sub_mod <- rma.mv(yi, vi, 
@@ -250,6 +276,10 @@ robustness <- function(robust_var, data) {
     type_mod = type_mod,
     type_mod = type_mod2,
     type_r = type_r,
+    type_mod_pet = type_mod_pet,
+    type_mod_peese = type_mod_peese,
+    type_r_pet = type_r_pet,
+    type_r_peese = type_r_peese,
     sub_mod = sub_mod,
     sub_mod2 = sub_mod2,
     sub_r = sub_r,
@@ -269,11 +299,11 @@ dat <- read.csv("cmsu_raw-data.csv")
 
 rc_1 <- robustness("robust_1", dat)
 
-# Robustness Check 2 substitutes Yoon et al.,(2017) with Duprey et al.(2017) ---------------
+# Robustness Check 2 substitutes Yoon et al.,(2017) with Duprey et al.(2017)
 
 rc_2 <- robustness("robust_2", dat)
 
-# Robustness Check 3 substitutes Yoon et al., (2017) with Fagan & Novak (2018) -
+# Robustness Check 3 substitutes Yoon et al., (2017) with Fagan & Novak (2018)
 
 rc_3 <- robustness("robust_3", dat)
 
@@ -281,10 +311,23 @@ rc_3 <- robustness("robust_3", dat)
 
 rc_4 <- robustness("robust_4", dat)
 
-# Robustness Check 5 substitutes Yoon et al., (2017) with Olson et al.,(2021) --
+# Robustness Check 5 substitutes Yoon et al., (2017) with Olson et al.,(2021)
 
 rc_5 <- robustness("robust_5", dat)
 
-# Robustness Check 2 substitutes Yoon et al., (2017) with Yoon et al., (2021) --
+# Robustness Check 2 substitutes Yoon et al., (2017) with Yoon et al., (2021)
 
 rc_6 <- robustness("robust_6", dat)
+
+# Removing Mills et al (2013) --------------------------------------------------
+
+dat <- dat %>% 
+  mutate(
+    robust_mills = case_when(
+      study_id == 22 ~ 0,
+      study_id != 22 ~ 1
+    )
+  )
+
+rc_mills <- robustness("robust_mills", dat)
+
