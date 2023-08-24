@@ -48,7 +48,7 @@ rc_5
 rc_6
 ```
 
-# Robustness Check 7 removes Mills et al (2013)
+# Robustness Check 7 removes Mills et al (2014)
 
 ```{r}
 rc_mills

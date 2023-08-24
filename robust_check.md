@@ -2,7 +2,7 @@ Child Maltreatment and Adolescent Substance Use – Robustness Check
 Report
 ================
 Stephanie Boettiger & Timothy J. Luke
-2023-08-21
+2023-08-24
 
 # Robustness Check 1 substitutes Yoon et al. (2017) with Dubowitz et al. (2016)
 
@@ -2845,7 +2845,7 @@ rc_6
     ##          r      ci.lb      ci.ub 
     ##  0.1742543 -0.1449833  0.4606325
 
-# Robustness Check 7 removes Mills et al (2013)
+# Robustness Check 7 removes Mills et al (2014)
 
 ``` r
 rc_mills

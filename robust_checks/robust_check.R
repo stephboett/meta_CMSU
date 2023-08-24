@@ -319,7 +319,7 @@ rc_5 <- robustness("robust_5", dat)
 
 rc_6 <- robustness("robust_6", dat)
 
-# Removing Mills et al (2013) --------------------------------------------------
+# Removing Mills et al (2014) --------------------------------------------------
 
 dat <- dat %>% 
   mutate(
